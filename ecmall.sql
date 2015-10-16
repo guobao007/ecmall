@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2015-08-05 14:06:33
+Date: 2015-10-16 16:47:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,13 +52,14 @@ CREATE TABLE `ecm_address` (
   `phone_mob` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`addr_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_address
 -- ----------------------------
 INSERT INTO `ecm_address` VALUES ('1', '4', '超级卖家', '43', '中国	上海市	徐汇区', '长江路15号', '200088', '021-88886666', '13366669999');
 INSERT INTO `ecm_address` VALUES ('2', '2', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '');
+INSERT INTO `ecm_address` VALUES ('3', '5', '测试', '5', '中国	北京市	西城', '测试测试测试测试测试', '230000', '18212271611', '');
 
 -- ----------------------------
 -- Table structure for `ecm_article`
@@ -140,14 +141,14 @@ INSERT INTO `ecm_brand` VALUES ('1', '麦包包', 'data/files/mall/brand/1.gif',
 INSERT INTO `ecm_brand` VALUES ('2', 'ESprit', 'data/files/mall/brand/2.jpg', '2', '1', '0', '1', '');
 INSERT INTO `ecm_brand` VALUES ('3', '李宁', 'data/files/mall/brand/3.jpg', '3', '1', '0', '1', '');
 INSERT INTO `ecm_brand` VALUES ('4', 'G-Star', 'data/files/mall/brand/4.jpg', '4', '1', '0', '1', '');
-INSERT INTO `ecm_brand` VALUES ('5', 'Lee', 'data/files/mall/brand/5.jpg', '5', '1', '0', '1', '');
+INSERT INTO `ecm_brand` VALUES ('5', 'Lee', 'data/files/mall/brand/5.jpg', '5', '1', '0', '1', '伯伯');
 INSERT INTO `ecm_brand` VALUES ('6', 'Jack & Jones', 'data/files/mall/brand/6.jpg', '6', '1', '0', '1', '');
 INSERT INTO `ecm_brand` VALUES ('7', 'DIOR', 'data/files/mall/brand/7.jpg', '6', '1', '0', '1', '');
-INSERT INTO `ecm_brand` VALUES ('8', 'Chanel', 'data/files/mall/brand/8.jpg', '7', '1', '0', '1', '');
+INSERT INTO `ecm_brand` VALUES ('8', 'Chanel', 'data/files/mall/brand/8.jpg', '7', '1', '0', '1', '阿');
 INSERT INTO `ecm_brand` VALUES ('9', 'PUMA', 'data/files/mall/brand/9.jpg', '8', '1', '0', '1', '');
-INSERT INTO `ecm_brand` VALUES ('10', '美特斯邦威', 'data/files/mall/brand/10.jpg', '9', '1', '0', '1', '');
+INSERT INTO `ecm_brand` VALUES ('10', '美特斯邦威', 'data/files/mall/brand/10.jpg', '9', '1', '0', '1', '测试');
 INSERT INTO `ecm_brand` VALUES ('11', 'Adidas', 'data/files/mall/brand/11.jpg', '10', '1', '0', '1', '');
-INSERT INTO `ecm_brand` VALUES ('12', 'Nike', 'data/files/mall/brand/12.jpg', '11', '1', '0', '1', '');
+INSERT INTO `ecm_brand` VALUES ('12', 'Nike', 'data/files/mall/brand/12.jpg', '11', '1', '0', '1', '测试');
 
 -- ----------------------------
 -- Table structure for `ecm_cart`
@@ -168,11 +169,12 @@ CREATE TABLE `ecm_cart` (
   PRIMARY KEY (`rec_id`),
   KEY `session_id` (`session_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_cart
 -- ----------------------------
+INSERT INTO `ecm_cart` VALUES ('35', '2', '0c2c18635edf2c31b77e93215e4666f6', '3', '1', '多彩人生多彩裤', '1', '颜色:粉红色 尺码:XL', '99.00', '1', 'data/files/store_2/goods_179/small_200908060822598478.jpg');
 
 -- ----------------------------
 -- Table structure for `ecm_category_goods`
@@ -251,6 +253,9 @@ CREATE TABLE `ecm_collect` (
 -- ----------------------------
 -- Records of ecm_collect
 -- ----------------------------
+INSERT INTO `ecm_collect` VALUES ('2', 'store', '2', '', '1438764545');
+INSERT INTO `ecm_collect` VALUES ('5', 'store', '3', '', '1441955144');
+INSERT INTO `ecm_collect` VALUES ('2', 'goods', '5', '', '1444282505');
 
 -- ----------------------------
 -- Table structure for `ecm_coupon`
@@ -305,6 +310,7 @@ CREATE TABLE `ecm_friend` (
 -- Records of ecm_friend
 -- ----------------------------
 INSERT INTO `ecm_friend` VALUES ('4', '3', '1249545996');
+INSERT INTO `ecm_friend` VALUES ('5', '2', '1442304912');
 
 -- ----------------------------
 -- Table structure for `ecm_function`
@@ -334,7 +340,7 @@ CREATE TABLE `ecm_gcategory` (
   `if_show` tinyint(3) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`cate_id`),
   KEY `store_id` (`store_id`,`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1210 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1212 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_gcategory
@@ -600,6 +606,7 @@ INSERT INTO `ecm_gcategory` VALUES ('1206', '3', '皮夹钱包', '1204', '2', '1
 INSERT INTO `ecm_gcategory` VALUES ('1207', '3', '时尚女鞋', '0', '3', '1');
 INSERT INTO `ecm_gcategory` VALUES ('1208', '3', '气质单鞋', '1207', '1', '1');
 INSERT INTO `ecm_gcategory` VALUES ('1209', '3', '运动休闲', '1207', '2', '1');
+INSERT INTO `ecm_gcategory` VALUES ('1211', '0', 'T恤1', '2', '255', '1');
 
 -- ----------------------------
 -- Table structure for `ecm_goods`
@@ -640,7 +647,7 @@ CREATE TABLE `ecm_goods` (
   KEY `cate_id_4` (`cate_id_4`),
   KEY `brand` (`brand`(10)),
   KEY `tags` (`tags`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_goods
@@ -674,7 +681,12 @@ INSERT INTO `ecm_goods` VALUES ('26', '3', 'material', '喜皮风格牛仔短裤
 INSERT INTO `ecm_goods` VALUES ('27', '3', 'material', '春季尼龙休闲裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26a.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26b.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26c.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26d.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26e.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '2', '颜色', '尺码', '1', '0', null, '1249553044', '1249553044', '68', 'data/files/store_2/goods_5/small_200908061003253339.jpg', '1', '21', '32', '0', '0', '288.00', '');
 INSERT INTO `ecm_goods` VALUES ('28', '3', 'material', '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/14.jpg\" alt=\"\" /></div>', '26', '女装/女士精品	超短外套', '美特斯邦威', '0', '', '', '1', '0', null, '1249553192', '1249553238', '73', 'data/files/store_2/goods_115/small_200908061005154170.jpg', '1', '21', '26', '0', '0', '188.00', '');
 INSERT INTO `ecm_goods` VALUES ('29', '3', 'material', '夹克.韩版新款09开衫小外套卫衣短甜美显瘦春装', '<p><img src=\"http://pic.shopex.cn/pictures/goodsdetail/13.jpg\" alt=\"\" /></p>', '22', '女装/女士精品	风衣/长大衣', 'PUMA', '0', '', '', '1', '0', null, '1249553354', '1249553354', '74', 'data/files/store_2/goods_121/small_200908061008412008.jpg', '1', '21', '22', '0', '0', '328.00', '');
-INSERT INTO `ecm_goods` VALUES ('30', '2', 'material', '测试测试测试', '<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>', '4', '男装	卫衣', '测试品牌', '0', '', '', '1', '0', null, '1438754213', '1438754213', '75', '', '1', '1', '4', '0', '0', '100.00', ',测试标签,');
+INSERT INTO `ecm_goods` VALUES ('30', '2', 'material', '测试测试测试', '<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签<img src=\"http://ecmall/data/files/store_2/goods_29/201508050847094110.jpg\" alt=\"04914788634870398.jpg\" /></h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>\r\n<h2>标签</h2>', '4', '男装	卫衣', '测试品牌', '0', '', '', '1', '0', null, '1438754213', '1438764437', '75', 'data/files/store_2/goods_4/small_201508050846449221.jpg', '1', '1', '4', '0', '0', '100.00', ',测试标签,');
+INSERT INTO `ecm_goods` VALUES ('31', '2', 'material', '测试商品', '<p><img src=\"http://ecmall/data/files/store_2/goods_45/201509140154059781.jpg\" alt=\"1_04848498615189861_1280.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_49/201509140154091464.jpg\" alt=\"1_04848498638519467_1280.jpg\" /></p>', '75', '运动服/颈环配件	T恤	长袖休闲T恤', 'ERG', '0', '', '', '1', '0', null, '1442195663', '1442388582', '76', 'data/files/store_2/goods_60/small_201509140154203827.jpg', '1', '73', '74', '75', '0', '50.00', '');
+INSERT INTO `ecm_goods` VALUES ('32', '2', 'material', '测试商品生成二维码', '<p><img src=\"http://ecmall/data/files/store_2/goods_91/201509240204513228.jpg\" alt=\"web-055620-33.jpg\" /></p>', '1211', '男装	T恤	T恤1', '', '0', '', '', '1', '0', null, '1443060297', '1443064263', '77', 'data/files/store_2/goods_123/small_201509240145231928.jpg', '1', '1', '2', '1211', '0', '100.00', '');
+INSERT INTO `ecm_goods` VALUES ('33', '2', 'material', '测试商品生成二维码2', '', '1211', '男装	T恤	T恤1', '', '0', '', '', '1', '0', null, '1443060693', '1443064230', '78', 'data/files/store_2/goods_90/small_201509240211301710.jpg', '1', '1', '2', '1211', '0', '50.00', '');
+INSERT INTO `ecm_goods` VALUES ('34', '2', 'material', '测试商品生成二维码3', '<p><img src=\"http://ecmall/data/files/store_2/goods_112/201509240311522849.jpg\" alt=\"web-041503-45.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_113/201509240311534723.jpg\" alt=\"web-041520-46.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_113/201509240311538334.jpg\" alt=\"web-052642-9.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_113/201509240311538313.jpg\" alt=\"web-052730-26.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_113/201509240311538559.jpg\" alt=\"web-052950-2.jpg\" /><img src=\"http://ecmall/data/files/store_2/goods_114/201509240311541358.jpg\" alt=\"web-055514-27.jpg\" /></p>', '1211', '男装	T恤	T恤1', '', '0', '', '', '1', '0', null, '1443064328', '1443064328', '79', 'data/files/store_2/goods_88/small_201509240311289386.jpg', '1', '1', '2', '1211', '0', '10.00', '');
+INSERT INTO `ecm_goods` VALUES ('35', '2', 'material', '测试商品22222', '', '1211', '男装	T恤	T恤1', '', '2', '颜色', '尺码', '1', '0', null, '1443513003', '1444703233', '80', 'data/files/store_2/goods_1/small_201509290726412817.jpg', '1', '1', '2', '1211', '0', '10.00', '');
 
 -- ----------------------------
 -- Table structure for `ecm_goods_attr`
@@ -708,7 +720,7 @@ CREATE TABLE `ecm_goods_image` (
   `file_id` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`image_id`),
   KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_goods_image
@@ -794,6 +806,16 @@ INSERT INTO `ecm_goods_image` VALUES ('78', '28', 'data/files/store_2/goods_14/2
 INSERT INTO `ecm_goods_image` VALUES ('79', '28', 'data/files/store_2/goods_26/200908061007068653.jpg', 'data/files/store_2/goods_26/small_200908061007068653.jpg', '255', '81');
 INSERT INTO `ecm_goods_image` VALUES ('80', '29', 'data/files/store_2/goods_121/200908061008412008.jpg', 'data/files/store_2/goods_121/small_200908061008412008.jpg', '255', '82');
 INSERT INTO `ecm_goods_image` VALUES ('81', '29', 'data/files/store_2/goods_127/200908061008473587.jpg', 'data/files/store_2/goods_127/small_200908061008473587.jpg', '255', '83');
+INSERT INTO `ecm_goods_image` VALUES ('82', '30', 'data/files/store_2/goods_194/201508050846346486.jpg', 'data/files/store_2/goods_194/small_201508050846346486.jpg', '255', '98');
+INSERT INTO `ecm_goods_image` VALUES ('83', '30', 'data/files/store_2/goods_4/201508050846449221.jpg', 'data/files/store_2/goods_4/small_201508050846449221.jpg', '1', '99');
+INSERT INTO `ecm_goods_image` VALUES ('84', '30', 'data/files/store_2/goods_12/201508060906525988.jpg', 'data/files/store_2/goods_12/small_201508060906525988.jpg', '255', '101');
+INSERT INTO `ecm_goods_image` VALUES ('85', '30', 'data/files/store_2/goods_23/201508100330235496.jpg', 'data/files/store_2/goods_23/small_201508100330235496.jpg', '255', '102');
+INSERT INTO `ecm_goods_image` VALUES ('86', '30', 'data/files/store_2/goods_187/201508100333072083.jpg', 'data/files/store_2/goods_187/small_201508100333072083.jpg', '255', '103');
+INSERT INTO `ecm_goods_image` VALUES ('88', '31', 'data/files/store_2/goods_60/201509140154203827.jpg', 'data/files/store_2/goods_60/small_201509140154203827.jpg', '1', '109');
+INSERT INTO `ecm_goods_image` VALUES ('89', '32', 'data/files/store_2/goods_123/201509240145231928.jpg', 'data/files/store_2/goods_123/small_201509240145231928.jpg', '1', '110');
+INSERT INTO `ecm_goods_image` VALUES ('90', '33', 'data/files/store_2/goods_90/201509240211301710.jpg', 'data/files/store_2/goods_90/small_201509240211301710.jpg', '1', '112');
+INSERT INTO `ecm_goods_image` VALUES ('91', '34', 'data/files/store_2/goods_88/201509240311289386.jpg', 'data/files/store_2/goods_88/small_201509240311289386.jpg', '1', '113');
+INSERT INTO `ecm_goods_image` VALUES ('92', '35', 'data/files/store_2/goods_1/201509290726412817.jpg', 'data/files/store_2/goods_1/small_201509290726412817.jpg', '1', '120');
 
 -- ----------------------------
 -- Table structure for `ecm_goods_qa`
@@ -816,11 +838,22 @@ CREATE TABLE `ecm_goods_qa` (
   KEY `user_id` (`user_id`),
   KEY `goods_id` (`item_id`),
   KEY `store_id` (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_goods_qa
 -- ----------------------------
+INSERT INTO `ecm_goods_qa` VALUES ('1', '111111111111', '5', '3', '1212@qq.com', '11', '耐克红粉世家运动鞋', '', '1443424213', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('2', '111111111', '0', '3', '1212@qq.com', '11', '耐克红粉世家运动鞋', '', '1443424224', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('3', '111111111111', '5', '2', '1212@qq.com', '33', '测试商品生成二维码2', '2222222222222222', '1443427736', '1443427801', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('4', '33333333', '0', '2', '1821227161@qq.com', '33', '测试商品生成二维码2', '', '1443495767', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('5', '33333333', '0', '2', '1821227161@qq.com', '33', '测试商品生成二维码2', '', '1443495804', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('6', '1111', '0', '2', '12122@qq.com', '33', '测试商品生成二维码2', '', '1443495959', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('7', 'asdfasdfasdfasdf', '0', '2', '122222@qq.com', '33', '测试商品生成二维码2', '', '1443496167', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('8', '11111', '5', '2', '1212@qq.com', '33', '测试商品生成二维码2', '', '1443496197', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('9', 'asdfasdf', '0', '2', '1212@qq.com', '33', '测试商品生成二维码2', '', '1443496204', '0', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('10', '牛逼 卧槽', '0', '2', '1212@qq.com', '35', '测试商品22222', '你牛逼', '1443602669', '1443602771', '1', 'goods');
+INSERT INTO `ecm_goods_qa` VALUES ('11', '马马虎虎', '5', '2', '1212@qq.com', '35', '测试商品22222', '呵呵', '1443602690', '1443602761', '1', 'goods');
 
 -- ----------------------------
 -- Table structure for `ecm_goods_spec`
@@ -838,7 +871,7 @@ CREATE TABLE `ecm_goods_spec` (
   PRIMARY KEY (`spec_id`),
   KEY `goods_id` (`goods_id`),
   KEY `price` (`price`)
-) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_goods_spec
@@ -856,7 +889,7 @@ INSERT INTO `ecm_goods_spec` VALUES ('11', '5', '蓝白混色', '39', '', '688.0
 INSERT INTO `ecm_goods_spec` VALUES ('12', '5', '蓝白混色', '40', '', '688.00', '39', '');
 INSERT INTO `ecm_goods_spec` VALUES ('13', '5', '蓝白混色', '41', '', '688.00', '99', '');
 INSERT INTO `ecm_goods_spec` VALUES ('14', '5', '蓝白混色', '42', '', '688.00', '10', '');
-INSERT INTO `ecm_goods_spec` VALUES ('15', '6', '', '', '', '170.00', '90', '');
+INSERT INTO `ecm_goods_spec` VALUES ('15', '6', '', '', '', '170.00', '89', '');
 INSERT INTO `ecm_goods_spec` VALUES ('16', '7', '黑色', '均码', '', '178.00', '20', '');
 INSERT INTO `ecm_goods_spec` VALUES ('17', '7', '银色', '均码', '', '178.00', '30', '');
 INSERT INTO `ecm_goods_spec` VALUES ('19', '8', '金色', '36', '', '368.00', '10', '');
@@ -873,7 +906,7 @@ INSERT INTO `ecm_goods_spec` VALUES ('29', '10', '蓝色', 'XL', '', '170.00', '
 INSERT INTO `ecm_goods_spec` VALUES ('30', '11', '粉红', '36', '', '268.00', '88', '');
 INSERT INTO `ecm_goods_spec` VALUES ('31', '11', '粉红', '37', '', '268.00', '88', '');
 INSERT INTO `ecm_goods_spec` VALUES ('32', '11', '粉红', '38', '', '268.00', '88', '');
-INSERT INTO `ecm_goods_spec` VALUES ('33', '11', '粉红', '39', '', '268.00', '88', '');
+INSERT INTO `ecm_goods_spec` VALUES ('33', '11', '粉红', '39', '', '268.00', '86', '');
 INSERT INTO `ecm_goods_spec` VALUES ('34', '12', '', '', '', '268.00', '29', '');
 INSERT INTO `ecm_goods_spec` VALUES ('35', '13', '', '', '', '179.00', '500', '');
 INSERT INTO `ecm_goods_spec` VALUES ('37', '14', '', '', '', '125.00', '33', '');
@@ -884,7 +917,7 @@ INSERT INTO `ecm_goods_spec` VALUES ('41', '15', '混色', '39', '', '578.00', '
 INSERT INTO `ecm_goods_spec` VALUES ('42', '16', '方格混色', '37', '', '128.00', '88', '');
 INSERT INTO `ecm_goods_spec` VALUES ('43', '16', '方格混色', '38', '', '128.00', '88', '');
 INSERT INTO `ecm_goods_spec` VALUES ('44', '16', '方格混色', '39', '', '128.00', '88', '');
-INSERT INTO `ecm_goods_spec` VALUES ('55', '17', '', '', '', '90.00', '83', '');
+INSERT INTO `ecm_goods_spec` VALUES ('55', '17', '', '', '', '90.00', '80', '');
 INSERT INTO `ecm_goods_spec` VALUES ('47', '18', '', '', '', '170.00', '27', '');
 INSERT INTO `ecm_goods_spec` VALUES ('48', '19', '', '', '', '170.00', '86', '');
 INSERT INTO `ecm_goods_spec` VALUES ('49', '20', '深蓝色', 'M', '', '129.00', '99', '');
@@ -894,7 +927,7 @@ INSERT INTO `ecm_goods_spec` VALUES ('52', '20', '白色', 'X', '', '129.00', '9
 INSERT INTO `ecm_goods_spec` VALUES ('53', '20', '粉红色', 'M', '', '129.00', '99', '');
 INSERT INTO `ecm_goods_spec` VALUES ('54', '20', '粉红色', 'X', '', '129.00', '99', '');
 INSERT INTO `ecm_goods_spec` VALUES ('56', '21', '', '', '', '170.00', '87', '');
-INSERT INTO `ecm_goods_spec` VALUES ('57', '22', '', '', '', '111.00', '33', '');
+INSERT INTO `ecm_goods_spec` VALUES ('57', '22', '', '', '', '111.00', '32', '');
 INSERT INTO `ecm_goods_spec` VALUES ('58', '23', '', '', '', '170.00', '500', '');
 INSERT INTO `ecm_goods_spec` VALUES ('59', '24', '花色', '36', '', '169.00', '887', '');
 INSERT INTO `ecm_goods_spec` VALUES ('60', '24', '花色', '37', '', '169.00', '888', '');
@@ -912,6 +945,14 @@ INSERT INTO `ecm_goods_spec` VALUES ('71', '27', '深蓝', 'X', '', '288.00', '2
 INSERT INTO `ecm_goods_spec` VALUES ('73', '28', '', '', '', '188.00', '2220', '');
 INSERT INTO `ecm_goods_spec` VALUES ('74', '29', '', '', '', '328.00', '99', '');
 INSERT INTO `ecm_goods_spec` VALUES ('75', '30', '', '', '', '100.00', '100', '111111111');
+INSERT INTO `ecm_goods_spec` VALUES ('76', '31', '', '', '', '50.00', '10', '23456789422');
+INSERT INTO `ecm_goods_spec` VALUES ('77', '32', '', '', '', '100.00', '10', '');
+INSERT INTO `ecm_goods_spec` VALUES ('78', '33', '', '', '', '50.00', '10', '');
+INSERT INTO `ecm_goods_spec` VALUES ('79', '34', '', '', '', '10.00', '100', '');
+INSERT INTO `ecm_goods_spec` VALUES ('80', '35', '红色', 'M', '', '10.00', '10', '');
+INSERT INTO `ecm_goods_spec` VALUES ('81', '35', '褐色', 'L', '', '11.00', '0', '');
+INSERT INTO `ecm_goods_spec` VALUES ('82', '35', '褐色', 'M', '', '12.00', '30', '');
+INSERT INTO `ecm_goods_spec` VALUES ('83', '152', '', '', '', '50.00', '0', '');
 
 -- ----------------------------
 -- Table structure for `ecm_goods_statistics`
@@ -931,36 +972,231 @@ CREATE TABLE `ecm_goods_statistics` (
 -- ----------------------------
 -- Records of ecm_goods_statistics
 -- ----------------------------
-INSERT INTO `ecm_goods_statistics` VALUES ('1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('1', '9', '0', '1', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('2', '1', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('3', '0', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('4', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('5', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('6', '1', '0', '1', '1', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('5', '39', '1', '5', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('6', '6', '0', '2', '2', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('7', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('8', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('9', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('10', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('11', '0', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('8', '37', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('9', '2', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('10', '0', '0', '3', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('11', '92', '0', '3', '2', '2', '2');
 INSERT INTO `ecm_goods_statistics` VALUES ('12', '0', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('13', '0', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('14', '0', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('15', '0', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('16', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('17', '1', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('17', '15', '0', '4', '3', '2', '2');
 INSERT INTO `ecm_goods_statistics` VALUES ('18', '1', '0', '1', '1', '0', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('19', '2', '0', '2', '2', '1', '1');
+INSERT INTO `ecm_goods_statistics` VALUES ('19', '3', '0', '2', '2', '1', '1');
 INSERT INTO `ecm_goods_statistics` VALUES ('20', '1', '0', '1', '1', '1', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('21', '1', '0', '1', '1', '0', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('22', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('23', '0', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('21', '6', '0', '2', '1', '0', '1');
+INSERT INTO `ecm_goods_statistics` VALUES ('22', '1', '0', '1', '1', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('23', '1', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('24', '1', '0', '1', '1', '1', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('25', '0', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('25', '1', '0', '0', '0', '0', '0');
 INSERT INTO `ecm_goods_statistics` VALUES ('26', '1', '0', '1', '1', '0', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('27', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('28', '3', '0', '2', '2', '1', '1');
-INSERT INTO `ecm_goods_statistics` VALUES ('29', '0', '0', '0', '0', '0', '0');
-INSERT INTO `ecm_goods_statistics` VALUES ('30', '2', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('27', '9', '0', '1', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('28', '5', '0', '3', '2', '1', '1');
+INSERT INTO `ecm_goods_statistics` VALUES ('29', '7', '0', '1', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('30', '115', '0', '2', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('31', '2', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('32', '3', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('33', '108', '0', '2', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('34', '0', '0', '0', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('35', '194', '0', '7', '0', '0', '0');
+INSERT INTO `ecm_goods_statistics` VALUES ('152', '0', '0', '0', '0', '0', '0');
+
+-- ----------------------------
+-- Table structure for `ecm_goods3`
+-- ----------------------------
+DROP TABLE IF EXISTS `ecm_goods3`;
+CREATE TABLE `ecm_goods3` (
+  `goods_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `store_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `type` varchar(10) NOT NULL DEFAULT 'material',
+  `goods_name` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `cate_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `cate_name` varchar(255) NOT NULL DEFAULT '',
+  `brand` varchar(100) NOT NULL,
+  `spec_qty` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  `spec_name_1` varchar(60) NOT NULL DEFAULT '',
+  `spec_name_2` varchar(60) NOT NULL DEFAULT '',
+  `if_show` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `closed` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `close_reason` varchar(255) DEFAULT NULL,
+  `add_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `last_update` int(10) unsigned NOT NULL DEFAULT '0',
+  `default_spec` int(11) unsigned NOT NULL DEFAULT '0',
+  `default_image` varchar(255) NOT NULL DEFAULT '',
+  `recommended` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  `cate_id_1` int(10) unsigned NOT NULL DEFAULT '0',
+  `cate_id_2` int(10) unsigned NOT NULL DEFAULT '0',
+  `cate_id_3` int(10) unsigned NOT NULL DEFAULT '0',
+  `cate_id_4` int(10) unsigned NOT NULL DEFAULT '0',
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `tags` varchar(102) NOT NULL,
+  PRIMARY KEY (`goods_id`),
+  KEY `store_id` (`store_id`),
+  KEY `cate_id` (`cate_id`),
+  KEY `cate_id_1` (`cate_id_1`),
+  KEY `cate_id_2` (`cate_id_2`),
+  KEY `cate_id_3` (`cate_id_3`),
+  KEY `cate_id_4` (`cate_id_4`),
+  KEY `brand` (`brand`(10)),
+  KEY `tags` (`tags`)
+) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ecm_goods3
+-- ----------------------------
+INSERT INTO `ecm_goods3` VALUES ('1', '3', 'material', '多彩人生多彩裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/35a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/35b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/35c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/35d.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/35e.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '2', '颜色', '尺码', '1', '0', null, '1249547077', '1249547077', '1', 'data/files/store_2/goods_179/small_200908060822598478.jpg', '1', '21', '32', '0', '0', '99.00', '');
+INSERT INTO `ecm_goods3` VALUES ('2', '3', 'material', '花色高邦运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0026.gif\" alt=\"\" /></p>\r\n<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0027.jpg\" alt=\"\" /></p>\r\n<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0028.jpg\" alt=\"\" /></p>', '178', '女鞋	休闲球鞋(不露脚背)', 'G-Star', '2', '颜色', '尺码', '1', '0', null, '1249547390', '1249547390', '4', 'data/files/store_2/goods_131/small_200908060828517782.jpg', '1', '172', '178', '0', '0', '188.00', '');
+INSERT INTO `ecm_goods3` VALUES ('3', '3', 'material', '09新款职业女裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/34a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/34b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/34c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/34d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249547562', '1249547562', '8', 'data/files/store_2/goods_107/small_200908060831473107.jpg', '1', '21', '32', '0', '0', '238.00', '');
+INSERT INTO `ecm_goods3` VALUES ('4', '3', 'material', '09新款韩版淑连衣裙', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/24.jpg\" alt=\"\" /></div>', '36', '女装/女士精品	连衣裙', 'Lee', '0', '', '', '1', '0', null, '1249547772', '1249547772', '9', 'data/files/store_2/goods_66/small_200908060834263919.jpg', '1', '21', '36', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('5', '3', 'material', '2009耐克新款运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0025.jpg\" alt=\"\" /></p>', '191', '运动鞋	全能鞋', 'Nike', '2', '颜色', '尺码', '1', '0', null, '1249547890', '1249547960', '11', 'data/files/store_2/goods_70/small_200908060837502713.jpg', '1', '185', '191', '0', '0', '688.00', '');
+INSERT INTO `ecm_goods3` VALUES ('6', '3', 'material', '包邮韩版经典长袖雪纺下摆针织连衣裙', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/23.jpg\" alt=\"\" /></div>', '36', '女装/女士精品	连衣裙', 'Nike', '0', '', '', '1', '0', null, '1249548137', '1249548137', '15', 'data/files/store_2/goods_95/small_200908060841358079.jpg', '1', '21', '36', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('7', '3', 'material', '09春款专柜正品奢华系列9分裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/36a.jpg\" alt=\"\" /><br /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/36c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/36d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprite', '2', '颜色', '尺码', '1', '0', null, '1249549645', '1249549645', '16', 'data/files/store_2/goods_186/small_200908060906263554.jpg', '1', '21', '32', '0', '0', '178.00', '');
+INSERT INTO `ecm_goods3` VALUES ('8', '3', 'material', '彪马精品练功鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0024.jpg\" alt=\"\" /></p>\r\n<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0023.jpg\" alt=\"\" /></p>', '193', '运动鞋	休闲鞋', 'PUM', '2', '颜色', '尺码', '1', '0', null, '1249549693', '1249549816', '19', 'data/files/store_2/goods_187/small_200908060909472569.jpg', '1', '185', '193', '0', '0', '368.00', '');
+INSERT INTO `ecm_goods3` VALUES ('9', '3', 'material', '新女性职业长裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/32a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/32b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/32c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/32d.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/32e.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249549936', '1249549936', '25', 'data/files/store_2/goods_98/small_200908060911381037.jpg', '1', '21', '32', '0', '0', '168.00', '');
+INSERT INTO `ecm_goods3` VALUES ('10', '3', 'material', '家居横纹休闲长裙', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/22.jpg\" alt=\"\" /></div>', '30', '女装/女士精品	半身裙', 'G-Star', '2', '颜色', '尺码', '1', '0', null, '1249550129', '1249550129', '26', 'data/files/store_2/goods_69/small_200908060914291406.jpg', '1', '21', '30', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('11', '3', 'material', '耐克红粉世家运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0022.gif\" alt=\"\" /></p>', '178', '女鞋	休闲球鞋(不露脚背)', 'Nike', '2', '颜色', '尺码', '1', '0', null, '1249550246', '1249550246', '30', 'data/files/store_2/goods_33/small_200908060917132087.jpg', '1', '172', '178', '0', '0', '268.00', '');
+INSERT INTO `ecm_goods3` VALUES ('12', '3', 'material', '09新款飞腾运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0020.jpg\" alt=\"\" /></p>\r\n<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0021.jpg\" alt=\"\" /></p>', '187', '运动鞋	跑步鞋', 'PUMA', '0', '', '', '1', '0', null, '1249550348', '1249550348', '34', 'data/files/store_2/goods_123/small_200908060918436837.jpg', '1', '185', '187', '0', '0', '268.00', '');
+INSERT INTO `ecm_goods3` VALUES ('13', '3', 'material', '秀族09新款韩版淑女七分袖针织雪纺连衣裙', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/21.jpg\" alt=\"\" /></div>', '21', '女装/女士精品', 'DIOR', '0', '', '', '1', '0', null, '1249550465', '1249550465', '35', 'data/files/store_2/goods_24/small_200908060920245196.jpg', '1', '21', '0', '0', '0', '179.00', '');
+INSERT INTO `ecm_goods3` VALUES ('14', '3', 'material', '春款彩色格纹系列牛仔小脚裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/37a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/37b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/37c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/37d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249550608', '1249550637', '37', 'data/files/store_2/goods_128/small_200908060922084636.jpg', '1', '21', '32', '0', '0', '125.00', '');
+INSERT INTO `ecm_goods3` VALUES ('15', '3', 'material', '耐克混色女式篮球鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0019.jpg\" alt=\"\" /></p>', '178', '女鞋	休闲球鞋(不露脚背)', 'Nike', '2', '颜色', '尺码', '1', '0', null, '1249550754', '1249550754', '38', 'data/files/store_2/goods_147/small_200908060925471585.jpg', '1', '172', '178', '0', '0', '578.00', '');
+INSERT INTO `ecm_goods3` VALUES ('16', '3', 'material', '横纹方格运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0018.jpg\" alt=\"\" /></p>', '178', '女鞋	休闲球鞋(不露脚背)', '李宁', '2', '颜色', '尺码', '1', '0', null, '1249550876', '1249550876', '42', 'data/files/store_2/goods_67/small_200908060927474675.jpg', '1', '172', '178', '0', '0', '128.00', '');
+INSERT INTO `ecm_goods3` VALUES ('17', '3', 'material', '韩E族百搭修身紧腰休闲长裤【灰色】', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/30a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/30b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/30c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/30d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249551261', '1249552157', '55', 'data/files/store_2/goods_121/small_200908060932011437.jpg', '1', '21', '32', '0', '0', '90.00', '');
+INSERT INTO `ecm_goods3` VALUES ('18', '3', 'material', '春针织淑女连衣裙女装', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/20.jpg\" alt=\"\" /></div>', '30', '女装/女士精品	半身裙', 'Jack & Jones', '0', '', '', '1', '0', null, '1249551437', '1249551437', '47', 'data/files/store_2/goods_195/small_200908060936352784.jpg', '1', '21', '30', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('19', '3', 'material', '罗衣OL气质真丝雪纺百褶裙针织背心裙', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/19.jpg\" alt=\"\" /></div>', '30', '女装/女士精品	半身裙', '美特斯邦威', '0', '', '', '1', '0', null, '1249551552', '1249551552', '48', 'data/files/store_2/goods_109/small_200908060938292631.jpg', '1', '21', '30', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('20', '3', 'material', '小脚牛仔铅笔裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/29a.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/29b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/29c.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/29d.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/29e.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '2', '颜色', '尺码', '1', '0', null, '1249551779', '1249551779', '49', 'data/files/store_2/goods_143/small_200908060942233830.jpg', '1', '21', '32', '0', '0', '129.00', '');
+INSERT INTO `ecm_goods3` VALUES ('21', '3', 'material', '09春季新款简约大方高雅修身针织连衣裙983配腰带', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/18.jpg\" alt=\"\" /></div>', '30', '女装/女士精品	半身裙', 'Adidas', '0', '', '', '1', '0', null, '1249552281', '1249552281', '56', 'data/files/store_2/goods_25/small_200908060950258122.jpg', '1', '21', '30', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('22', '3', 'material', '新款多用型穿珠运动长裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/38a.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/38b.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/38c.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/38d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249552384', '1249552384', '57', 'data/files/store_2/goods_147/small_200908060952274906.jpg', '1', '21', '32', '0', '0', '111.00', '');
+INSERT INTO `ecm_goods3` VALUES ('23', '3', 'material', '韩.春.搭.闲.优雅修身精致荡领针织连衣裙/配皮带', '<p><img src=\"http://pic.shopex.cn/pictures/goodsdetail/17.jpg\" alt=\"\" /></p>', '30', '女装/女士精品	半身裙', '', '0', '', '', '1', '0', null, '1249552499', '1249552499', '58', 'data/files/store_2/goods_64/small_200908060954245662.jpg', '1', '21', '30', '0', '0', '170.00', '');
+INSERT INTO `ecm_goods3` VALUES ('24', '3', 'material', '阿迪达斯花式运动鞋', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/danson0017.jpg\" alt=\"\" /></p>', '178', '女鞋	休闲球鞋(不露脚背)', 'Adidas', '2', '颜色', '尺码', '1', '0', null, '1249552624', '1249552624', '59', 'data/files/store_2/goods_20/small_200908060957002218.jpg', '1', '172', '178', '0', '0', '169.00', '');
+INSERT INTO `ecm_goods3` VALUES ('25', '3', 'material', '春款韩版卡其休闲上衣', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/15.jpg\" alt=\"\" /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/16.jpg\" alt=\"\" /></div>', '26', '女装/女士精品	超短外套', 'Chanel', '2', '颜色', '尺码', '1', '0', null, '1249552779', '1249552779', '63', 'data/files/store_2/goods_139/small_200908060958592106.jpg', '1', '21', '26', '0', '0', '128.00', '');
+INSERT INTO `ecm_goods3` VALUES ('26', '3', 'material', '喜皮风格牛仔短裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/39a.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/39b.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/39c.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/39d.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '0', '', '', '1', '0', null, '1249552900', '1249552900', '67', 'data/files/store_2/goods_47/small_200908061000474424.jpg', '1', '21', '32', '0', '0', '89.00', '');
+INSERT INTO `ecm_goods3` VALUES ('27', '3', 'material', '春季尼龙休闲裤', '<p align=\"center\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26a.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26b.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26c.jpg\" alt=\"\" /> <br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26d.jpg\" alt=\"\" /><br /><img src=\"http://pic.shopex.cn/pictures/goodsdetail/26e.jpg\" alt=\"\" /></p>', '32', '女装/女士精品	裤子', 'ESprit', '2', '颜色', '尺码', '1', '0', null, '1249553044', '1249553044', '68', 'data/files/store_2/goods_5/small_200908061003253339.jpg', '1', '21', '32', '0', '0', '288.00', '');
+INSERT INTO `ecm_goods3` VALUES ('28', '3', 'material', '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套', '<div style=\"text-align: center;\"><img src=\"http://pic.shopex.cn/pictures/goodsdetail/14.jpg\" alt=\"\" /></div>', '26', '女装/女士精品	超短外套', '美特斯邦威', '0', '', '', '1', '0', null, '1249553192', '1249553238', '73', 'data/files/store_2/goods_115/small_200908061005154170.jpg', '1', '21', '26', '0', '0', '188.00', '');
+INSERT INTO `ecm_goods3` VALUES ('29', '3', 'material', '夹克.韩版新款09开衫小外套卫衣短甜美显瘦春装', '<p><img src=\"http://pic.shopex.cn/pictures/goodsdetail/13.jpg\" alt=\"\" /></p>', '22', '女装/女士精品	风衣/长大衣', 'PUMA', '0', '', '', '1', '0', null, '1249553354', '1249553354', '74', 'data/files/store_2/goods_121/small_200908061008412008.jpg', '1', '21', '22', '0', '0', '328.00', '');
+INSERT INTO `ecm_goods3` VALUES ('34', '7', 'material', '伊利金领冠妈妈配方奶粉400g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_168/201510081056087516.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_0/201510081056406955.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_0/201510081056408637.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_1/201510081056412050.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_1/201510081056414012.jpg\" alt=\"x5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_0/201510081056405273.jpg\" alt=\"x6.jpg\" /></p>', '1317', '母婴保健	哺育喂养	其他', '伊利', '0', '', '', '0', '0', null, '1444244234', '1444244234', '79', 'data/files/store_7/goods_152/small_201510081055521209.jpg', '1', '1213', '1295', '1317', '0', '65.80', ',妈妈配方奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('33', '7', 'material', '奶粉', '<p>啊沙发上<img style=\"vertical-align: baseline;\" src=\"安大\" alt=\"伟大\" width=\"12\" height=\"35\" /></p>', '1300', '母婴保健	奶粉	学生奶粉', '', '0', '', '', '0', '0', null, '1443485037', '1443485257', '78', 'data/files/store_7/goods_165/small_201509291602457052.jpg', '1', '1213', '1293', '1300', '0', '41.00', '');
+INSERT INTO `ecm_goods3` VALUES ('35', '7', 'material', '雀巢妈妈孕产妇配方奶粉900g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_179/201510081059394293.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_179/201510081059396395.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_179/201510081059398637.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_179/201510081059392050.jpg\" alt=\"x4.jpg\" /></p>', '1317', '母婴保健	哺育喂养	其他', '雀巢', '0', '', '', '0', '0', null, '1444244399', '1444244399', '80', 'data/files/store_7/goods_150/small_201510081059104433.jpg', '1', '1213', '1295', '1317', '0', '178.00', ',孕产妇配方奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('36', '7', 'material', '伊利女士营养奶粉400g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_125/201510081108455554.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_125/201510081108454293.jpg\" alt=\"3.jpg\" /></p>', '1317', '母婴保健	哺育喂养	其他', '伊利', '0', '', '', '0', '0', null, '1444244950', '1444244950', '81', 'data/files/store_7/goods_99/small_201510081108194994.jpg', '1', '1213', '1295', '1317', '0', '28.90', ',女士营养奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('37', '7', 'material', '伊利金领冠3段奶粉900g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_173/201510081122538357.jpg\" alt=\"1.jpg\" /></p>', '1304', '母婴保健	奶粉	幼儿奶粉3段', '伊利', '0', '', '', '0', '0', null, '1444245784', '1444245784', '82', 'data/files/store_7/goods_138/small_201510081118589058.jpg', '1', '1213', '1293', '1304', '0', '185.00', ',3段奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('38', '7', 'material', '伊利金领冠2段奶粉400g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_114/201510081125143872.jpg\" alt=\"1.jpg\" /></p>', '1303', '母婴保健	奶粉	婴儿奶粉2段', '伊利', '0', '', '', '0', '0', null, '1444245941', '1444245941', '83', 'data/files/store_7/goods_102/small_201510081125026395.jpg', '1', '1213', '1293', '1303', '0', '69.80', ',2段奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('39', '7', 'material', '完达山元乳奶粉1段婴儿900g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_32/201510081127129479.jpg\" alt=\"01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_33/201510081127132330.jpg\" alt=\"02.jpg\" /></p>', '1302', '母婴保健	奶粉	婴儿奶粉1段', '完达山', '0', '', '', '0', '0', null, '1444246043', '1444246043', '84', 'data/files/store_7/goods_12/small_201510081126529758.jpg', '1', '1213', '1293', '1302', '0', '228.00', ',1段婴儿奶粉,');
+INSERT INTO `ecm_goods3` VALUES ('40', '7', 'material', '长寿花金胚玉米油1.8L', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_174/201510081539347937.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_198/201510081549587236.jpg\" alt=\"2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_198/201510081549589058.jpg\" alt=\"3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_198/201510081549582611.jpg\" alt=\"4.jpg\" /></p>', '1269', '粮油副食	食用油	玉米油', '长寿花', '0', '', '', '0', '0', null, '1444261808', '1444261830', '85', 'data/files/store_7/goods_159/small_201510081539196676.jpg', '1', '1212', '1256', '1269', '0', '39.80', ',玉米油,');
+INSERT INTO `ecm_goods3` VALUES ('41', '7', 'material', '福临门 玉米油1.8L', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_132/201510090848529058.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_133/201510090848531630.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_133/201510090848533312.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_133/201510090848535134.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_133/201510090848537096.jpg\" alt=\"x5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_133/201510090848538637.jpg\" alt=\"x6.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_132/201510090848527657.jpg\" alt=\"x7.jpg\" /></p>', '1269', '粮油副食	食用油	玉米油', '福临门', '0', '', '', '0', '0', null, '1444322964', '1444322964', '86', 'data/files/store_7/goods_82/small_201510090848028357.jpg', '1', '1212', '1256', '1269', '0', '31.90', ',玉米油,');
+INSERT INTO `ecm_goods3` VALUES ('42', '7', 'material', '福临门菜籽油（一级）5L', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_38/201510090850384152.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_38/201510090850385975.jpg\" alt=\"2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_38/201510090850387657.jpg\" alt=\"3.jpg\" /></p>', '1265', '粮油副食	食用油	菜籽油', '福临门', '0', '', '', '0', '0', null, '1444323128', '1444323128', '87', 'data/files/store_7/goods_92/small_201510090851322891.jpg', '1', '1212', '1256', '1265', '0', '66.80', ',菜籽油,');
+INSERT INTO `ecm_goods3` VALUES ('43', '7', 'material', '金龙鱼 大豆油900ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090853407516.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090853408918.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_21/201510090853411630.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090853404994.jpg\" alt=\"x4.jpg\" /></p>', '1266', '粮油副食	食用油	大豆油', '金龙鱼', '0', '', '', '0', '0', null, '1444323244', '1444323244', '88', 'data/files/store_7/goods_1/small_201510090853211069.jpg', '1', '1212', '1256', '1266', '0', '9.90', ',大豆油,');
+INSERT INTO `ecm_goods3` VALUES ('44', '7', 'material', '鲁花橄榄油700ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_135/201510090855359479.jpg\" alt=\"1.jpg\" /></p>', '1268', '粮油副食	食用油	橄榄油', '鲁花', '0', '', '', '0', '0', null, '1444323354', '1444323354', '89', 'data/files/store_7/goods_115/small_201510090855153031.png', '1', '1212', '1256', '1268', '0', '109.90', ',橄榄油,');
+INSERT INTO `ecm_goods3` VALUES ('45', '7', 'material', '欧丽薇兰橄榄油250ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090857004854.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090857006676.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090857008217.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090857009758.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_21/201510090857012050.jpg\" alt=\"x5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_21/201510090857012891.jpg\" alt=\"x6.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510090857003031.jpg\" alt=\"x7.jpg\" /></p>', '1268', '粮油副食	食用油	橄榄油', '欧丽薇兰', '0', '', '', '0', '0', null, '1444323540', '1444323540', '90', 'data/files/store_7/goods_4/small_201510090856445834.jpg', '1', '1212', '1256', '1268', '0', '46.00', ',橄榄油,');
+INSERT INTO `ecm_goods3` VALUES ('53', '7', 'material', '正宗椰树椰子汁245ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510090956541910.jpg\" alt=\"正宗椰汁详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510090956543452.jpg\" alt=\"正宗椰汁详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510090956544854.jpg\" alt=\"正宗椰汁详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510090956546395.jpg\" alt=\"正宗椰汁详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510090956548497.jpg\" alt=\"正宗椰汁详情页_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_13/201510090956539339.jpg\" alt=\"正宗椰汁详情页_06.jpg\" /></p>', '1374', '茶酒饮料	饮料/水	果汁', '', '0', '', '', '0', '0', null, '1444327055', '1444327055', '98', 'data/files/store_7/goods_159/small_201510090955597376.jpg', '1', '1214', '1331', '1374', '0', '3.50', '');
+INSERT INTO `ecm_goods3` VALUES ('47', '7', 'material', '达利园绿茶500ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_62/201510090924226115.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_62/201510090924227096.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_62/201510090924223452.jpg\" alt=\"x3.jpg\" /></p>', '1375', '茶酒饮料	饮料/水	茶饮料', '达利园', '0', '', '', '0', '0', null, '1444325081', '1444325081', '92', 'data/files/store_7/goods_43/small_201510090924035273.jpg', '1', '1214', '1331', '1375', '0', '2.50', ',绿茶,');
+INSERT INTO `ecm_goods3` VALUES ('48', '7', 'material', '康师傅绿茶550ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_48/201510090927282191.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_48/201510090927283452.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_48/201510090927285273.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_47/201510090927279479.jpg\" alt=\"x4.jpg\" /></p>', '1375', '茶酒饮料	饮料/水	茶饮料', '康师傅', '0', '', '', '0', '0', null, '1444325258', '1444325258', '93', 'data/files/store_7/goods_26/small_201510090927065975.jpg', '1', '1214', '1331', '1375', '0', '2.50', ',绿茶,');
+INSERT INTO `ecm_goods3` VALUES ('49', '7', 'material', '锐奥混合水果味', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_160/201510090929207376.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_161/201510090929211490.png\" alt=\"2.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_161/201510090929213031.png\" alt=\"3.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_161/201510090929215273.png\" alt=\"4.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_161/201510090929217236.png\" alt=\"5.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_161/201510090929219479.png\" alt=\"6.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_162/201510090929222891.png\" alt=\"7.png\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_160/201510090929204012.png\" alt=\"8.png\" /></p>', '1339', '茶酒饮料	酒类	预调酒', '锐奥', '0', '', '', '0', '0', null, '1444325383', '1444325383', '94', 'data/files/store_7/goods_137/small_201510090928579479.jpg', '1', '1214', '1327', '1339', '0', '15.00', ',鸡尾酒,');
+INSERT INTO `ecm_goods3` VALUES ('51', '7', 'material', '测试', '', '1298', '母婴保健	奶粉	孕妇奶粉', '', '0', '', '', '0', '0', null, '1444325710', '1444325710', '96', 'data/files/store_7/goods_79/small_201510090934394854.jpg', '1', '1213', '1293', '1298', '0', '4120.00', '');
+INSERT INTO `ecm_goods3` VALUES ('54', '7', 'material', '旺仔牛奶145ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_142/201510090959022191.jpg\" alt=\"134270586782093825169730_x.jpg\" /></p>', '1369', '茶酒饮料	乳品饮料	加味牛奶', '旺仔', '0', '', '', '0', '0', null, '1444327149', '1444327149', '99', 'data/files/store_7/goods_121/small_201510090958415554.jpg', '1', '1214', '1330', '1369', '0', '2.70', ',旺仔,');
+INSERT INTO `ecm_goods3` VALUES ('55', '7', 'material', '六安桂花红茶礼盒240g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_38/201510091000388637.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_50/201510091000503591.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_61/201510091001014293.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_72/201510091001124573.jpg\" alt=\"0_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_77/201510091001172330.jpg\" alt=\"0_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_84/201510091001242050.jpg\" alt=\"0_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_89/201510091001297096.jpg\" alt=\"0_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_92/201510091001327516.jpg\" alt=\"0_08.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_95/201510091001351910.jpg\" alt=\"0_09.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444327385', '1444327454', '100', 'data/files/store_7/goods_33/small_201510091003536955.jpg', '1', '1214', '1623', '0', '0', '268.00', '');
+INSERT INTO `ecm_goods3` VALUES ('56', '7', 'material', '均瑶原味牛奶338ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_18/201510091003385834.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_19/201510091003397797.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_19/201510091003399899.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510091003402891.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_18/201510091003383452.jpg\" alt=\"x5.jpg\" /></p>', '1364', '茶酒饮料	乳品饮料	原味酸乳', '均瑶', '0', '', '', '0', '0', null, '1444327431', '1444327431', '101', 'data/files/store_7/goods_190/small_201510091003108918.jpg', '1', '1214', '1330', '1364', '0', '5.50', ',原味牛奶,');
+INSERT INTO `ecm_goods3` VALUES ('57', '7', 'material', '六安桂花瓜片礼盒240g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_91/201510091008117657.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_105/201510091008256115.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_108/201510091008284854.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_111/201510091008312191.jpg\" alt=\"0_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_120/201510091008406115.jpg\" alt=\"0_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_122/201510091008427657.jpg\" alt=\"0_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_124/201510091008448918.jpg\" alt=\"0_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_127/201510091008474433.jpg\" alt=\"0_08.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_142/201510091009024293.jpg\" alt=\"0_09.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444327820', '1444327820', '102', 'data/files/store_7/goods_67/small_201510091007475975.jpg', '1', '1214', '1624', '0', '0', '268.00', '');
+INSERT INTO `ecm_goods3` VALUES ('58', '7', 'material', '彩椒1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_81/201510091011218637.jpg\" alt=\"1.jpg\" /></p>', '1215', '果蔬蛋肉', '', '0', '', '', '0', '0', null, '1444327893', '1444327893', '103', 'data/files/store_7/goods_44/small_201510091010441770.jpg', '1', '1215', '0', '0', '0', '7.36', '');
+INSERT INTO `ecm_goods3` VALUES ('59', '7', 'material', '西兰花1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_69/201510091017497376.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_69/201510091017498918.jpg\" alt=\"2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_70/201510091017501630.jpg\" alt=\"3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_70/201510091017503452.jpg\" alt=\"4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_70/201510091017505414.jpg\" alt=\"5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_69/201510091017495554.jpg\" alt=\"6.jpg\" /></p>', '1215', '果蔬蛋肉', '', '0', '', '', '0', '0', null, '1444328284', '1444328284', '104', 'data/files/store_7/goods_31/small_201510091017111349.jpg', '1', '1215', '0', '0', '0', '11.16', '');
+INSERT INTO `ecm_goods3` VALUES ('60', '7', 'material', '六安瓜片A250g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_112/201510091018326955.jpg\" alt=\"详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_115/201510091018353591.jpg\" alt=\"详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_124/201510091018442330.jpg\" alt=\"详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_132/201510091018521630.jpg\" alt=\"详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_96/201510091028167679.jpg\" alt=\"详情页_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_151/201510091019116676.jpg\" alt=\"详情页_06.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444330198', '1444332603', '105', 'data/files/store_7/goods_199/small_201510091129597556.jpg', '1', '1214', '1624', '0', '0', '269.00', '');
+INSERT INTO `ecm_goods3` VALUES ('61', '7', 'material', '金寨红金卡小竹器100g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_108/201510091121481890.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_110/201510091121506519.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_113/201510091121535961.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_123/201510091122031629.jpg\" alt=\"0_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_126/201510091122062193.jpg\" alt=\"0_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_128/201510091122089204.jpg\" alt=\"0_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_140/201510091122203052.jpg\" alt=\"0_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_142/201510091122229923.jpg\" alt=\"0_08.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_145/201510091122251936.jpg\" alt=\"0_09.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444332178', '1444332178', '106', 'data/files/store_7/goods_195/small_201510091049559281.jpg', '1', '1214', '1623', '0', '0', '318.00', '');
+INSERT INTO `ecm_goods3` VALUES ('62', '7', 'material', '金寨红小竹器礼盒100g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_89/201510091124498147.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_92/201510091124525206.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_94/201510091124548573.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_105/201510091125052138.jpg\" alt=\"0_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_108/201510091125081022.jpg\" alt=\"0_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_110/201510091125103968.jpg\" alt=\"0_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_119/201510091125193838.jpg\" alt=\"0_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_121/201510091125216504.jpg\" alt=\"0_08.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_123/201510091125237909.jpg\" alt=\"0_09.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444332349', '1444332349', '107', 'data/files/store_7/goods_67/small_201510091124277417.jpg', '1', '1214', '1623', '0', '0', '298.00', '');
+INSERT INTO `ecm_goods3` VALUES ('63', '7', 'material', '金寨红大竹器礼盒100g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_102/201510091128224491.jpg\" alt=\"5_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_105/201510091128252531.jpg\" alt=\"5_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_107/201510091128275057.jpg\" alt=\"5_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_121/201510091128419841.jpg\" alt=\"5_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_139/201510091128592855.jpg\" alt=\"5_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_142/201510091129021597.jpg\" alt=\"5_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_144/201510091129043983.jpg\" alt=\"5_08.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444332569', '1444343833', '108', 'data/files/store_7/goods_74/small_201510091127549221.jpg', '1', '1214', '1623', '0', '0', '460.00', '');
+INSERT INTO `ecm_goods3` VALUES ('64', '7', 'material', '金寨红礼盒150g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_90/201510091131306831.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_94/201510091131345434.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_100/201510091131407965.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_105/201510091131458531.jpg\" alt=\"0_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_108/201510091131484050.jpg\" alt=\"0_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_110/201510091131508678.jpg\" alt=\"0_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_120/201510091132009952.jpg\" alt=\"0_07.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_124/201510091132041546.jpg\" alt=\"0_08.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_126/201510091132065754.jpg\" alt=\"0_09.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444332755', '1444340555', '109', 'data/files/store_7/goods_67/small_201510091131078624.jpg', '1', '1214', '1623', '0', '0', '218.00', '');
+INSERT INTO `ecm_goods3` VALUES ('65', '7', 'material', '六安瓜片AA250g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_14/201510091133341660.jpg\" alt=\"详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_30/201510091133501821.jpg\" alt=\"详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_43/201510091134036042.jpg\" alt=\"详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_57/201510091134172556.jpg\" alt=\"详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_61/201510091134219289.jpg\" alt=\"详情页_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_73/201510091134333557.jpg\" alt=\"详情页_06.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444332887', '1444332887', '110', 'data/files/store_7/goods_199/small_201510091133194725.jpg', '1', '1214', '1624', '0', '0', '339.00', '');
+INSERT INTO `ecm_goods3` VALUES ('75', '7', 'material', '金寨红大瓷器礼盒200g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_150/201510091402308975.jpg\" alt=\"6_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_153/201510091402336592.jpg\" alt=\"6_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_160/201510091402403090.jpg\" alt=\"6_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_164/201510091402448137.jpg\" alt=\"6_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_167/201510091402471129.jpg\" alt=\"6_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_169/201510091402492531.jpg\" alt=\"6_06.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444341791', '1444341791', '120', 'data/files/store_7/goods_124/small_201510091402045604.jpg', '1', '1214', '1623', '0', '0', '580.00', '');
+INSERT INTO `ecm_goods3` VALUES ('71', '7', 'material', '红玫瑰苹果1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_12/201510091346521611.jpg\" alt=\"1.jpg\" /></p>', '1391', '果蔬蛋肉	瓜果蔬菜	苹果类', '', '0', '', '', '0', '0', null, '1444340822', '1444340822', '116', 'data/files/store_7/goods_186/small_201510091346261044.jpg', '1', '1215', '1379', '1391', '0', '19.60', '');
+INSERT INTO `ecm_goods3` VALUES ('72', '7', 'material', '六安瓜片金寨红120g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_70/201510091357504565.jpg\" alt=\"3_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_87/201510091358075550.jpg\" alt=\"3_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_91/201510091358113869.jpg\" alt=\"3_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_95/201510091358156113.jpg\" alt=\"3_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_103/201510091358237095.jpg\" alt=\"3_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_107/201510091358272611.jpg\" alt=\"3_06.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444341032', '1444341525', '117', 'data/files/store_7/goods_189/small_201510091356294547.jpg', '1', '1214', '1623', '0', '0', '179.00', '');
+INSERT INTO `ecm_goods3` VALUES ('68', '7', 'material', '六安瓜片AAA240g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_11/201510091140116486.jpg\" alt=\"1_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_32/201510091140329171.jpg\" alt=\"1_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_37/201510091140379456.jpg\" alt=\"1_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_47/201510091140475122.jpg\" alt=\"1_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_51/201510091140512322.jpg\" alt=\"1_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_77/201510091141177536.jpg\" alt=\"1_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_81/201510091141215016.jpg\" alt=\"1_07.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444333312', '1444333312', '113', 'data/files/store_7/goods_94/small_201510091138141313.jpg', '1', '1214', '1624', '0', '0', '489.00', '');
+INSERT INTO `ecm_goods3` VALUES ('69', '7', 'material', '六安瓜片AAAA240g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_66/201510091144266890.jpg\" alt=\"详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_70/201510091144302688.jpg\" alt=\"详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_89/201510091144492848.jpg\" alt=\"详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_92/201510091144526636.jpg\" alt=\"详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_95/201510091144553556.jpg\" alt=\"详情页_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_107/201510091145071746.jpg\" alt=\"详情页_06.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444333526', '1444333526', '114', 'data/files/store_7/goods_50/small_201510091144105191.jpg', '1', '1214', '1624', '0', '0', '899.00', '');
+INSERT INTO `ecm_goods3` VALUES ('70', '7', 'material', '圣女果1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_60/201510091341007276.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_60/201510091341008819.jpg\" alt=\"2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_60/201510091341004613.jpg\" alt=\"3.jpg\" /></p>', '1386', '果蔬蛋肉	瓜果蔬菜	种子/根茎类', '', '0', '', '', '0', '0', null, '1444340472', '1444340472', '115', 'data/files/store_7/goods_113/small_201510091338336823.jpg', '1', '1215', '1379', '1386', '0', '5.16', '');
+INSERT INTO `ecm_goods3` VALUES ('73', '7', 'material', '库尔勒香梨1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_171/201510091356116505.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_171/201510091356118046.jpg\" alt=\"2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_171/201510091356119448.jpg\" alt=\"3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_172/201510091356122300.jpg\" alt=\"4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_172/201510091356123842.jpg\" alt=\"5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_171/201510091356114542.jpg\" alt=\"6.jpg\" /></p>', '1392', '果蔬蛋肉	瓜果蔬菜	梨类', '', '0', '', '', '0', '0', null, '1444341391', '1444341391', '118', 'data/files/store_7/goods_151/small_201510091355519865.jpg', '1', '1215', '1379', '1392', '0', '17.60', '');
+INSERT INTO `ecm_goods3` VALUES ('74', '7', 'material', '红提1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_118/201510091358385978.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_118/201510091358384716.jpg\" alt=\"2.jpg\" /></p>', '1386', '果蔬蛋肉	瓜果蔬菜	种子/根茎类', '', '0', '', '', '0', '0', null, '1444341528', '1444341528', '119', 'data/files/store_7/goods_94/small_201510091358144711.jpg', '1', '1215', '1379', '1386', '0', '27.60', '');
+INSERT INTO `ecm_goods3` VALUES ('76', '7', 'material', '六安瓜片小礼盒A96g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_26/201510091403465908.jpg\" alt=\"4_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_29/201510091403497451.jpg\" alt=\"4_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_6/201510091406464128.jpg\" alt=\"4_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_85/201510091408057510.jpg\" alt=\"4_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_11/201510091406515250.jpg\" alt=\"4_06.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_29/201510091407091189.jpg\" alt=\"4_07.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444342115', '1444342115', '121', 'data/files/store_7/goods_181/small_201510091403018701.jpg', '1', '1214', '1624', '0', '0', '159.00', '');
+INSERT INTO `ecm_goods3` VALUES ('77', '7', 'material', '六安瓜片AAAAA192g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_84/201510091411245453.jpg\" alt=\"详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_87/201510091411272931.jpg\" alt=\"详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_90/201510091411303632.jpg\" alt=\"详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_100/201510091411409802.jpg\" alt=\"详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_112/201510091411521675.jpg\" alt=\"详情页_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_115/201510091411558964.jpg\" alt=\"详情页_06.jpg\" /></p>', '1624', '茶叶	绿茶', '', '0', '', '', '1', '0', null, '1444342330', '1444608848', '122', 'data/files/store_7/goods_71/small_201510091411111526.jpg', '1', '1214', '1624', '0', '0', '1299.00', '');
+INSERT INTO `ecm_goods3` VALUES ('78', '7', 'material', '麻将坐垫45*45', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_51/201510091414116606.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_51/201510091414118568.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_51/201510091414114924.jpg\" alt=\"x3.jpg\" /></p>', '1563', '家居百货	家纺装饰	坐垫', '', '0', '', '', '0', '0', null, '1444342461', '1444342461', '123', 'data/files/store_7/goods_25/small_201510091413455480.jpg', '1', '1218', '1540', '1563', '0', '19.50', '');
+INSERT INTO `ecm_goods3` VALUES ('79', '8', 'material', '公牛插板609/3M', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_141/201510091422215429.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_141/201510091422216831.jpg\" alt=\"x2.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_141/201510091422218513.jpg\" alt=\"x3.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_141/201510091422221084.jpg\" alt=\"x4.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_142/201510091422222906.jpg\" alt=\"x5.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_142/201510091422224448.jpg\" alt=\"x6.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_142/201510091422226130.jpg\" alt=\"x7.webp.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_141/201510091422213607.jpg\" alt=\"x9.webp.jpg\" /></p>', '1553', '家居百货	休闲百货	其他玩具', '', '0', '', '', '0', '0', null, '1444342988', '1444342988', '124', 'data/files/store_8/goods_110/small_201510091421504162.jpg', '1', '1218', '1538', '1553', '0', '54.00', '');
+INSERT INTO `ecm_goods3` VALUES ('80', '8', 'material', '公牛插板612/1.8M', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_73/201510091424339235.png\" alt=\"x1.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_74/201510091424341807.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_74/201510091424342929.png\" alt=\"x3.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_74/201510091424347835.png\" alt=\"x6.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_74/201510091424349237.png\" alt=\"x7.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_75/201510091424351807.png\" alt=\"x8.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_75/201510091424353349.png\" alt=\"x9.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_75/201510091424354751.png\" alt=\"x10.png\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_73/201510091424337835.png\" alt=\"x11.png\" /></p>', '1547', '家居百货	休闲百货	保护配件', '', '0', '', '', '0', '0', null, '1444343108', '1444343108', '125', 'data/files/store_8/goods_42/small_201510091424023765.jpg', '1', '1218', '1538', '1547', '0', '28.00', '');
+INSERT INTO `ecm_goods3` VALUES ('81', '8', 'material', '公牛插座GN606/1.8M', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_199/201510091426392250.jpg\" alt=\"0.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_199/201510091426393792.jpg\" alt=\"1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_199/201510091426396595.jpg\" alt=\"3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_199/201510091426397856.jpg\" alt=\"4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_199/201510091426399819.jpg\" alt=\"5.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_0/201510091426402530.jpg\" alt=\"6.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_0/201510091426403652.jpg\" alt=\"7.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_0/201510091426405193.jpg\" alt=\"8.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_198/201510091426389398.jpg\" alt=\"9.jpg\" /></p>', '1547', '家居百货	休闲百货	保护配件', '公牛', '0', '', '', '0', '0', null, '1444343231', '1444343231', '126', 'data/files/store_8/goods_153/small_201510091425539390.jpg', '1', '1218', '1538', '1547', '0', '32.00', '');
+INSERT INTO `ecm_goods3` VALUES ('82', '8', 'material', '妙洁-MBGRSC点断式小号平底垃圾袋', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_88/201510091434485398.jpg\" alt=\"详情页面.jpg\" /></p>', '1582', '家居百货	居家日用	其他', '妙洁', '0', '', '', '0', '0', null, '1444343694', '1444343694', '127', 'data/files/store_8/goods_64/small_201510091434241050.jpg', '1', '1218', '1542', '1582', '0', '4.50', '');
+INSERT INTO `ecm_goods3` VALUES ('83', '8', 'material', '吸壁豪华筷笼L-105', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_167/201510091436073306.jpg\" alt=\"详情页面_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_166/201510091436068351.jpg\" alt=\"详情页面_03.jpg\" /></p>', '1581', '家居百货	居家日用	收纳篮/框/盒', '', '0', '', '', '0', '0', null, '1444343786', '1444343800', '128', 'data/files/store_8/goods_148/small_201510091435486947.jpg', '1', '1218', '1542', '1581', '0', '7.50', '');
+INSERT INTO `ecm_goods3` VALUES ('84', '7', 'material', '金寨红小瓷器礼盒200g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_132/201510091438521922.jpg\" alt=\"6_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_134/201510091438548931.jpg\" alt=\"6_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_137/201510091438574586.jpg\" alt=\"6_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_147/201510091439074167.jpg\" alt=\"6_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_152/201510091439126410.jpg\" alt=\"6_05.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_157/201510091439171645.jpg\" alt=\"6_06.jpg\" /></p>', '1623', '茶叶	红茶', '', '0', '', '', '1', '0', null, '1444343980', '1444608822', '129', 'data/files/store_7/goods_110/small_201510091438306825.jpg', '1', '1214', '1623', '0', '0', '398.00', '');
+INSERT INTO `ecm_goods3` VALUES ('85', '8', 'material', '法兰琳卡补水保湿柔肤水100ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_40/201510091450407329.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_40/201510091450408731.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_40/201510091450409853.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_41/201510091450412425.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_41/201510091450413966.jpg\" alt=\"x6.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_41/201510091450414947.jpg\" alt=\"x7.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_40/201510091450405788.jpg\" alt=\"x78.jpg\" /></p>', '1520', '洗浴护理	保养护肤	护理水/爽肤水', '法兰琳卡', '0', '', '', '0', '0', null, '1444344668', '1444344668', '130', 'data/files/store_8/goods_7/small_201510091450073682.jpg', '1', '1217', '1485', '1520', '0', '74.00', '');
+INSERT INTO `ecm_goods3` VALUES ('86', '8', 'material', '白大夫祛黑眼圈走珠精华露12ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_58/201510091454188336.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_59/201510091454191608.jpg\" alt=\"x2.jpg\" /></p>', '1521', '洗浴护理	保养护肤	乳液/露/油', '白大夫', '0', '', '', '0', '0', null, '1444344873', '1444344873', '131', 'data/files/store_8/goods_35/small_201510091453557772.jpg', '1', '1217', '1485', '1521', '0', '130.60', '');
+INSERT INTO `ecm_goods3` VALUES ('87', '8', 'material', '百雀羚无暇眼霜', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_181/201510091456216808.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_181/201510091456218771.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_182/201510091456221623.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_182/201510091456222884.jpg\" alt=\"x4.jpg\" /></p>', '1517', '洗浴护理	保养护肤	膏/霜/精华类保养品', '百雀羚', '0', '', '', '0', '0', null, '1444345000', '1444345000', '132', 'data/files/store_8/goods_155/small_201510091455559048.jpg', '1', '1217', '1485', '1517', '0', '49.80', '');
+INSERT INTO `ecm_goods3` VALUES ('88', '8', 'material', '兰亭男士瞬时补水精华凝露', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_115/201510091458357104.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_115/201510091458358646.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_115/201510091458359768.jpg\" alt=\"x3.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_115/201510091458355423.jpg\" alt=\"x4.jpg\" /></p>', '1521', '洗浴护理	保养护肤	乳液/露/油', '兰亭', '0', '', '', '0', '0', null, '1444345131', '1444345131', '133', 'data/files/store_8/goods_94/small_201510091458149765.jpg', '1', '1217', '1485', '1521', '0', '69.40', '');
+INSERT INTO `ecm_goods3` VALUES ('89', '8', 'material', '蒂花之秀清润水动力细致面贴膜25g', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_24/201510091500243052.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_24/201510091500241090.jpg\" alt=\"x2.jpg\" /></p>', '1519', '洗浴护理	保养护肤	面膜', '蒂花之秀', '0', '', '', '0', '0', null, '1444345238', '1444345238', '134', 'data/files/store_8/goods_5/small_201510091500051368.jpg', '1', '1217', '1485', '1519', '0', '9.90', '');
+INSERT INTO `ecm_goods3` VALUES ('90', '8', 'material', '佳雪美白防晒露SPF20', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_189/201510091503094893.jpg\" alt=\"x1.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_189/201510091503096715.jpg\" alt=\"x2.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_189/201510091503092931.jpg\" alt=\"x4.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_189/201510091503092931.jpg\" alt=\"x4.jpg\" /></p>', '1522', '洗浴护理	保养护肤	防晒类保养品', '佳雪', '0', '', '', '0', '0', null, '1444345410', '1444437913', '135', 'data/files/store_8/goods_101/small_201510101645012571.jpg', '1', '1217', '1485', '1522', '0', '21.00', '');
+INSERT INTO `ecm_goods3` VALUES ('91', '8', 'material', '红蛇果1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_83/201510091638037802.jpg\" alt=\"1_04825139592005936_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_84/201510091638042196.jpg\" alt=\"1_04825139586987272_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_83/201510091638039484.jpg\" alt=\"1_04825139582790903_1280.jpg\" /></p>', '1391', '果蔬蛋肉	瓜果蔬菜	苹果类', '', '0', '', '', '0', '0', null, '1444351112', '1444351112', '136', 'data/files/store_8/goods_30/small_201510091637102333.jpg', '1', '1215', '1379', '1391', '0', '11.96', '');
+INSERT INTO `ecm_goods3` VALUES ('92', '8', 'material', '火龙果1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_49/201510091710493905.jpg\" alt=\"1_04825201642516262_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_48/201510091710488670.jpg\" alt=\"1_04825201624836796_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_50/201510091710509091.jpg\" alt=\"1_04825202034237746_1280.jpg\" /></p>', '1395', '果蔬蛋肉	瓜果蔬菜	软果类', '', '0', '', '', '0', '0', null, '1444353096', '1444353096', '137', 'data/files/store_8/goods_29/small_201510091710297549.jpg', '1', '1215', '1379', '1395', '0', '40.00', '');
+INSERT INTO `ecm_goods3` VALUES ('93', '8', 'material', '砀山梨1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_9/201510091716491522.jpg\" alt=\"1_04825149854493525_1280.jpg\" /></p>', '1392', '果蔬蛋肉	瓜果蔬菜	梨类', '', '0', '', '', '0', '0', null, '1444353415', '1444353415', '138', 'data/files/store_8/goods_2/small_201510091716426007.jpg', '1', '1215', '1379', '1392', '0', '5.96', '');
+INSERT INTO `ecm_goods3` VALUES ('94', '8', 'material', '柠檬1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_192/201510091719529511.jpg\" alt=\"1_04813265497014794_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_193/201510091719532223.jpg\" alt=\"1_04813265517185079_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_192/201510091719527409.jpg\" alt=\"1_04813265528575375_1280.jpg\" /></p>', '1394', '果蔬蛋肉	瓜果蔬菜	橙橘类', '', '0', '', '', '0', '0', null, '1444353606', '1444353606', '139', 'data/files/store_8/goods_181/small_201510091719412364.jpg', '1', '1215', '1379', '1394', '0', '23.60', '');
+INSERT INTO `ecm_goods3` VALUES ('95', '8', 'material', '芒果1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_144/201510091722243344.jpg\" alt=\"1_04825961569416906_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_144/201510091722245167.jpg\" alt=\"1_04825961574444492_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_144/201510091722241242.jpg\" alt=\"1_04825961579775519_1280.jpg\" /></p>', '1395', '果蔬蛋肉	瓜果蔬菜	软果类', '', '0', '', '', '0', '0', null, '1444353757', '1444353757', '140', 'data/files/store_8/goods_132/small_201510091722124325.jpg', '1', '1215', '1379', '1395', '0', '29.60', '');
+INSERT INTO `ecm_goods3` VALUES ('96', '8', 'material', '由达家用多功能榨油机', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_78/201510091724386849.jpg\" alt=\"1_04819725432281967_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_78/201510091724388250.jpg\" alt=\"1_04819725427070864_1280.jpg\" /></p>', '1582', '家居百货	居家日用	其他', '', '0', '', '', '0', '0', null, '1444353884', '1444353884', '141', 'data/files/store_8/goods_69/small_201510091724301101.jpg', '1', '1218', '1542', '1582', '0', '1499.00', '');
+INSERT INTO `ecm_goods3` VALUES ('97', '8', 'material', '血橙1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_193/201510091726334046.jpg\" alt=\"1_04825167729579925_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_193/201510091726337970.jpg\" alt=\"1_04825167750504960_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_193/201510091726336007.jpg\" alt=\"1_04825167733970468_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_193/201510091726339932.jpg\" alt=\"1_04825167940691785_1280.jpg\" /></p>', '1394', '果蔬蛋肉	瓜果蔬菜	橙橘类', '', '0', '', '', '0', '0', null, '1444354020', '1444354020', '142', 'data/files/store_8/goods_182/small_201510091726221382.jpg', '1', '1215', '1379', '1394', '0', '17.60', '');
+INSERT INTO `ecm_goods3` VALUES ('98', '8', 'material', '好时黑巧克力82g', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_106/201510091728261522.jpg\" alt=\"1_04841599506363519_1280.jpg\" /></p>', '1467', '休闲食品	糖果巧克力	礼盒巧克力', '', '0', '', '', '0', '0', null, '1444354111', '1444354111', '143', 'data/files/store_8/goods_96/small_201510091728162364.jpg', '1', '1216', '1415', '1467', '0', '13.90', '');
+INSERT INTO `ecm_goods3` VALUES ('99', '7', 'material', '木皇金油茶籽油248ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_50/201510101020509652.jpg\" alt=\"2详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_53/201510101020538811.jpg\" alt=\"2详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_56/201510101020562223.jpg\" alt=\"2详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_64/201510101021048250.jpg\" alt=\"2详情页_04.jpg\" /></p>', '1271', '粮油副食	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444414878', '1444416266', '144', 'data/files/store_7/goods_26/small_201510101020266288.jpg', '1', '1212', '1256', '1271', '0', '680.00', '');
+INSERT INTO `ecm_goods3` VALUES ('100', '7', 'material', '木皇金油茶籽油500ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_191/201510101023115026.jpg\" alt=\"1详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_194/201510101023145026.jpg\" alt=\"1详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_196/201510101023166147.jpg\" alt=\"1详情页_04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_5/201510101023251943.jpg\" alt=\"1详情页_05.jpg\" /></p>', '1271', '粮油副食	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415029', '1444416281', '145', 'data/files/store_7/goods_145/small_201510101022258250.jpg', '1', '1212', '1256', '1271', '0', '798.00', '');
+INSERT INTO `ecm_goods3` VALUES ('101', '7', 'material', '“大别山”牌茶油500ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_30/201510101023503204.jpg\" alt=\"500.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '大别山', '0', '', '', '1', '0', null, '1444415043', '1444415043', '146', 'data/files/store_7/goods_193/small_201510101023131943.jpg', '1', '1212', '1256', '1271', '0', '199.00', '');
+INSERT INTO `ecm_goods3` VALUES ('102', '7', 'material', '木皇金油茶籽油750ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_129/201510101025294465.jpg\" alt=\"木皇金油茶籽油_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_131/201510101025319511.jpg\" alt=\"木皇金油茶籽油_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_134/201510101025347409.jpg\" alt=\"木皇金油茶籽油_03.jpg\" /></p>', '1271', '粮油副食	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415142', '1444416248', '147', 'data/files/store_7/goods_104/small_201510101025046708.jpg', '1', '1212', '1256', '1271', '0', '980.00', '');
+INSERT INTO `ecm_goods3` VALUES ('109', '7', 'material', '五猴山高山有机香米礼盒装4kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_30/201510101047101242.jpg\" alt=\"6详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_32/201510101047125307.jpg\" alt=\"6详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_34/201510101047147689.jpg\" alt=\"6详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_44/201510101047242223.jpg\" alt=\"6详情页_04.jpg\" /></p>', '1260', '米面粮油	米面杂粮	大米', '', '0', '', '', '1', '0', null, '1444416452', '1444416452', '154', 'data/files/store_7/goods_6/small_201510101046463204.jpg', '1', '1212', '1255', '1260', '0', '120.00', '');
+INSERT INTO `ecm_goods3` VALUES ('103', '7', 'material', '“大别山”牌茶油1000ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_62/201510101111026006.jpg\" alt=\"0_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_71/201510101111114744.jpg\" alt=\"0_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_78/201510101111181240.jpg\" alt=\"0_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_81/201510101111217828.jpg\" alt=\"0_04.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415420', '1444417891', '148', 'data/files/store_7/goods_50/small_201510101030507689.jpg', '1', '1212', '1256', '1271', '0', '359.00', '');
+INSERT INTO `ecm_goods3` VALUES ('104', '7', 'material', '木皇金龙禧版山茶油500ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_15/201510101030155867.jpg\" alt=\"木皇金山茶油_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_17/201510101030179652.jpg\" alt=\"木皇金山茶油_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_19/201510101030199371.jpg\" alt=\"木皇金山茶油_03.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415430', '1444416216', '149', 'data/files/store_7/goods_194/small_201510101029542783.jpg', '1', '1212', '1256', '1271', '0', '9999.00', '');
+INSERT INTO `ecm_goods3` VALUES ('105', '7', 'material', '木皇金尚品版山茶油500ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_142/201510101035426288.jpg\" alt=\"木皇金尚品山茶油_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_144/201510101035447268.jpg\" alt=\"木皇金尚品山茶油_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_146/201510101035468250.jpg\" alt=\"木皇金尚品山茶油_03.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415753', '1444416231', '150', 'data/files/store_7/goods_125/small_201510101042054185.jpg', '1', '1212', '1256', '1271', '0', '9999.00', '');
+INSERT INTO `ecm_goods3` VALUES ('106', '7', 'material', '“大别山”牌茶油1760ml*2', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_89/201510101038091943.jpg\" alt=\"0.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444415903', '1444415903', '151', 'data/files/store_7/goods_50/small_201510101037308531.jpg', '1', '1212', '1256', '1271', '0', '528.00', '');
+INSERT INTO `ecm_goods3` VALUES ('107', '7', 'material', '五猴山高山有机香米手提袋装4kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_44/201510101040442503.jpg\" alt=\"4详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_46/201510101040466989.jpg\" alt=\"4详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_48/201510101040488110.jpg\" alt=\"4详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_59/201510101040592924.jpg\" alt=\"4详情页_04.jpg\" /></p>', '1260', '米面粮油	米面杂粮	大米', '', '0', '', '', '1', '0', null, '1444416071', '1444416808', '152', 'data/files/store_7/goods_8/small_201510101040088110.jpg', '1', '1212', '1255', '1260', '0', '64.00', '');
+INSERT INTO `ecm_goods3` VALUES ('108', '7', 'material', '“大别山”牌茶油4500ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_63/201510101041035307.jpg\" alt=\"3详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_67/201510101041076568.jpg\" alt=\"3详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_77/201510101041174185.jpg\" alt=\"3详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_84/201510101041248250.jpg\" alt=\"3详情页_04.jpg\" /></p>', '1271', '米面粮油	食用油	其他食用油', '', '0', '', '', '1', '0', null, '1444416113', '1444416113', '153', 'data/files/store_7/goods_13/small_201510101040134886.jpg', '1', '1212', '1256', '1271', '0', '599.00', '');
+INSERT INTO `ecm_goods3` VALUES ('110', '7', 'material', '五猴山高山有机香米真空袋装5kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_160/201510101049205165.jpg\" alt=\"7详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_162/201510101049225446.jpg\" alt=\"7详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_164/201510101049242642.jpg\" alt=\"7详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_172/201510101049328529.jpg\" alt=\"7详情页_04.jpg\" /></p>', '1260', '米面粮油	米面杂粮	大米', '', '0', '', '', '1', '0', null, '1444416581', '1444416581', '155', 'data/files/store_7/goods_135/small_201510101048552502.jpg', '1', '1212', '1255', '1260', '0', '80.00', '');
+INSERT INTO `ecm_goods3` VALUES ('111', '7', 'material', '清真烤肠2KG', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_20/201510101050209510.jpg\" alt=\"0.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444416628', '1444601090', '156', 'data/files/store_7/goods_177/small_201510101049371661.jpg', '1', '1216', '0', '0', '0', '59.00', '');
+INSERT INTO `ecm_goods3` VALUES ('112', '7', 'material', '五猴山有机富硒米礼盒装2.5kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_134/201510101052148108.jpg\" alt=\"5详情页_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_136/201510101052168950.jpg\" alt=\"5详情页_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_139/201510101052191521.jpg\" alt=\"5详情页_03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_154/201510101052346987.jpg\" alt=\"5详情页_04.jpg\" /></p>', '1260', '米面粮油	米面杂粮	大米', '', '0', '', '', '1', '0', null, '1444416762', '1444601012', '157', 'data/files/store_7/goods_113/small_201510101051531521.jpg', '1', '1212', '1255', '1260', '0', '120.00', '');
+INSERT INTO `ecm_goods3` VALUES ('113', '7', 'material', '板栗肽口服液120ML', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_12/201510101053327828.jpg\" alt=\"板栗肽口服液_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_15/201510101053357688.jpg\" alt=\"板栗肽口服液_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_18/201510101053385866.jpg\" alt=\"板栗肽口服液_03.jpg\" /></p>', '1622', '板栗	板栗深加工', '', '0', '', '', '1', '0', null, '1444416828', '1444600987', '158', 'data/files/store_7/goods_181/small_201510101053014184.jpg', '1', '1211', '1622', '0', '0', '599.00', '');
+INSERT INTO `ecm_goods3` VALUES ('114', '7', 'material', '怡栗肽蓝莓味饮料3KG', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_37/201510101057177128.jpg\" alt=\"怡栗肽蓝莓味_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_57/201510101057374324.jpg\" alt=\"怡栗肽蓝莓味_03.jpg\" /></p>', '1622', '板栗	板栗深加工', '', '0', '', '', '1', '0', null, '1444417066', '1444600971', '159', 'data/files/store_7/goods_196/small_201510101056368529.jpg', '1', '1211', '1622', '0', '0', '60.00', '');
+INSERT INTO `ecm_goods3` VALUES ('115', '7', 'material', '怡栗肽芒果味饮料3KG', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_55/201510101100557968.jpg\" alt=\"怡栗肽芒果味_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_59/201510101100592362.jpg\" alt=\"怡栗肽芒果味_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_71/201510101101116006.jpg\" alt=\"怡栗肽芒果味_03.jpg\" /></p>', '1622', '板栗	板栗深加工', '', '0', '', '', '1', '0', null, '1444417276', '1444600955', '160', 'data/files/store_7/goods_14/small_201510101100142362.jpg', '1', '1211', '1622', '0', '0', '60.00', '');
+INSERT INTO `ecm_goods3` VALUES ('116', '7', 'material', '怡栗肽水蜜桃味饮料3KG', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_190/201510101103109370.jpg\" alt=\"怡栗肽水蜜桃味_01.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_194/201510101103149650.jpg\" alt=\"怡栗肽水蜜桃味_02.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_8/201510101103281380.jpg\" alt=\"怡栗肽水蜜桃味_03.jpg\" /></p>', '1622', '板栗	板栗深加工', '', '0', '', '', '1', '0', null, '1444417417', '1444600938', '161', 'data/files/store_7/goods_143/small_201510101102233483.jpg', '1', '1211', '1622', '0', '0', '60.00', '');
+INSERT INTO `ecm_goods3` VALUES ('117', '8', 'material', '安儿乐小轻芯纸尿裤XL7029', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_95/201510101258158529.jpg\" alt=\"1_04825959390469589_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_95/201510101258156567.jpg\" alt=\"1_04825959385887219_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_95/201510101258154324.jpg\" alt=\"1_04825959762319299_1280.jpg\" /></p>', '1312', '母婴保健	宝宝生活用品	婴儿纸尿裤', '安儿乐', '0', '', '', '0', '0', null, '1444424338', '1444424338', '162', 'data/files/store_8/goods_59/small_201510101257397828.jpg', '1', '1213', '1294', '1312', '0', '85.50', '');
+INSERT INTO `ecm_goods3` VALUES ('118', '8', 'material', '金领冠3段婴幼儿奶粉', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_7/201510101300071661.jpg\" alt=\"1_04812134330841165_1280.jpg\" /></p>', '1304', '母婴保健	奶粉	幼儿奶粉3段', '金领冠', '0', '', '', '0', '0', null, '1444424411', '1444424411', '163', 'data/files/store_8/goods_193/small_201510101259533483.jpg', '1', '1213', '1293', '1304', '0', '210.00', '');
+INSERT INTO `ecm_goods3` VALUES ('119', '8', 'material', '调皮宝宝宝金露(金银花防蚊液)160ml', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_105/201510101301459370.jpg\" alt=\"1_04825980565859715_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_118/201510101301583764.jpg\" alt=\"1_04825980355196999_1280.jpg\" /></p>', '1310', '母婴保健	宝宝生活用品	婴儿用防蚊/花露水/祛痱(液)', '调皮宝宝宝', '0', '', '', '0', '0', null, '1444424537', '1444424537', '164', 'data/files/store_8/goods_55/small_201510101300552222.jpg', '1', '1213', '1294', '1310', '0', '19.80', '');
+INSERT INTO `ecm_goods3` VALUES ('120', '8', 'material', '金龙鱼盘锦大米', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_172/201510101306126286.jpg\" alt=\"1_04822502472201026_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_172/201510101306127407.jpg\" alt=\"1_04822502673795542_1280.jpg\" /></p>', '1260', '粮油副食	米面杂粮	大米', '金龙鱼', '0', '', '', '0', '0', null, '1444424782', '1444424815', '165', 'data/files/store_8/goods_127/small_201510101305277548.jpg', '1', '1212', '1255', '1260', '0', '39.50', '');
+INSERT INTO `ecm_goods3` VALUES ('121', '8', 'material', '九珍6℃八年原汁老醋', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_33/201510101343533623.jpg\" alt=\"1_04822486367732232_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_33/201510101343535025.jpg\" alt=\"1_04822486363640804_1280.jpg\" /></p>', '1276', '粮油副食	调味品	黑醋/香醋', '', '0', '', '', '0', '0', null, '1444427057', '1444427057', '166', 'data/files/store_8/goods_198/small_201510101343183062.jpg', '1', '1212', '1257', '1276', '0', '6.00', '');
+INSERT INTO `ecm_goods3` VALUES ('122', '8', 'material', '金龙鱼AE大豆油', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_195/201510101346353904.jpg\" alt=\"1_04822506970066359_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_194/201510101346349229.jpg\" alt=\"1_04822506975094197_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_195/201510101346352362.jpg\" alt=\"1_04822506960576027_1280.jpg\" /></p>', '1266', '粮油副食	食用油	大豆油', '金龙鱼', '0', '', '', '0', '0', null, '1444427246', '1444428909', '167', 'data/files/store_8/goods_103/small_201510101415035726.jpg', '1', '1212', '1256', '1266', '0', '43.80', '');
+INSERT INTO `ecm_goods3` VALUES ('123', '8', 'material', '阿一波海峡紫菜', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_110/201510101348309650.jpg\" alt=\"1_04823378835707105_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_110/201510101348307548.jpg\" alt=\"1_04823378847844155_1280.jpg\" /></p>', '1289', '粮油副食	方便速食	其它速食', '阿一波', '0', '', '', '0', '0', null, '1444427319', '1444428930', '168', 'data/files/store_8/goods_127/small_201510101415273203.jpg', '1', '1212', '1258', '1289', '0', '14.50', '');
+INSERT INTO `ecm_goods3` VALUES ('124', '8', 'material', '金锣特级王中王', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_69/201510101401092783.jpg\" alt=\"1_04829321986491200_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_69/201510101401091661.jpg\" alt=\"1_04829322196732846_1280.jpg\" /></p>', '1430', '休闲食品	肉蛋豆制品	猪肉干', '金锣', '0', '', '', '0', '0', null, '1444428074', '1444428950', '169', 'data/files/store_8/goods_144/small_201510101415448950.jpg', '1', '1216', '1412', '1430', '0', '16.50', '');
+INSERT INTO `ecm_goods3` VALUES ('125', '8', 'material', '双汇王中王', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_176/201510101406168950.jpg\" alt=\"1_04829325348219258_360.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_176/201510101406167407.jpg\" alt=\"1_04829325351285950_360.jpg\" /></p>', '1406', '果蔬蛋肉	猪肉	其它', '双汇', '0', '', '', '0', '0', null, '1444428384', '1444428967', '170', 'data/files/store_8/goods_163/small_201510101416038669.jpg', '1', '1215', '1382', '1406', '0', '13.00', '');
+INSERT INTO `ecm_goods3` VALUES ('126', '8', 'material', '福临门天天五谷调和油1.8l', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_39/201510101410395726.jpg\" alt=\"1_04834639902973948_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_39/201510101410396847.jpg\" alt=\"1_04834639906224970_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_39/201510101410393483.jpg\" alt=\"1_04834639910482006_1280.jpg\" /></p>', '1267', '粮油副食	食用油	调和油', '福临门', '0', '', '', '0', '0', null, '1444428663', '1444428987', '171', 'data/files/store_8/goods_181/small_201510101416216987.jpg', '1', '1212', '1256', '1267', '0', '21.50', '');
+INSERT INTO `ecm_goods3` VALUES ('127', '8', 'material', '丰大香菇面', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_120/201510101422001904.jpg\" alt=\"1_04834635157659690_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_120/201510101422009902.jpg\" alt=\"1_04834635149791213_1280.jpg\" /></p>', '1261', '粮油副食	米面杂粮	粉面', '丰大', '0', '', '', '0', '0', null, '1444429326', '1444429326', '172', 'data/files/store_8/goods_41/small_201510101420416146.jpg', '1', '1212', '1255', '1261', '0', '9.00', '');
+INSERT INTO `ecm_goods3` VALUES ('128', '7', 'material', '五花肉500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_88/201510101541285083.jpg\" alt=\"五花肉0.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_6/201510101506467621.jpg\" alt=\"03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_8/201510101506481256.jpg\" alt=\"04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_11/201510101506518136.jpg\" alt=\"05.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444432026', '1444600922', '173', 'data/files/store_7/goods_180/small_201510101506202669.jpg', '1', '1216', '0', '0', '0', '14.00', '');
+INSERT INTO `ecm_goods3` VALUES ('129', '7', 'material', '排骨500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_189/201510101509498069.jpg\" alt=\"排骨0.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444432239', '1444600909', '174', 'data/files/store_7/goods_177/small_201510101509373672.jpg', '1', '1216', '0', '0', '0', '20.00', '');
+INSERT INTO `ecm_goods3` VALUES ('130', '7', 'material', '后座500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_69/201510101514293646.jpg\" alt=\"后座0.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_72/201510101514321252.jpg\" alt=\"03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_74/201510101514345064.jpg\" alt=\"04.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_84/201510101514444989.jpg\" alt=\"05.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444432528', '1444600897', '175', 'data/files/store_7/goods_46/small_201510101514065575.jpg', '1', '1216', '0', '0', '0', '15.00', '');
+INSERT INTO `ecm_goods3` VALUES ('131', '7', 'material', '肋条500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_62/201510101517429501.jpg\" alt=\"勒条肉0.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_65/201510101517459154.jpg\" alt=\"03.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444432702', '1444600880', '176', 'data/files/store_7/goods_38/small_201510101517182670.jpg', '1', '1216', '0', '0', '0', '14.00', '');
+INSERT INTO `ecm_goods3` VALUES ('132', '7', 'material', '前胛500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_50/201510101520503945.jpg\" alt=\"前夹肉0.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_53/201510101520538175.jpg\" alt=\"03.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_7/goods_63/201510101521033646.jpg\" alt=\"05.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444432870', '1444600859', '177', 'data/files/store_7/goods_39/small_201510101520396221.jpg', '1', '1216', '0', '0', '0', '14.00', '');
+INSERT INTO `ecm_goods3` VALUES ('133', '7', 'material', '土公鸡500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_8/201510101523289741.jpg\" alt=\"公鸡.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444433033', '1444600846', '178', 'data/files/store_7/goods_177/small_201510101522578419.jpg', '1', '1216', '0', '0', '0', '20.00', '');
+INSERT INTO `ecm_goods3` VALUES ('134', '7', 'material', '土母鸡500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_123/201510101525234184.jpg\" alt=\"母鸡.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444433129', '1444600831', '179', 'data/files/store_7/goods_101/small_201510101525011619.jpg', '1', '1216', '0', '0', '0', '35.00', '');
+INSERT INTO `ecm_goods3` VALUES ('135', '7', 'material', '土老鸭500g', '<p><img src=\"http://mall.jzncds.com//201510101527455271.jpg\" alt=\"母鸡.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444433269', '1444600806', '180', 'data/files/store_7/goods_193/small_201510101526336388.jpg', '1', '1216', '0', '0', '0', '20.00', '');
+INSERT INTO `ecm_goods3` VALUES ('136', '7', 'material', '野生甲鱼500g', '<p><img src=\"http://mall.jzncds.com/data/files/store_7/goods_119/201510101538397788.jpg\" alt=\"0.jpg\" /></p>', '1216', '生态养殖', '', '0', '', '', '1', '0', null, '1444433934', '1444600786', '181', 'data/files/store_7/goods_103/small_201510101538232728.jpg', '1', '1216', '0', '0', '0', '150.00', '');
+INSERT INTO `ecm_goods3` VALUES ('137', '8', 'material', '会稽山黄酒清爽五年', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_62/201510101601026272.jpg\" alt=\"1_04841564784019744_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_62/201510101601026646.jpg\" alt=\"1_04841564772323981_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_62/201510101601024428.jpg\" alt=\"1_04841564779090459_1280.jpg\" /></p>', '1340', '茶酒饮料	酒类	黄酒', '会稽山', '0', '', '', '0', '0', null, '1444435279', '1444435279', '182', 'data/files/store_8/goods_111/small_201510101555123191.jpg', '1', '1214', '1327', '1340', '0', '39.80', '');
+INSERT INTO `ecm_goods3` VALUES ('138', '8', 'material', '泸州百年60年', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_145/201510101602259460.jpg\" alt=\"1_04825821121648811_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_145/201510101602257324.jpg\" alt=\"1_04825821131276803_1280.jpg\" /></p>', '1336', '茶酒饮料	酒类	高度白酒', '', '0', '', '', '0', '0', null, '1444435414', '1444435414', '183', 'data/files/store_8/goods_118/small_201510101601588716.jpg', '1', '1214', '1327', '1336', '0', '468.00', '');
+INSERT INTO `ecm_goods3` VALUES ('139', '8', 'material', '燕京菠萝果汁啤酒', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_74/201510101604348400.jpg\" alt=\"1_04824308204715880_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_73/201510101604338187.jpg\" alt=\"1_04824308227991457_1280.jpg\" /></p>', '1344', '茶酒饮料	酒类	啤酒', '燕京', '0', '', '', '0', '0', null, '1444435495', '1444435495', '184', 'data/files/store_8/goods_59/small_201510101604205534.jpg', '1', '1214', '1327', '1344', '0', '3.50', '');
+INSERT INTO `ecm_goods3` VALUES ('140', '8', 'material', '油桃1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_189/201510101609497051.jpg\" alt=\"1_04825960547360252_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_188/201510101609485743.jpg\" alt=\"1_04825960559838616_1280.jpg\" /></p>', '1395', '果蔬蛋肉	瓜果蔬菜	软果类', '', '0', '', '', '0', '0', null, '1444435794', '1444435794', '185', 'data/files/store_8/goods_173/small_201510101609338723.jpg', '1', '1215', '1379', '1395', '0', '29.96', '');
+INSERT INTO `ecm_goods3` VALUES ('141', '8', 'material', '金针菇1kg', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_78/201510101611187085.jpg\" alt=\"1_04813228883497371_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_78/201510101611187257.jpg\" alt=\"1_04813228757373032_1280.jpg\" /></p>', '1389', '果蔬蛋肉	瓜果蔬菜	菌菇类', '', '0', '', '', '0', '0', null, '1444435887', '1444435887', '186', 'data/files/store_8/goods_64/small_201510101611047714.jpg', '1', '1215', '1379', '1389', '0', '9.36', '');
+INSERT INTO `ecm_goods3` VALUES ('142', '8', 'material', '亿美卫生桶0296', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_46/201510101614066588.jpg\" alt=\"1_04835551037474596_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_46/201510101614065612.jpg\" alt=\"1_04835551059696319_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_46/201510101614068525.jpg\" alt=\"1_04835551245224674_1280.jpg\" /></p>', '1582', '家居百货	居家日用	其他', '亿美', '0', '', '', '0', '0', null, '1444436059', '1444436059', '187', 'data/files/store_8/goods_29/small_201510101613495254.jpg', '1', '1218', '1542', '1582', '0', '9.90', '');
+INSERT INTO `ecm_goods3` VALUES ('143', '8', 'material', '汇丰信佳高级西服衣架', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_164/201510101616041817.jpg\" alt=\"1_04825083297775585_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_164/201510101616049146.jpg\" alt=\"1_04825083304664799_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_163/201510101616033882.jpg\" alt=\"1_04825083292956979_1280.jpg\" /></p>', '1579', '家居百货	居家日用	衣架置物架', '汇丰信佳', '0', '', '', '0', '0', null, '1444436174', '1444436174', '188', 'data/files/store_8/goods_154/small_201510101615542134.jpg', '1', '1218', '1542', '1579', '0', '11.30', '');
+INSERT INTO `ecm_goods3` VALUES ('144', '8', 'material', '玉兰油多效修护防晒霜50g', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_77/201510101621175163.jpg\" alt=\"1_04846738368122256_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_77/201510101621174611.jpg\" alt=\"1_04846738384736090_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_77/201510101621173841.jpg\" alt=\"1_04846738357440490_1280.jpg\" /></p>', '1517', '洗浴护理	保养护肤	膏/霜/精华类保养品', '玉兰油', '0', '', '', '0', '0', null, '1444436494', '1444436494', '189', 'data/files/store_8/goods_49/small_201510101620497822.jpg', '1', '1217', '1485', '1517', '0', '130.00', '');
+INSERT INTO `ecm_goods3` VALUES ('145', '8', 'material', '相宜本草红景天幼白隔离防晒乳', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_163/201510101622438151.jpg\" alt=\"1_04846727927869310_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_163/201510101622434542.jpg\" alt=\"1_04846727933392435_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_163/201510101622437092.jpg\" alt=\"1_04846727930087773_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_162/201510101622422962.jpg\" alt=\"1_04846727946015334_1280.jpg\" /></p>', '1521', '洗浴护理	保养护肤	乳液/露/油', '相宜本草', '0', '', '', '0', '0', null, '1444436593', '1444436593', '190', 'data/files/store_8/goods_149/small_201510101622295907.jpg', '1', '1217', '1485', '1521', '0', '86.20', '');
+INSERT INTO `ecm_goods3` VALUES ('146', '8', 'material', '吉列剃须泡自然型', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_151/201510101625517672.jpg\" alt=\"1_04846759710062092_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_151/201510101625517274.jpg\" alt=\"1_04846759713426548_1280.jpg\" /></p>', '1506', '洗浴护理	洗浴用品	洁面乳浴盐/搓泥宝/沐浴精油', '吉列', '0', '', '', '0', '0', null, '1444436756', '1444436756', '191', 'data/files/store_8/goods_101/small_201510101625013433.jpg', '1', '1217', '1484', '1506', '0', '27.00', '');
+INSERT INTO `ecm_goods3` VALUES ('147', '8', 'material', 'ABC夜用棉柔8片卫生巾 K14', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_172/201510101629329106.jpg\" alt=\"1_04813098640919093_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_173/201510101629331237.jpg\" alt=\"1_04813098643458614_1280.jpg\" /></p>', '1531', '洗浴护理	女性护理	夜用棉质卫生巾', 'ABC', '0', '', '', '0', '0', null, '1444437001', '1444437001', '192', 'data/files/store_8/goods_109/small_201510101628294327.jpg', '1', '1217', '1487', '1531', '0', '13.00', '');
+INSERT INTO `ecm_goods3` VALUES ('148', '8', 'material', '隆力奇蛇胆牛黄花露水', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_71/201510101631111527.jpg\" alt=\"1_04844157868634526_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_71/201510101631127249.jpg\" alt=\"1_04844157862586316_1280.jpg\" /></p>', '1518', '洗浴护理	保养护肤	花露水', '隆力奇', '0', '', '', '0', '0', null, '1444437076', '1444437076', '193', 'data/files/store_8/goods_28/small_201510101630282240.jpg', '1', '1217', '1485', '1518', '0', '12.80', '');
+INSERT INTO `ecm_goods3` VALUES ('149', '8', 'material', '护舒宝超值干爽丝薄夜用卫生巾', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_172/201510101632524378.jpg\" alt=\"1_04819893666847101_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_173/201510101632534657.jpg\" alt=\"1_04819893663157774_1280.jpg\" /></p>', '1532', '洗浴护理	女性护理	夜用网面卫生巾', '护舒宝', '0', '', '', '0', '0', null, '1444437192', '1444437192', '194', 'data/files/store_8/goods_150/small_201510101632308027.jpg', '1', '1217', '1487', '1532', '0', '8.80', '');
+INSERT INTO `ecm_goods3` VALUES ('150', '8', 'material', '曼秀雷敦什果冰润唇膏', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_112/201510101635126721.jpg\" alt=\"1_04846761170711501_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_112/201510101635124278.jpg\" alt=\"1_04846761176694772_1280.jpg\" /></p>', '1537', '洗浴护理	美容彩妆	唇部化妆品', '曼秀雷敦', '0', '', '', '0', '0', null, '1444437320', '1444437320', '195', 'data/files/store_8/goods_49/small_201510101634098598.jpg', '1', '1217', '1488', '1537', '0', '24.90', '');
+INSERT INTO `ecm_goods3` VALUES ('151', '8', 'material', '吉列超级蓝双面刀架', '<p><img src=\"http://mall.jzncds.com/data/files/store_8/goods_24/201510101637043921.jpg\" alt=\"1_04844158907906193_1280.jpg\" /><img src=\"http://mall.jzncds.com/data/files/store_8/goods_24/201510101637047114.jpg\" alt=\"1_04844158915229348_1280.jpg\" /></p>', '1526', '洗浴护理	男性护理	刀架', '吉列', '0', '', '', '0', '0', null, '1444437433', '1444437433', '196', 'data/files/store_8/goods_172/small_201510101636127102.jpg', '1', '1217', '1486', '1526', '0', '8.50', '');
+INSERT INTO `ecm_goods3` VALUES ('152', '2', 'material', '测试商品生成二维码', '', '24', '女装/女士精品	棉衣/棉服', '', '0', '', '', '1', '0', null, '1444703128', '1444703206', '83', '', '1', '21', '24', '0', '0', '50.00', '');
 
 -- ----------------------------
 -- Table structure for `ecm_groupbuy`
@@ -988,7 +1224,7 @@ CREATE TABLE `ecm_groupbuy` (
 -- ----------------------------
 -- Records of ecm_groupbuy
 -- ----------------------------
-INSERT INTO `ecm_groupbuy` VALUES ('1', '测试团购', '', '1438754257', '1441065599', '30', '2', 'a:1:{i:75;a:1:{s:5:\"price\";s:5:\"90.00\";}}', '10', '1', '1', '0', '3');
+INSERT INTO `ecm_groupbuy` VALUES ('1', '测试团购', '', '1438754257', '1438828962', '30', '2', 'a:1:{i:75;a:1:{s:5:\"price\";s:5:\"90.00\";}}', '10', '5', '3', '0', '20');
 
 -- ----------------------------
 -- Table structure for `ecm_groupbuy_log`
@@ -1010,6 +1246,7 @@ CREATE TABLE `ecm_groupbuy_log` (
 -- ----------------------------
 -- Records of ecm_groupbuy_log
 -- ----------------------------
+INSERT INTO `ecm_groupbuy_log` VALUES ('1', '5', 'guobao001', '5', 'a:1:{i:75;a:2:{s:4:\"spec\";s:12:\"默认规格\";s:3:\"qty\";s:1:\"5\";}}', '国宝', '1821212121', '0', '1438828537');
 
 -- ----------------------------
 -- Table structure for `ecm_mail_queue`
@@ -1026,16 +1263,20 @@ CREATE TABLE `ecm_mail_queue` (
   `add_time` int(11) NOT NULL DEFAULT '0',
   `lock_expiry` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`queue_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_mail_queue
 -- ----------------------------
-INSERT INTO `ecm_mail_queue` VALUES ('8', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:买家guobao已通过线下支付支付了订单的费用', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">买家guobao已通过线下支付支付了与您交易的订单1521453324。请注意查收。</p>\r\n<p style=\"padding-left: 30px;\">支付信息：111</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-08-03 14:10</p>', '1', '1', '1438582254', '1438582285');
-INSERT INTO `ecm_mail_queue` VALUES ('4', '123@qq.com', 'utf-8', 'ECMall演示站提醒:您的订单已生成', '<p>尊敬的guobao:</p>\r\n<p style=\"padding-left: 30px;\">您在ECMall演示站上下的订单已生成，订单号1521453324。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=10\">http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=10</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-08-03 14:06</p>', '1', '1', '1438582018', '1438582266');
-INSERT INTO `ecm_mail_queue` VALUES ('5', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:您有一个新订单需要处理', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">您有一个新的订单需要处理，订单号1521453324，请尽快处理。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-08-03 14:06</p>', '1', '1', '1438582018', '1438582266');
-INSERT INTO `ecm_mail_queue` VALUES ('6', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:买家guobao已通过线下支付支付了订单的费用', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">买家guobao已通过线下支付支付了与您交易的订单1521453324。请注意查收。</p>\r\n<p style=\"padding-left: 30px;\">支付信息：111</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=10</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-08-03 14:09</p>', '1', '1', '1438582164', '1438582266');
-INSERT INTO `ecm_mail_queue` VALUES ('7', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:买家guobao已通过线下支付支付了订单的费用', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">买家guobao已通过线下支付支付了与您交易的订单1521105379。请注意查收。</p>\r\n<p style=\"padding-left: 30px;\">支付信息：11111111111</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=9\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=9</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-08-03 14:09</p>', '1', '1', '1438582194', '1438582266');
+INSERT INTO `ecm_mail_queue` VALUES ('29', '1212@qq.com', 'utf-8', 'ECMall演示站提醒:您的商品咨询咨询已得到回复', '<p>尊敬的用户:</p>\r\n<p style=\"padding-left: 30px;\">您好, 您在 ECMall演示站 中的“测试商品22222”咨询已得到回复，请点击下面的链接查看：</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=goods&act=qa&id=35&amp;ques_id=10&amp;new=yes\">http://ecmall/index.php?app=goods&act=qa&id=35&amp;ques_id=10&amp;new=yes</a></p>\r\n<p style=\"padding-left: 30px;\"> 如果以上链接无法点击，请将它拷贝到浏览器(例如IE)的地址栏中。</p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-30 16:46</p>', '1', '0', '1443602771', '0');
+INSERT INTO `ecm_mail_queue` VALUES ('28', '1212@qq.com', 'utf-8', 'ECMall演示站提醒:您的商品咨询咨询已得到回复', '<p>尊敬的用户:</p>\r\n<p style=\"padding-left: 30px;\">您好, 您在 ECMall演示站 中的“测试商品22222”咨询已得到回复，请点击下面的链接查看：</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=goods&act=qa&id=35&amp;ques_id=11&amp;new=yes\">http://ecmall/index.php?app=goods&act=qa&id=35&amp;ques_id=11&amp;new=yes</a></p>\r\n<p style=\"padding-left: 30px;\"> 如果以上链接无法点击，请将它拷贝到浏览器(例如IE)的地址栏中。</p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-30 16:46</p>', '1', '0', '1443602762', '0');
+INSERT INTO `ecm_mail_queue` VALUES ('27', '1212@qq.com', 'utf-8', 'ECMall演示站提醒:您的商品咨询咨询已得到回复', '<p>尊敬的用户:</p>\r\n<p style=\"padding-left: 30px;\">您好, 您在 ECMall演示站 中的“测试商品生成二维码2”咨询已得到回复，请点击下面的链接查看：</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=goods&act=qa&id=33&amp;ques_id=3&amp;new=yes\">http://ecmall/index.php?app=goods&act=qa&id=33&amp;ques_id=3&amp;new=yes</a></p>\r\n<p style=\"padding-left: 30px;\"> 如果以上链接无法点击，请将它拷贝到浏览器(例如IE)的地址栏中。</p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 16:10</p>', '1', '0', '1443427801', '0');
+INSERT INTO `ecm_mail_queue` VALUES ('26', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:买家确认了与您交易的订单1527054346，交易完成', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">买家guobao001已经确认了与您交易的订单1527054346。交易完成</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=17\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=17</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:15</p>', '1', '1', '1443402935', '1443425853');
+INSERT INTO `ecm_mail_queue` VALUES ('21', '1212@qq.com', 'utf-8', 'ECMall演示站提醒:您的订单已生成', '<p>尊敬的guobao001:</p>\r\n<p style=\"padding-left: 30px;\">您在ECMall演示站上下的订单已生成，订单号1527088957。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=16\">http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=16</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:11</p>', '1', '1', '1443402660', '1443425853');
+INSERT INTO `ecm_mail_queue` VALUES ('22', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:您有一个新订单需要处理', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">您有一个新的订单需要处理，订单号1527088957，请尽快处理。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=16\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=16</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:11</p>', '1', '1', '1443402660', '1443425854');
+INSERT INTO `ecm_mail_queue` VALUES ('23', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:买家确认了与您交易的订单1527088957，交易完成', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">买家guobao001已经确认了与您交易的订单1527088957。交易完成</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=16\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=16</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:13</p>', '1', '1', '1443402802', '1443425853');
+INSERT INTO `ecm_mail_queue` VALUES ('24', '1212@qq.com', 'utf-8', 'ECMall演示站提醒:您的订单已生成', '<p>尊敬的guobao001:</p>\r\n<p style=\"padding-left: 30px;\">您在ECMall演示站上下的订单已生成，订单号1527054346。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=17\">http://ecmall/index.php?app=buyer_order&amp;act=view&amp;order_id=17</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:15</p>', '1', '1', '1443402920', '1443425853');
+INSERT INTO `ecm_mail_queue` VALUES ('25', 'seller@ecmall.com', 'utf-8', 'ECMall演示站提醒:您有一个新订单需要处理', '<p>尊敬的演示店铺:</p>\r\n<p style=\"padding-left: 30px;\">您有一个新的订单需要处理，订单号1527054346，请尽快处理。</p>\r\n<p style=\"padding-left: 30px;\">查看订单详细信息请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=17\">http://ecmall/index.php?app=seller_order&amp;act=view&amp;order_id=17</a></p>\r\n<p style=\"padding-left: 30px;\">查看您的订单列表管理页请点击以下链接</p>\r\n<p style=\"padding-left: 30px;\"><a href=\"http://ecmall/index.php?app=seller_order\">http://ecmall/index.php?app=seller_order</a></p>\r\n<p style=\"text-align: right;\">ECMall演示站</p>\r\n<p style=\"text-align: right;\">2015-09-28 09:15</p>', '1', '1', '1443402920', '1443425853');
 
 -- ----------------------------
 -- Table structure for `ecm_member`
@@ -1069,15 +1310,16 @@ CREATE TABLE `ecm_member` (
   KEY `user_name` (`user_name`),
   KEY `email` (`email`),
   KEY `outer_id` (`outer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_member
 -- ----------------------------
-INSERT INTO `ecm_member` VALUES ('1', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', null, '0', null, null, null, null, null, null, null, null, '1438306573', '1438754304', '127.0.0.1', '6', '0', null, '0', null, '');
-INSERT INTO `ecm_member` VALUES ('2', 'guobao', '123@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '国宝', '0', '0000-00-00', null, null, '', '', null, null, null, '1438307455', '1438753623', '127.0.0.1', '5', '0', null, '0', null, '');
-INSERT INTO `ecm_member` VALUES ('3', 'seller', 'seller@ecmall.com', 'e10adc3949ba59abbe56e057f20f883e', '超级卖家', '0', null, null, null, null, null, null, null, null, '1438307858', null, null, '0', '0', null, '0', null, '');
+INSERT INTO `ecm_member` VALUES ('1', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '', '0', null, null, null, '', '', null, null, null, '1438306573', '1444876343', '127.0.0.1', '33', '0', '', '0', null, '');
+INSERT INTO `ecm_member` VALUES ('2', 'guobao', '123@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '国宝', '0', '0000-00-00', null, null, '', '', null, null, null, '1438307455', '1444977671', '127.0.0.1', '75', '0', 'data/files/mall/portrait/1/2.jpg', '0', null, '');
+INSERT INTO `ecm_member` VALUES ('3', 'seller', 'seller@ecmall.com', 'e10adc3949ba59abbe56e057f20f883e', '超级卖家', '0', null, null, null, null, null, null, null, null, '1438307858', '1443509147', '127.0.0.1', '2', '0', null, '0', null, '');
 INSERT INTO `ecm_member` VALUES ('4', 'buyer', 'buyer@ecmall.com', 'e10adc3949ba59abbe56e057f20f883e', '超级买家', '0', null, null, null, null, null, null, null, null, '1438307858', null, null, '0', '0', null, '0', null, '');
+INSERT INTO `ecm_member` VALUES ('5', 'guobao001', '1212@qq.com', 'e10adc3949ba59abbe56e057f20f883e', null, '0', null, null, null, null, null, null, null, null, '1438827972', '1443597826', '127.0.0.1', '15', '0', null, '0', null, '');
 
 -- ----------------------------
 -- Table structure for `ecm_message`
@@ -1098,11 +1340,14 @@ CREATE TABLE `ecm_message` (
   KEY `from_id` (`from_id`),
   KEY `to_id` (`to_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_message
 -- ----------------------------
+INSERT INTO `ecm_message` VALUES ('1', '0', '2', '', '请尽快到“已结束的团购”完成该团购活动，以便买家可以完成交易，如结束后5天未确认完成，该活动将被自动取消,查看[url=http://ecmall/index.php?app=seller_groupbuy&state=end]已结束的团购[/url]', '1438828555', '1438828555', '0', '0', '3');
+INSERT INTO `ecm_message` VALUES ('2', '0', '5', '', '“测试团购”活动成功完成，请尽快购买活动商品。[url=http://ecmall/index.php?app=order&goods=groupbuy&group_id=1]点此购买[/url]', '1438828597', '1438828597', '1', '0', '3');
+INSERT INTO `ecm_message` VALUES ('3', '0', '5', '', '“测试团购”活动成功完成，请尽快购买活动商品。[url=http://ecmall/index.php?app=order&goods=groupbuy&group_id=1]点此购买[/url]', '1438828962', '1438828962', '1', '0', '3');
 
 -- ----------------------------
 -- Table structure for `ecm_module`
@@ -1134,11 +1379,14 @@ CREATE TABLE `ecm_navigation` (
   `sort_order` tinyint(3) unsigned NOT NULL DEFAULT '255',
   `open_new` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`nav_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_navigation
 -- ----------------------------
+INSERT INTO `ecm_navigation` VALUES ('3', 'middle', '金寨特产', 'index.php?app=jztc', '255', '0');
+INSERT INTO `ecm_navigation` VALUES ('4', 'middle', '本地生活', 'index.php?app=local_life', '255', '0');
+INSERT INTO `ecm_navigation` VALUES ('5', 'middle', '神买专柜', 'index.php?app=shoppe', '255', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_order`
@@ -1178,7 +1426,7 @@ CREATE TABLE `ecm_order` (
   KEY `seller_name` (`seller_name`),
   KEY `buyer_name` (`buyer_name`),
   KEY `add_time` (`add_time`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_order
@@ -1192,7 +1440,14 @@ INSERT INTO `ecm_order` VALUES ('6', '0921877812', 'material', 'normal', '3', '�
 INSERT INTO `ecm_order` VALUES ('7', '0921848095', 'material', 'normal', '3', '演示店铺', '4', 'buyer', 'buyer@ecmall.com', '40', '1249611987', '1', '货到付款', 'cod', '', '1249612050', '', '1249612042', 'abcd1234', '1249612050', '89.00', '0.00', '99.00', '1', '1249612167', '0', '', '0');
 INSERT INTO `ecm_order` VALUES ('8', '0921855800', 'material', 'normal', '3', '演示店铺', '4', 'buyer', 'buyer@ecmall.com', '40', '1249611999', '2', '银行汇款', 'bank', '', '1249612021', '已付款', '1249612031', 'abcd1234', '1249612132', '188.00', '0.00', '208.00', '1', '1249612152', '0', '', '0');
 INSERT INTO `ecm_order` VALUES ('9', '1521105379', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '11', '1438311002', '2', '银行汇款', 'bank', '', null, '11111111111', null, null, '0', '170.00', '0.00', '175.00', '0', '0', '0', '', '0');
-INSERT INTO `ecm_order` VALUES ('10', '1521453324', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '11', '1438582018', '2', '银行汇款', 'bank', '', null, '111', null, null, '0', '188.00', '0.00', '193.00', '0', '0', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('10', '1521453324', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '30', '1438582018', '2', '银行汇款', 'bank', '', null, '111', null, null, '0', '188.00', '0.00', '193.00', '0', '0', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('11', '1521660552', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '40', '1438755466', null, null, '', '', null, '', null, null, '1438840505', '90.00', '0.00', '95.00', '1', '1441614559', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('12', '1521740234', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '40', '1438839450', null, null, '', '', null, '', null, null, '1438840192', '90.00', '0.00', '95.00', '1', '1438840197', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('13', '1521829092', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '11', '1438934896', '2', '支付宝', 'alipay', '1521829092', null, '', null, null, '0', '90.00', '0.00', '95.00', '0', '0', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('14', '1522131953', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '11', '1439168197', null, null, '', '', null, '', null, null, '0', '111.00', '0.00', '116.00', '0', '0', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('15', '1525881213', 'material', 'normal', '3', '演示店铺', '2', 'guobao', '123@qq.com', '11', '1442366855', '2', '支付宝', 'alipay', '1525881213', null, '', null, null, '0', '170.00', '0.00', '175.00', '0', '0', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('16', '1527088957', 'material', 'normal', '3', '演示店铺', '5', 'guobao001', '1212@qq.com', '40', '1443402660', null, null, '', '', null, '', null, null, '1443402802', '268.00', '0.00', '273.00', '1', '1443402812', '0', '', '0');
+INSERT INTO `ecm_order` VALUES ('17', '1527054346', 'material', 'normal', '3', '演示店铺', '5', 'guobao001', '1212@qq.com', '40', '1443402920', null, null, '', '', null, '', null, null, '1443402935', '268.00', '0.00', '273.00', '1', '1443402940', '1', '', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_order_extm`
@@ -1227,6 +1482,13 @@ INSERT INTO `ecm_order_extm` VALUES ('7', '超级卖家', '43', '中国	上海�
 INSERT INTO `ecm_order_extm` VALUES ('8', '超级卖家', '43', '中国	上海市	徐汇区', '长江路15号', '200088', '021-88886666', '13366669999', '3', 'EMS', '20.00');
 INSERT INTO `ecm_order_extm` VALUES ('9', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
 INSERT INTO `ecm_order_extm` VALUES ('10', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('11', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('12', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('13', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('14', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('15', '测试', '65', '中国	重庆市	沙坪坝', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('16', '测试', '5', '中国	北京市	西城', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
+INSERT INTO `ecm_order_extm` VALUES ('17', '测试', '5', '中国	北京市	西城', '测试测试测试测试测试', '230000', '18212271611', '', '1', '平邮', '5.00');
 
 -- ----------------------------
 -- Table structure for `ecm_order_goods`
@@ -1248,7 +1510,7 @@ CREATE TABLE `ecm_order_goods` (
   `is_valid` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`rec_id`),
   KEY `order_id` (`order_id`,`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_order_goods
@@ -1263,6 +1525,13 @@ INSERT INTO `ecm_order_goods` VALUES ('7', '7', '26', '喜皮风格牛仔短裤'
 INSERT INTO `ecm_order_goods` VALUES ('8', '8', '28', '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套', '73', '', '188.00', '1', 'data/files/store_2/goods_115/small_200908061005154170.jpg', '3', '穿上很好看，价格也实在', '1', '1');
 INSERT INTO `ecm_order_goods` VALUES ('9', '9', '19', '罗衣OL气质真丝雪纺百褶裙针织背心裙', '48', '', '170.00', '1', 'data/files/store_2/goods_109/small_200908060938292631.jpg', '0', '', '0', '1');
 INSERT INTO `ecm_order_goods` VALUES ('10', '10', '28', '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套', '73', '', '188.00', '1', 'data/files/store_2/goods_115/small_200908061005154170.jpg', '0', '', '0', '1');
+INSERT INTO `ecm_order_goods` VALUES ('11', '11', '17', '韩E族百搭修身紧腰休闲长裤【灰色】', '55', '', '90.00', '1', 'data/files/store_2/goods_121/small_200908060932011437.jpg', '3', '', '1', '1');
+INSERT INTO `ecm_order_goods` VALUES ('12', '12', '17', '韩E族百搭修身紧腰休闲长裤【灰色】', '55', '', '90.00', '1', 'data/files/store_2/goods_121/small_200908060932011437.jpg', '1', '', '-1', '1');
+INSERT INTO `ecm_order_goods` VALUES ('13', '13', '17', '韩E族百搭修身紧腰休闲长裤【灰色】', '55', '', '90.00', '1', 'data/files/store_2/goods_121/small_200908060932011437.jpg', '0', '', '0', '1');
+INSERT INTO `ecm_order_goods` VALUES ('14', '14', '22', '新款多用型穿珠运动长裤', '57', '', '111.00', '1', 'data/files/store_2/goods_147/small_200908060952274906.jpg', '0', '', '0', '1');
+INSERT INTO `ecm_order_goods` VALUES ('15', '15', '6', '包邮韩版经典长袖雪纺下摆针织连衣裙', '15', '', '170.00', '1', 'data/files/store_2/goods_95/small_200908060841358079.jpg', '0', '', '0', '1');
+INSERT INTO `ecm_order_goods` VALUES ('16', '16', '11', '耐克红粉世家运动鞋', '33', '颜色:粉红 尺码:39', '268.00', '1', 'data/files/store_2/goods_33/small_200908060917132087.jpg', '1', '1111111111111111', '-1', '1');
+INSERT INTO `ecm_order_goods` VALUES ('17', '17', '11', '耐克红粉世家运动鞋', '33', '颜色:粉红 尺码:39', '268.00', '1', 'data/files/store_2/goods_33/small_200908060917132087.jpg', '3', '222222222222222222222', '1', '1');
 
 -- ----------------------------
 -- Table structure for `ecm_order_log`
@@ -1278,7 +1547,7 @@ CREATE TABLE `ecm_order_log` (
   `log_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`log_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_order_log
@@ -1305,6 +1574,10 @@ INSERT INTO `ecm_order_log` VALUES ('19', '8', 'buyer', '已发货', '已完成'
 INSERT INTO `ecm_order_log` VALUES ('20', '6', 'buyer', '已发货', '已完成', '买家确认收货', '1249612171');
 INSERT INTO `ecm_order_log` VALUES ('21', '4', 'buyer', '已发货', '已完成', '买家确认收货', '1249612205');
 INSERT INTO `ecm_order_log` VALUES ('22', '3', 'buyer', '已发货', '已完成', '买家确认收货', '1249612221');
+INSERT INTO `ecm_order_log` VALUES ('23', '12', 'guobao', '已发货', '已完成', '买家确认收货', '1438840192');
+INSERT INTO `ecm_order_log` VALUES ('24', '11', 'guobao', '已发货', '已完成', '买家确认收货', '1438840505');
+INSERT INTO `ecm_order_log` VALUES ('25', '16', 'guobao001', '已发货', '已完成', '买家确认收货', '1443402802');
+INSERT INTO `ecm_order_log` VALUES ('26', '17', 'guobao001', '已发货', '已完成', '买家确认收货', '1443402935');
 
 -- ----------------------------
 -- Table structure for `ecm_pageview`
@@ -1364,15 +1637,14 @@ CREATE TABLE `ecm_payment` (
   PRIMARY KEY (`payment_id`),
   KEY `store_id` (`store_id`),
   KEY `payment_code` (`payment_code`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_payment
 -- ----------------------------
-INSERT INTO `ecm_payment` VALUES ('1', '3', 'cod', '货到付款', '送货上门，看货后付款', '', '0', '1', '2');
-INSERT INTO `ecm_payment` VALUES ('2', '3', 'bank', '银行汇款', '中国工商银行 955880001118282828 张老板\r\n中国农业银行 138292992992929292 张老板', '', '0', '1', '1');
-INSERT INTO `ecm_payment` VALUES ('3', '2', 'cod', '货到付款', '', '', '0', '0', '0');
-INSERT INTO `ecm_payment` VALUES ('6', '2', 'alipay', '支付宝', '', 'a:5:{s:14:\"alipay_account\";s:0:\"\";s:10:\"alipay_key\";s:0:\"\";s:14:\"alipay_partner\";s:0:\"\";s:14:\"alipay_service\";s:21:\"trade_create_by_buyer\";s:5:\"pcode\";s:0:\"\";}', '1', '1', '0');
+INSERT INTO `ecm_payment` VALUES ('1', '1', 'alipay', '支付宝', '444444444444', 'a:4:{s:14:\"alipay_account\";s:1:\"1\";s:10:\"alipay_key\";s:1:\"2\";s:14:\"alipay_partner\";s:1:\"3\";s:14:\"alipay_service\";s:25:\"create_direct_pay_by_user\";}', '1', '1', '0');
+INSERT INTO `ecm_payment` VALUES ('3', '3', 'alipay', '支付宝', '', 'a:5:{s:14:\"alipay_account\";s:0:\"\";s:10:\"alipay_key\";s:0:\"\";s:14:\"alipay_partner\";s:0:\"\";s:14:\"alipay_service\";s:21:\"trade_create_by_buyer\";s:5:\"pcode\";s:0:\"\";}', '1', '1', '0');
+INSERT INTO `ecm_payment` VALUES ('4', '2', 'alipay', '支付宝', '', 'a:5:{s:14:\"alipay_account\";s:0:\"\";s:10:\"alipay_key\";s:0:\"\";s:14:\"alipay_partner\";s:0:\"\";s:14:\"alipay_service\";s:21:\"trade_create_by_buyer\";s:5:\"pcode\";s:0:\"\";}', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_privilege`
@@ -1400,7 +1672,7 @@ CREATE TABLE `ecm_recommend` (
   `store_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`recom_id`),
   KEY `store_id` (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_recommend
@@ -1412,6 +1684,8 @@ INSERT INTO `ecm_recommend` VALUES ('12', '外套1', '0');
 INSERT INTO `ecm_recommend` VALUES ('11', '精品', '0');
 INSERT INTO `ecm_recommend` VALUES ('10', '特价2', '0');
 INSERT INTO `ecm_recommend` VALUES ('9', '特价1', '0');
+INSERT INTO `ecm_recommend` VALUES ('16', '测试', '0');
+INSERT INTO `ecm_recommend` VALUES ('17', '母婴', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_recommended_goods`
@@ -1469,6 +1743,8 @@ INSERT INTO `ecm_recommended_goods` VALUES ('10', '26', '255');
 INSERT INTO `ecm_recommended_goods` VALUES ('9', '27', '255');
 INSERT INTO `ecm_recommended_goods` VALUES ('9', '28', '255');
 INSERT INTO `ecm_recommended_goods` VALUES ('9', '29', '255');
+INSERT INTO `ecm_recommended_goods` VALUES ('16', '35', '255');
+INSERT INTO `ecm_recommended_goods` VALUES ('17', '34', '255');
 
 -- ----------------------------
 -- Table structure for `ecm_region`
@@ -2064,14 +2340,89 @@ CREATE TABLE `ecm_sessions` (
 -- ----------------------------
 -- Records of ecm_sessions
 -- ----------------------------
-INSERT INTO `ecm_sessions` VALUES ('dcc57d7d41c98b74e24c18afad239547', '1438313609', '0', '0', '127.0.0.1', '', '1');
-INSERT INTO `ecm_sessions` VALUES ('ec5f19df2b6f0ef103db3bc997892d99', '1438583712', '0', '0', '127.0.0.1', '', '1');
-INSERT INTO `ecm_sessions` VALUES ('06a0502d9577ccf9d4d3d86f3edb5da3', '1438566847', '0', '0', '127.0.0.1', '', '0');
-INSERT INTO `ecm_sessions` VALUES ('3f033e7ef3ba9edd1bba5a87c3f6f8fb', '1438566888', '0', '0', '127.0.0.1', '', '0');
-INSERT INTO `ecm_sessions` VALUES ('77227b73f390352243d261d773eddd75', '1438574378', '0', '0', '127.0.0.1', '', '0');
-INSERT INTO `ecm_sessions` VALUES ('6e6cb40b390009c6776b7a0079282c26', '1438583395', '0', '0', '127.0.0.1', '', '0');
-INSERT INTO `ecm_sessions` VALUES ('3612c8c8d230a699fc764b99a2c75501', '1438583416', '0', '0', '127.0.0.1', '', '0');
-INSERT INTO `ecm_sessions` VALUES ('04417f7f73ae030f8ec049fd24e7478d', '1438756075', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('0c2c18635edf2c31b77e93215e4666f6', '1444979116', '0', '0', '127.0.0.1', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444977611\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}', '0');
+INSERT INTO `ecm_sessions` VALUES ('817c1e3faf950b809bff9021ecbb5ad3', '1444956965', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('b4c430216a3fbcd6bd1060665b3b510f', '1444979057', '0', '0', '127.0.0.1', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444789084\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}', '0');
+INSERT INTO `ecm_sessions` VALUES ('3ecce6de5a45904b07d11bad26012343', '1444880377', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('58bb7feec5e690fa0a021b647907063b', '1444880351', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('3ef00457c5ec7109d1f70cbf597686d7', '1444880156', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('388fb20f0fd87f5d3091c4ead50c9e7d', '1444880126', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('9ec6f7c1f0336b180736b3c9a26b2ff4', '1444878971', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('02919dbab14af99e5b8f0acc2f171f41', '1444878561', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('9afb90c9564473cb0e9f223f5b8ac5bb', '1444878305', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('f00ed85cc64274db2e9c37c3982e0288', '1444878211', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('4a0c8bd4e822d23a8702261c36ee3a72', '1444878182', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('1b20077c6a5b9bd39f0ee39646a2faf1', '1444878165', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('939071a49af5ed2f8a1941375943a60e', '1444878124', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('e265e400e2d5bc667694da906729c849', '1444877962', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('2fa9cf909fcde4e040d2035b1f62dbda', '1444891302', '0', '0', '127.0.0.1', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444703999\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}', '0');
+INSERT INTO `ecm_sessions` VALUES ('e0f31b76c69d706bd3cc257354c83752', '1444807404', '0', '0', '127.0.0.1', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444700875\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}captcha|s:8:\"bXg1Yw==\";', '0');
+INSERT INTO `ecm_sessions` VALUES ('e72fea39260224d428dac4881e8a2adc', '1444705505', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('04a79097fcd5c7be341f8cc0ad771bea', '1444639818', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('165ee8f31f5926951de55e388a5f64b4', '1444635979', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('17d0574b18bc602211b210e384a1a2ba', '1444642543', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('55fd542d75360da5238471f77a5e484d', '1444469464', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('a6507724d35e314a0368618dbc65a6df', '1444377698', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('dc4b0b6e0a0f83fac470ba6f008df7a1', '1444376992', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('c39f329b5d7ec25f940c3a62e9a9d37e', '1444375774', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('3c4d738fa5fa1c04de781f16458a5d40', '1444374560', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('af5b45cd4d51c23659e441d2ae3e3267', '1444374164', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('13fd036b39bce6eb482d1fb8e52e2d96', '1444373767', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('7a84509490811116b52dd371adf1580f', '1444373733', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('4fa5ce9a0db2dc56447be68affb49249', '1444373732', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('edba3d1f9a3f666f62deecbd4a018903', '1444373727', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('7fe4930b1073c1c2bd346db4bd0b30f6', '1444371759', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('ac253d52a7f5d589647ad9b020c1298e', '1444371350', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('61fd433d9cdcd9b4471dfb256abb30b3', '1444371330', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('01b43d9ad14e286a5dba8f33b431d5e1', '1444371049', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('4de922eba3ce43acfa91b48b26ac280c', '1444370905', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('e33c2316f06201ca1f4580fa490a1667', '1444297333', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('215c20ebb7b6047824047db7995703df', '1444297353', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('43d09284385b405303df85c384ed8dda', '1444370873', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('9855d7152de3bce246f697d4495d4884', '1444370650', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('7c7302ceafe3e7229d8c3aa74b48b5bf', '1444363756', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('ad9037fed351005d83b90f3e31ed509d', '1444363728', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('6eaf361f548af4dbd8f095533af03c9e', '1444362257', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('489193e195fe7277d9ef0ef3e5f56a01', '1444361579', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('21bcddd39858577adff135a4b0bcf0cb', '1444360394', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('8b39288b7ab06d59bb75bba73db190d2', '1444360306', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('3fffca93d1dc0f20d9d6edeec5017f87', '1444360237', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('3031f94175542b3b6886eea1b25873ee', '1444359992', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('012d68901fd1eb71c676af65a142f429', '1443519441', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('988cc1c41a785da62822dd1773e99a4f', '1444359352', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('24b7a4d73044a91cc272e728b50c2f7e', '1444356672', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('8b5f57f135a5d53d17f9e5e10b7e7e1c', '1444356570', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('4ae45f55a21c0dfffbdc91df3ca768b4', '1444356491', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('b129ce2e4f6bdef21c4f914b31213008', '1444356271', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('616912932c721f970b4c47a8bf4ef74e', '1444355907', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('75639db231551a43fa104382029ed692', '1444355771', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('8c299f5da022aac1bdf791f1938de444', '1444355300', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('94e9c4a3a5e46cd877094b6d630ad828', '1444353330', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('72cbeddb21ba9749b1967d1c905957c9', '1444353206', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('8848795bbcd3907901bc9e0727595468', '1444353165', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('75429fa0e983cd4fafaddccadcd553b0', '1444353100', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('a5352ca271e081dde7e791f199729ff7', '1444351526', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('c91e3d45318549112e14d400ce341cca', '1444380837', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('557d86c297eaea861a402580f540106f', '1444297523', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('a78445c227b09475a6d9191bea8fd715', '1444297465', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('23e9f79543451c8b0621eeb6498663a5', '1444297375', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('0a6de38c0ead591f390dee86f5d901a2', '1443604176', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('a9e24bb25253ac1c91f69d4a4980bcfe', '1443604211', '0', '0', '127.0.0.1', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1443594832\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}ASYNC_SENDMAIL|b:1;', '0');
+INSERT INTO `ecm_sessions` VALUES ('65dfd2c599e4fbdda783910fc3be5487', '1443605286', '0', '0', '127.0.0.1', 'captcha|s:8:\"NWtjMw==\";user_info|a:6:{s:7:\"user_id\";s:1:\"5\";s:9:\"user_name\";s:9:\"guobao001\";s:8:\"reg_time\";s:10:\"1438827972\";s:10:\"last_login\";s:10:\"1443496179\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";N;}', '0');
+INSERT INTO `ecm_sessions` VALUES ('471fc907ee95b5aea8b0079166113fb6', '1443513915', '0', '0', '127.0.0.1', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1443508929\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}', '0');
+INSERT INTO `ecm_sessions` VALUES ('f25f1fd9bf0eaaadc843604b187e6dbf', '1443605192', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('f19ce183f4775ee6ea3f0ba51ab3b296', '1444272003', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('72f57cf59ab5316ba36862e7447714e0', '1444270891', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('5e230184b7128f5eed610485f696bcb8', '1444298031', '0', '0', '127.0.0.1', '', '1');
+INSERT INTO `ecm_sessions` VALUES ('5f43336d8322d6fb606a80a036f8e055', '1444294936', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('6dd907c6d56ab335d680126f3e8d1a82', '1444285589', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('83510f457d932d883b12a3c264d7ef56', '1444287699', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('1f182477947e953a47fd00f834986a8d', '1444288089', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('8e5feb3493c0d689e24cb8a473a194ff', '1444294789', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('7ab00e08fccca2ec65d9f4984227d974', '1444296033', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('e3d654837c708d4ba727b01da0ea8c52', '1444297247', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('0f59930c0ff99cef15457003674f0ff7', '1444297283', '0', '0', '127.0.0.1', '', '0');
+INSERT INTO `ecm_sessions` VALUES ('3e1bd3ed32a51d57e629e026da5c016f', '1444297301', '0', '0', '127.0.0.1', '', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_sessions_data`
@@ -2088,9 +2439,13 @@ CREATE TABLE `ecm_sessions_data` (
 -- ----------------------------
 -- Records of ecm_sessions_data
 -- ----------------------------
-INSERT INTO `ecm_sessions_data` VALUES ('dcc57d7d41c98b74e24c18afad239547', '1438313609', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";N;s:7:\"last_ip\";N;}user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1438307717\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";N;}');
-INSERT INTO `ecm_sessions_data` VALUES ('ec5f19df2b6f0ef103db3bc997892d99', '1438583712', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1438307755\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1438307764\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}');
-INSERT INTO `ecm_sessions_data` VALUES ('04417f7f73ae030f8ec049fd24e7478d', '1438756075', 'user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1438565509\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1438563882\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('17d0574b18bc602211b210e384a1a2ba', '1444642543', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444452360\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}captcha|s:8:\"M3JtMg==\";user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444455768\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('c91e3d45318549112e14d400ce341cca', '1444380837', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444282856\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}captcha|s:8:\"dHB3Mg==\";user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444282432\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('55fd542d75360da5238471f77a5e484d', '1444469464', 'admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444350078\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444379064\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}captcha|s:8:\"aHlyZQ==\";');
+INSERT INTO `ecm_sessions_data` VALUES ('5e230184b7128f5eed610485f696bcb8', '1444298031', 'captcha|s:8:\"MjVjNw==\";user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444266176\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444266132\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('012d68901fd1eb71c676af65a142f429', '1443519441', 'captcha|s:8:\"Y2s1YQ==\";admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1443425819\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1443510954\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('f19ce183f4775ee6ea3f0ba51ab3b296', '1444272003', 'captcha|s:8:\"dHhlcg==\";admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1443508990\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1443602741\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}');
+INSERT INTO `ecm_sessions_data` VALUES ('e72fea39260224d428dac4881e8a2adc', '1444705505', 'captcha|s:8:\"eHA1NA==\";user_info|a:6:{s:7:\"user_id\";s:1:\"2\";s:9:\"user_name\";s:6:\"guobao\";s:8:\"reg_time\";s:10:\"1438307455\";s:10:\"last_login\";s:10:\"1444635839\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:8:\"store_id\";s:1:\"2\";}admin_info|a:5:{s:7:\"user_id\";s:1:\"1\";s:9:\"user_name\";s:5:\"admin\";s:8:\"reg_time\";s:10:\"1438306573\";s:10:\"last_login\";s:10:\"1444610429\";s:7:\"last_ip\";s:9:\"127.0.0.1\";}');
 
 -- ----------------------------
 -- Table structure for `ecm_sgrade`
@@ -2191,8 +2546,8 @@ CREATE TABLE `ecm_store` (
 -- ----------------------------
 -- Records of ecm_store
 -- ----------------------------
-INSERT INTO `ecm_store` VALUES ('3', '演示店铺', '张老板', '123456789012345678', '9', '中国	北京市	海淀', '人民大街16号', '100088', '010-88886666-8866', '2', '', '6', '85.71', '', '1', '', '1249543819', '0', '', '0', '1', '', null, null, '', '', '', '', '', '', '', '0', '1');
-INSERT INTO `ecm_store` VALUES ('2', '国宝的店铺', '姑伯翱', '2132146846541563', '44', '中国	上海市	长宁区', '测试测试测试测试测试', '230000', '1821212121', '2', '', '0', '0.00', '', '1', '', '1438309790', '0', 'autonym,material', '0', '1', '', null, null, null, 'data/files/mall/application/store_2_1.jpg', 'data/files/mall/application/store_2_2.jpg', '', '', '', '', '0', '1');
+INSERT INTO `ecm_store` VALUES ('3', '演示店铺', '张老板', '123456789012345678', '9', '中国	北京市	海淀', '人民大街16号', '100088', '010-88886666-8866', '2', '', '6', '72.73', '', '1', '', '1249543819', '0', '', '0', '1', '', null, null, '', '', '', '', '', '', '', '0', '1');
+INSERT INTO `ecm_store` VALUES ('2', '国宝的店铺', '姑伯翱', '2132146846541563', '44', '中国	上海市	长宁区', '测试测试测试测试测试', '230000', '1821212121', '2', '', '0', '0.00', '', '1', '', '1438309790', '0', 'autonym,material', '0', '1', 'default|style1', 'data/files/store_2/other/store_banner.jpg', 'data/files/store_2/other/store_logo.jpg', '', 'data/files/mall/application/store_2_1.jpg', 'data/files/mall/application/store_2_2.jpg', '', '111111111', '12312312', '', '0', '0');
 
 -- ----------------------------
 -- Table structure for `ecm_uploaded_file`
@@ -2210,7 +2565,7 @@ CREATE TABLE `ecm_uploaded_file` (
   `item_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`file_id`),
   KEY `store_id` (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecm_uploaded_file
@@ -2296,6 +2651,32 @@ INSERT INTO `ecm_uploaded_file` VALUES ('80', '3', 'image/jpeg', '10964', 'fae2e
 INSERT INTO `ecm_uploaded_file` VALUES ('81', '3', 'image/jpeg', '12046', 'b75c0a159f3c10b5.jpg', 'data/files/store_2/goods_26/200908061007068653.jpg', '1249553226', '2', '28');
 INSERT INTO `ecm_uploaded_file` VALUES ('82', '3', 'image/jpeg', '13297', '23141e259bb47c34.jpg', 'data/files/store_2/goods_121/200908061008412008.jpg', '1249553321', '2', '29');
 INSERT INTO `ecm_uploaded_file` VALUES ('83', '3', 'image/jpeg', '11197', '946a7039481ebbd5.jpg', 'data/files/store_2/goods_127/200908061008473587.jpg', '1249553327', '2', '29');
+INSERT INTO `ecm_uploaded_file` VALUES ('84', '0', 'image/jpeg', '34250', '1_04418206625430066_240.jpg', '', '1438760327', '1', '0');
+INSERT INTO `ecm_uploaded_file` VALUES ('85', '0', 'image/jpeg', '71917', '1_04418206625430066_360.jpg', '', '1438761238', '1', '0');
+INSERT INTO `ecm_uploaded_file` VALUES ('86', '0', 'image/jpeg', '34250', '1_04418206625430066_240.jpg', '', '1438764104', '1', '0');
+INSERT INTO `ecm_uploaded_file` VALUES ('87', '0', 'image/jpeg', '34250', '1_04418206625430066_240.jpg', '', '1438764250', '1', '0');
+INSERT INTO `ecm_uploaded_file` VALUES ('98', '2', 'image/jpeg', '595284', '04910666265407929.jpg', 'data/files/store_2/goods_194/201508050846346486.jpg', '1438764394', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('99', '2', 'image/jpeg', '879394', '04914788634870398.jpg', 'data/files/store_2/goods_4/201508050846449221.jpg', '1438764404', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('100', '2', 'image/jpeg', '879394', '04914788634870398.jpg', 'data/files/store_2/goods_29/201508050847094110.jpg', '1438764429', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('101', '2', 'image/jpeg', '21452', '04910666265407929_small.jpg', 'data/files/store_2/goods_12/201508060906525988.jpg', '1438852012', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('102', '2', 'image/jpeg', '71917', '1_04418206625430066_360.jpg', 'data/files/store_2/goods_23/201508100330235496.jpg', '1439177423', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('103', '2', 'image/jpeg', '11476', '1.jpg', 'data/files/store_2/goods_187/201508100333072083.jpg', '1439177587', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('104', '2', 'image/jpeg', '11476', '1.jpg', 'data/files/store_2/goods_193/201508100333136240.jpg', '1439177593', '2', '30');
+INSERT INTO `ecm_uploaded_file` VALUES ('105', '2', 'image/jpeg', '3805', '1_04418207107006930_60.jpg', 'data/files/store_2/other/201508100533217124.jpg', '1439184801', '3', '2');
+INSERT INTO `ecm_uploaded_file` VALUES ('107', '2', 'image/jpeg', '263742', '1_04848498615189861_1280.jpg', 'data/files/store_2/goods_45/201509140154059781.jpg', '1442195645', '2', '31');
+INSERT INTO `ecm_uploaded_file` VALUES ('108', '2', 'image/jpeg', '374329', '1_04848498638519467_1280.jpg', 'data/files/store_2/goods_49/201509140154091464.jpg', '1442195649', '2', '31');
+INSERT INTO `ecm_uploaded_file` VALUES ('109', '2', 'image/jpeg', '11476', '1.jpg', 'data/files/store_2/goods_60/201509140154203827.jpg', '1442195660', '2', '31');
+INSERT INTO `ecm_uploaded_file` VALUES ('110', '2', 'image/jpeg', '79410', 'web-040036-1.jpg', 'data/files/store_2/goods_123/201509240145231928.jpg', '1443059123', '2', '32');
+INSERT INTO `ecm_uploaded_file` VALUES ('111', '2', 'image/jpeg', '148700', 'web-055620-33.jpg', 'data/files/store_2/goods_91/201509240204513228.jpg', '1443060291', '2', '32');
+INSERT INTO `ecm_uploaded_file` VALUES ('112', '2', 'image/jpeg', '102373', 'web-063642-28.jpg', 'data/files/store_2/goods_90/201509240211301710.jpg', '1443060690', '2', '33');
+INSERT INTO `ecm_uploaded_file` VALUES ('113', '2', 'image/jpeg', '68483', 'web-083406-33.jpg', 'data/files/store_2/goods_88/201509240311289386.jpg', '1443064288', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('114', '2', 'image/jpeg', '95543', 'web-041503-45.jpg', 'data/files/store_2/goods_112/201509240311522849.jpg', '1443064312', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('115', '2', 'image/jpeg', '88197', 'web-041520-46.jpg', 'data/files/store_2/goods_113/201509240311534723.jpg', '1443064313', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('116', '2', 'image/jpeg', '84067', 'web-052642-9.jpg', 'data/files/store_2/goods_113/201509240311538334.jpg', '1443064313', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('117', '2', 'image/jpeg', '113319', 'web-052730-26.jpg', 'data/files/store_2/goods_113/201509240311538313.jpg', '1443064313', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('118', '2', 'image/jpeg', '99389', 'web-052950-2.jpg', 'data/files/store_2/goods_113/201509240311538559.jpg', '1443064313', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('119', '2', 'image/jpeg', '102190', 'web-055514-27.jpg', 'data/files/store_2/goods_114/201509240311541358.jpg', '1443064314', '2', '34');
+INSERT INTO `ecm_uploaded_file` VALUES ('120', '2', 'image/jpeg', '30983', '1_04423413554692434.jpg', 'data/files/store_2/goods_1/201509290726412817.jpg', '1443511601', '2', '35');
 
 -- ----------------------------
 -- Table structure for `ecm_user_coupon`
