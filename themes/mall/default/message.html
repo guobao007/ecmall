@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <base href="{$site_url}/" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {$page_seo}
+        <link href="{res file=css/ecmall.css}" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="{res file=css/base.css}" rel="stylesheet" />
+        <link type="text/css" href="{res file=css/home_header.css}" rel="stylesheet" />
+        <link type="text/css" href="{res file=css/head.css}" rel="stylesheet" />
+        <link href="{res file=font/font-awesome/css/font-awesome.min.css}" rel="stylesheet" />
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{res file=js/common.js}" charset="utf-8"></script>
+        <script type="text/javascript">
+        //<!CDATA[
+        var SITE_URL = "{$site_url}";
+        var REAL_SITE_URL = "{$real_site_url}";
+        var PRICE_FORMAT = '{$price_format}';
+        //]]>
+        </script>
+        <style type="text/css">
+        body  { background-color: #FAFAFA;}
+        .header-wrap{background-color: #FFF;}
+        .wrapper { width: 1000px;}
+        #faq { display: none;}
+        .msg { font: 100 36px/48px arial,"microsoft yahei"; color: #555; background-color: #FFF; text-align: center; width: 100%; border: solid 1px #E6E6E6; margin-bottom: 10px; padding: 120px 0;}
+        .msg i { font-size: 48px; vertical-align: middle; margin-right: 10px;}
+        </style>
+    </head>
+    <body>
+        <div id="topbox">
+            <div class="content1">
+                <div class="user-entry">
+                    <!--{if !$visitor.user_id}-->
+                        <div class="topl">
+                            <form action="{url app=member&act=login&ret_url=$ret_url}" method="post" name="form1" id="form1">    
+                                <div class="welcome">{$lang.hello}！欢迎光临{$site_title}！</div>
+                                <div class="login">用户名 
+                                    <input type="text" name="user_name" autocomplete="off" class="input1 wid100"> 
+                                    密码 
+                                    <input type="password" autocomplete="off" name="password" class="input1 wid100"> 
+                                    <input type="submit" value="登录" id="submit" name="submit" class="but1">
+                                    <a href="{url app=find_password}">忘记密码？</a><a href="{url app=member&act=register&ret_url=$ret_url}">注册新用户&gt;&gt;</a>
+                                </div> 
+                            </form> 
+                        </div>
+                    <!--{else}-->
+                        <div style="float:left;padding-top:10px;width:650px;">
+                        <span>{$lang.hello}<a href="">{$visitor.user_name|escape}</a></span>
+                        <span>欢迎来到<a href="/"  title="{$site_title}" alt="{$site_title}">{$site_title}</a></span>
+      <span>[<a href="{url app=member&act=logout}">{$lang.logout}</a>]</span>
+                        </div>
+                    <!--{/if}-->
+                    
+                </div>
+                <div class="public-top-layout w">
+                    <div class="quick-menu">
+                        <dl class="">
+                            <dt>
+                            <a href="{url app=buyer_order}">我的订单</a><i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=buyer_order&type=pending}">待付款订单</a></li>
+                                    <li><a href="{url app=buyer_order&type=shipped}">待确认收货</a></li>
+                                    <li><a href="{url app=buyer_order&type=finished}">待评价交易</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="{url app=my_favorite}">我的收藏</a><i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=my_favorite}">商品收藏</a></li>
+                                    <li><a href="{url app=my_favorite&type=store}">店铺收藏</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="">
+                            <dt>客户服务<i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=my_question}">我的咨询</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>关注我们<i></i></dt>
+                            <dd>
+                                <ul>
+                                    <!--
+                                      <li><img src="" width="100" height="100"></li>
+                                      <li><img src="" width="100" height="100"></li>
+                                    -->
+                                </ul>
+                            </dd>
+                        </dl>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function(){
+          $(".quick-menu dl").hover(function() {
+            $(this).addClass("hover");
+          },
+          function() {
+            $(this).removeClass("hover");
+          });
+
+        });
+        </script>
+        
+        <div class="header-wrap">
+            <header class="public-head-layout wrapper">
+                <h1 class="site-logo"><a href="index.php"><img class="pngFix" src="{$site_logo}"></a></h1>
+            </header>
+        </div>
+        <div class="msg">
+            {if $icon eq "notice"}
+            <i class="icon-ok-sign" style=" color:  #093684;"></i>
+            {else}
+            <i class="icon-info-sign" style="color:  #093684;"></i>
+            {/if}
+            {$message}
+        </div>
+        <script type="text/javascript">
+        //<!CDATA[
+        {if $redirect}
+        window.setTimeout("{$redirect}", 2000);
+        {else}
+        window.setTimeout("javascript:history.back()", 2000);
+        {/if}
+        //]]>
+        </script>
+        {include file=footer.html}

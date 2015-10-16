@@ -1,0 +1,50 @@
+<style type="text/css">
+#box { background: #FFF; width: 238px; height: 410px; margin: -390px 0 0 0; display: block; border: solid 4px #D93600; position: absolute; z-index: 999; opacity: .5}
+.shopMenu { position: fixed; z-index:1; right:25%; top: 0;}
+
+</style>
+<div class="squares" nc_type="current_display_mode">
+    <!-- {if $goods_list} -->
+    <ul class="list_pic">
+        <!--{foreach from=$goods_list item=goods}-->
+        <li class="item">
+            <div class="goods-content" nctype_goods="{$goods.goods_id}" nctype_store="{$goods.store_id}">
+                <div class="goods-pic">
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank" title="{$goods.goods_name|escape}"><img src="{$goods.default_image}" title="{$goods.goods_name|escape}" alt="{$goods.goods_name|escape}" /></a>
+                </div>
+                <div class="goods-info">
+                    <div class="goods-pic-scroll-show">
+                        
+                    </div>
+                    <div class="goods-name">
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}<em></em></a>
+                    </div>
+                    <div class="goods-price">
+                        <em class="sale-price" title="商城价：{$goods.price|price}">{$goods.price|price}</em>
+                        <em class="market-price" title="市场价：{$goods.price|price}">{$goods.price|price}</em>
+                        <!--<span class="raty" data-score=""></span>-->
+                    </div>
+                    <div class="sell-stat">
+                        <ul>
+                            <li><a href="{url app=goods&id=$goods.goods_id}" target="_blank" class="status">{$goods.sales|default:0}</a><p>商品销量</p></li>
+                            <li><a href="{url app=goods&id=$goods.goods_id}" target="_blank">{$goods.comments|default:0}</a><p>用户评论</p></li>
+                            <li><em member_id="<?php echo $value['member_id'];?>">&nbsp;</em></li>
+                        </ul>
+                    </div>
+                    <div class="store"><a href="{url app=store&id=$goods.store_id}" title="{$goods.store_name|escape}" class="name">{$goods.store_name|escape}</a></div>
+                    <div class="add-cart">
+                        <a href="{url app=goods&id=$goods.goods_id}" nctype="buy_now"><i class="icon-shopping-cart"></i>立即购买</a>
+<!--                        <a href="javascript:void(0);" nctype="add_cart" data-param=""><i class="icon-shopping-cart"></i>加入购物车</a>-->
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!--{/foreach}-->
+        <div class="clear"></div>
+    </ul>
+    <!-- {else} -->
+    <div class="module_common">
+        <p class="no_info">很抱歉! 没有找到相关商品</p>
+    </div>
+    <!-- {/if} -->
+</div>

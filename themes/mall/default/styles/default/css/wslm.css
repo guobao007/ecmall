@@ -1,0 +1,55 @@
+@charset "utf-8";
+.midbox1 {width:1200px; height:460px; margin:0 auto; clear:both; background:#fff;}
+.loginbox1 {width:162px; height:151px; padding:28px 29px 0px;}
+.logintxt1{width:162px; height:31px; font:normal 16px/31px "Microsoft Yahei"; color:#fff; background-color:#f00066; border:none; letter-spacing:5px;}
+.logintxt2{font:normal 12px/30px "宋体"; color:#999;}
+.logintxt2 img{margin:-2px 4px 0px 0px; display:inline;}
+.logintxt2 a{color:#999; text-decoration:none;}
+.logintxt2 a:hover{color:#f00066; text-decoration:underline;}
+.productbox{width:208px; height:269px; border:6px #f0f0f0 solid;}
+.product_name{width:208px; font:normal 12px/34px "宋体"; text-align:center;}
+.commission{padding:0px 14px; overflow:hidden;}
+.commission font{font:normal 16px/18px "Arial";}
+.cenbox{width:760px; float:left;}
+.cenbox_down{width:760px; height:80px; background:url(../images/wslm_banner_down.jpg) no-repeat;}
+.cenbox_down .list{width:131px; height:56px; float:left; padding:24px 0px 0px 59px; font:normal 12px/20px "Microsoft Yahei";}
+.cenbox_down .list span{color:#333; font-size:16px;}
+.announcement{width:220px; height:230px;}
+.announcement_tit{height:28px; font:normal 12px/28px "Microsoft Yahei"; color:#fff; text-align:center; background:#999;}
+.announcement_cont{background:url(../images/ico3.jpg) top center no-repeat;}
+.announcement_cont ul li{padding:0px 18px 0px 33px; height:39px; line-height:39px; border-bottom:1px #efefef dashed; background:url(../images/ico4.jpg) 17px 19px no-repeat; font-family:"Arial";}
+.announcement_cont ul li span{display:block; float:right;}
+.announcement_cont ul li.noneb{border:none;}
+.midbox2{width:1200px; margin:0 auto;}
+.resources_title{height:35px; padding:0px 20px; border-bottom:1px #ccc solid; margin-top:23px;}
+.resources_title .re_l{font:normal 18px/32px "Microsoft Yahei"; color:#333; border-bottom:4px #999 solid;}
+.resources_title .re_r{font:normal 11px/35px "Arial";}
+.resources_down{width:1188px; padding:22px 4px; margin-top:19px; border-top:1px #f4f4f4 solid; border-right:2px #f0f0f0 solid; border-bottom:2px #e0e0e0 solid; border-left:2px #ececec solid; background:#fff; overflow:hidden;}
+.down_one{width:200px; float:left; border-right:2px #f6f6f6 solid; padding:0px 18px;}
+.down_one_pic{border:5px #f0f0f0 solid;}
+.down_txt{font:bold 16px/40px "Microsoft Yahei"; color:#333;}
+.down_txt2{line-height:18px; color:#333;}
+.midbox3{width:1196px; margin:17px auto 0px; border-top:1px #f4f4f4 solid; border-right:2px #f0f0f0 solid; border-bottom:2px #e0e0e0 solid; border-left:2px #ececec solid; background:#fff; overflow:hidden;}
+.midbox3_l{width:518px; padding:20px 42px 20px 30px; overflow:hidden; border-right:2px #e0e0e0 solid; float:left;}
+.midbox3_l_pic{width:90px; float:left;}
+.midbox3_l_txt{width:428px; float:left; color:#333; line-height:18px;}
+.midbox3_l_txt span{font-size:14px; font-weight:bold; height:24px; font-family:"Microsoft Yahei"; display:block;}
+.midbox3_r{width:518px; padding:20px 42px 20px 44px; overflow:hidden; float:left;}
+
+.zslm_banner{width:1200px; height:380px; margin:0px auto;}
+.midbox4{width:1200px; height:100px; margin:60px auto 0px;}
+.midbox4_one{width:299px; height:100px; border-left:1px #cfcfcf solid; float:left; font-family:"Microsoft Yahei"; text-align:center;}
+.midbox4_one_txt{font-size:18px; color:#333; height:28px;}
+.midbox4_one_txt2{font-size:14px; height:39px;}
+.midbox4_one_txt3{width:120px; height:35px; line-height:35px; font-size:14px; color:#fff; background:url(../images/zslm_ico.jpg) no-repeat; cursor:pointer; margin:0px auto;}
+.midbox4_two{width:298px; height:100px; border-left:1px #cfcfcf solid; border-right:1px #cfcfcf solid; float:left;}
+.midbox4_two_tit{font-size:14px; color:#333; height:28px; padding:0px 0px 0px 48px; font-family:"Microsoft Yahei";}
+.midbox4_one_cont{padding:0px 0px 0px 37px;}
+.midbox4_one_cont ul li{height:18px; line-height:18px; padding-left:12px; background:url(../images/ico5.jpg) 0px 7px no-repeat;}
+.enterstep{width:1200px; margin:0px auto;}
+.enterstep_tit{height:34px; font:bold 16px/26px "Microsoft Yahei"; background:url(../images/enter_line.jpg) left bottom no-repeat; margin-top:50px; text-align:center;}
+.enterstep_tit2{font:normal 12px/18px "Arial"; color:#ccc; text-align:center; letter-spacing:1px;}
+.enterstep_cont{margin-top:28px;}
+.enterstep_one{width:192px; height:100px; line-height:20px; padding:80px 17px 0px 4px; text-align:center; color:#666; float:left; margin:0px 35px 0px 0px;}
+.enterstep_one span,.enterstep_two span{font:normal 16px/30px "Microsoft Yahei"; color:#333;}
+.enterstep_two{width:200px; height:100px; line-height:20px; padding:80px 4px 0px; text-align:center; color:#666; float:left;}

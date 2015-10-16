@@ -1,0 +1,17 @@
+/*foot*/
+.footer {width:100%;margin:40px auto 0;clear:both; background:#fff;}
+.footer .bottom{width:1200px; margin:0px auto; padding:20px 0px; overflow:hidden; border-top:2px #f0f0f0 solid; border-bottom:2px #f0f0f0 solid; font-family:"Microsoft Yahei";}
+.bottom_l{width:740px; float:left;}
+.bottom_l li{float:left; text-align:left; line-height:30px; padding-left:24px;}
+.bottom_l li b{font-size:14px;}
+.bottom_l li.pad{padding-left:68px;}
+.bottom_c{width:182px; float:left;}
+.bottom_r{width:278px; float:right;}
+.bottom_r ul li{float:left; padding:0px 0px 0px 34px;}
+.bottom_down{width:645px; margin:0 auto; line-height:26px;	padding:24px 0px; text-align:center; font-family:Arial;}
+.bottom_down p{font-family:"Microsoft Yahei"; line-height:42px;}
+
+/* 链接 */
+.bottom_down a { color: #333; text-decoration: none; outline: medium none; -webkit-transition-property:color; -webkit-transition-duration: 0.3s; -webkit-transition-timing-function: ease;}
+.bottom_down a:link, a:visited, a:active { text-decoration: none;}
+.bottom_down a:hover { color: #D93600; text-decoration: underline;}

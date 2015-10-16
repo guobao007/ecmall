@@ -1,0 +1,83 @@
+{include file=member.header.html}
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right"> 
+        {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table">
+                <table id="my_category" >
+                    <tr class="line_bold" >
+                        <th class="width1"></th>
+                        <th class="align1" colspan="7">
+                            <div class="select_div">
+                            <form id="my_goods_form" method="get">
+                            <input type="hidden" name="app" value="my_membership_card_info">
+                            <select class="select2" name="character">
+                                <option value="0">-请选择-</option>
+                                {html_options options=$lang.character_array selected=$smarty.get.character}
+                            </select>
+                            <input type="text" class="text_normal" name="keyword" value="{$smarty.get.keyword|escape}"/>
+                            <input type="submit" class="btn" value="{$lang.soso}" />
+                            </form>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="gray">
+                        <th class="width1"></th>
+                        <th  style="width:50;text-align:center;">{$lang.card_num}</th>
+                        <th  style="width:60;text-align:center;">{$lang.user_name}</th>
+                        <th  style="width:60;text-align:center;">{$lang.phone}</th>
+                        <th  style="width:70;text-align:center;">{$lang.create_time}</th>
+                        <th  style="width:30;text-align:center;">{$lang.status}</th>
+                        <th  style="width:50;text-align:center;">{$lang.handle}</th>
+                    </tr>
+                 <!-- {if $datas} -->
+                <tbody id="treet1">
+                <!-- {/if} -->
+                <!-- {foreach from=$datas item=data name=v} -->
+                <tr class="line<!--{if $smarty.foreach.v.last}--> last_line<!--{/if}-->" ectype="table_item" idvalue="{$data.membership_card_info_id}">
+                    <td class="align2"></td>
+                    <td width="50" class="align2">{$data.card_num|escape}</td>
+                    <td width="60" class="align2">{$data.user_name|escape}</td>
+                    <td width="50" class="align2">{$data.phone|escape}</td>
+                    <td width="70" class="align2">{$data.create_time|date:Y-m-d H:i:s}</td>
+                    <td width="30" class="align2">{if $data.status eq '1'}正常{elseif $data.status eq '0'}<b style="color:red;">冻结</b>{/if}</td>
+                    <td width="50" class="padding5" >
+                        <a href="index.php?app=my_membership_card_info&amp;act=edit&amp;id={$data.membership_card_info_id}"  class="edit1">{$lang.edit}</a>
+                        {if $data.status eq '1'}
+                          <a href="javascript:drop_confirm('{$lang.freeze_confirm}', 'index.php?app=my_membership_card_info&amp;act=freeze&id={$data.membership_card_info_id}');" class="freeze">{$lang.freeze}</a>
+                          {elseif $data.status eq '0'}
+                          <a href="javascript:drop_confirm('{$lang.unfreeze_confirm}', 'index.php?app=my_membership_card_info&amp;act=unfreeze&id={$data.membership_card_info_id}');" class="unfreeze">{$lang.unfreeze}</a>
+                          
+                          {/if}
+                        </td>
+                </tr>
+                <!-- {foreachelse} -->
+                <tr>
+                    <td colspan="8" class="member_no_records padding6">{$lang.no_records}</td>
+                </tr>
+                <!--{/foreach}-->
+                <!-- {if $datas} -->
+                </tbody>
+                <!-- {/if} -->
+                <!-- {if $datas} -->
+                <tr class="line_bold line_bold_bottom">
+                    <td colspan="8">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th></td>
+                    <th colspan="7"></td>
+                    <p class="position2">
+                           {include file=member.page.bottom.html}
+                    </p>
+                </tr>
+                <!-- {/if} -->
+                </table>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

@@ -1,0 +1,36 @@
+﻿#footer{}
+#footer a{text-decoration:none;}
+
+#mall-desc{background:#F5F5F5;border-bottom:1px #F5F5F5 solid;}
+#mall-desc2{background:#F5F5F5;}
+#mall-desc #footer_links{ width:1100px; height:60px; margin:0px auto; padding:20px 0px 15px 100px;}
+#mall-desc #footer_links dl{ width:200px; float:left; height:48px; overflow:hidden; margin-right:15px;}
+#mall-desc #footer_links dl dt{ width:48px; float:left; height:48px;}
+#mall-desc #footer_links dl dd{ width:100px; float:left; margin-left:10px; color:#666666}
+#mall-desc #footer_links dl dd p{ font-size:14px; font-weight:bold;  margin-top:5px;}
+#mall-desc #footer_links dl dd span{ font-size:11px; font-weight:bold; }
+.footer_ico1,.footer_ico2,.footer_ico3,.footer_ico4,.footer_ico5{background: url(../images/taocz.png) no-repeat;}
+.footer_ico1{background-position:-7px -495px;}
+.footer_ico2{background-position:-58px -495px;}
+.footer_ico3{background-position:-109px -495px;}
+.footer_ico4{background-position:-159px -495px;}
+.footer_ico5{background-position:-209px -495px;}
+
+#footer_links2{ width:1130px; margin:0px auto; padding:20px 0px 15px 70px; height:120px;}
+#footer_links2 dl{ padding-left:30px; border-right:1px #F5F5F5 solid; float:left; height:120px;}
+#footer_links2 dl dt{ clear:both; color:#666666; font-size:14px;font-weight:bold; font-family:微软雅黑;}
+#footer_links2 dl dd{line-height:21px; color:#959595;}
+#footer_links2 dl dd a{float:left;  color:#959595; width:100%;}
+
+#footer .foot-group,#footer .foot-copyright,#footer .foot-parter{ text-align:center;color:#666; background:#fff}
+#footer .foot-group{margin: 0px auto 10px auto;border-top:1px #ddd solid;padding-top:15px;}
+#footer .foot-group a { margin: 0 7px;}
+
+#footer .foot-copyright {margin: 5px auto 10px auto; font-family:Tahoma, Geneva, sans-serif}
+#footer .foot-parter a{margin-right:15px;}
+
+#footer .footer-fixed{left: 50%;position: fixed;_position: absolute;top: 400px;margin-left:610px;overflow: hidden;}
+#footer .footer-fixed .feeback{display: block;width: 13px;height: 62px;padding: 18px 6px 0;background:url(../images/indexhead_sprite.png) -160px -520px no-repeat;color: #F60;font-size: 12px;text-decoration: none;}
+#footer .footer-fixed .feeback:hover{background:url(../images/indexhead_sprite.png) -185px -520px no-repeat;color:#fff;}
+#footer .footer-fixed .toTop {display:none;width: 13px;height:24px;padding: 18px 6px 0;background: url(../images/indexhead_sprite.png) -185px -600px no-repeat;font-size: 12px;text-decoration: none;}
+#footer .footer-fixed .toTop:hover{background: url(../images/indexhead_sprite.png) -160px -600px no-repeat;}

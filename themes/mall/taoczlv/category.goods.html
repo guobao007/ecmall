@@ -1,0 +1,32 @@
+{include file=header.html}
+<div id="main" class="w-full">
+<div id="page-category" class="w mt10">
+	{include file=curlocal.html}
+	<div class="w" area="top" widget_type="area">
+		<!--{widgets page=gcategory area=top}-->
+	</div>
+	<div class="gcategory w mt10">
+        <div class="search-type mb10 clearfix">
+			<div class="float-left btn-type">
+				<a href="{url app=category}" class="current">{$lang.gcategory}</a>
+				<a href="{url app=category&act=store}">{$lang.scategory}</a>	
+			</div>                       
+		</div>
+		<!--{foreach from=$gcategorys item=gcategory}-->
+		<dl class="content mb10">
+			<dt class="fs14 strong"><a href="{url app=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a></dt>
+			<dd>
+				<!--{foreach from=$gcategory.children item=child}-->
+				<a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a>
+				<!--{/foreach}-->
+			</dd>
+		</dl>
+		<!--{/foreach}-->
+	</div>
+	<div class="w mb20" area="bottom" widget_type="area">
+		<!--{widgets page=gcategory area=bottom}-->
+	</div>
+</div>
+</div>
+{include file=server.html}
+{include file=footer.html}

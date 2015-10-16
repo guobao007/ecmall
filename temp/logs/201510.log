@@ -1,0 +1,15 @@
+Fri, 09 Oct 2015 02:54:17 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\cycle_image\main.widget.php	53
+Fri, 09 Oct 2015 02:56:41 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\cycle_image\main.widget.php	53
+Fri, 09 Oct 2015 02:56:56 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\cycle_image\main.widget.php	53
+Fri, 09 Oct 2015 02:57:16 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\cycle_image\main.widget.php	53
+Fri, 09 Oct 2015 03:45:46 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\qt_re_image\main.widget.php	59
+Fri, 09 Oct 2015 05:59:33 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\qt_floor_2\main.widget.php	84
+Fri, 09 Oct 2015 06:31:27 +0000	[2]filemtime(): stat failed for F:\wamp\www\ecmall/data/crond.lock	\includes\libraries\cron.lib.php	132
+Fri, 09 Oct 2015 06:46:01 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\tc_floor_1\main.widget.php	58
+Fri, 09 Oct 2015 06:50:57 +0000	[2]Invalid argument supplied for foreach()	\external\widgets\tc_floor_2\main.widget.php	58
+Tue, 13 Oct 2015 01:26:15 +0000	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form ecm_goods' at line 1
+MySQL Query:select * form ecm_goods
+Wrong File:  F:\wamp\www\ecmall\eccore\model\mysql.php[508]	\eccore\model\mysql.php	286
+Tue, 13 Oct 2015 02:10:46 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57
+Tue, 13 Oct 2015 02:10:52 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57
+Tue, 13 Oct 2015 02:11:00 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57

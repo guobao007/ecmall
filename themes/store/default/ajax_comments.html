@@ -1,0 +1,42 @@
+{if $goodsevallist}
+<!-- {foreach from=$goodsevallist item=comment} -->
+<div id="t" class="ncs-commend-floor">
+    <div class="user-avatar">
+        <a><img src="{res file=images/default_user_portrait.gif.png}"></a>
+    </div>
+    <dl class="detail">
+        <dt>
+            <span class="user-name">{$comment.buyer_name|escape}</span>
+            <time pubdate="pubdate">[{$comment.evaluation_time|date:complete}]</time>
+        </dt>
+        <dd>用户评分：
+            <span class="raty" data-score="{$comment.evaluation}">
+                {if $comment.evaluation gt 0}<img src="{res file=images/star-on.png}" />{/if}
+                {if $comment.evaluation gt 1}<img src="{res file=images/star-on.png}" />{/if}
+                {if $comment.evaluation gt 2}<img src="{res file=images/star-on.png}" />{/if}
+                {if $comment.evaluation lt 3}<img src="{res file=images/star-off.png}" />{/if}
+                {if $comment.evaluation lt 2}<img src="{res file=images/star-off.png}" />{/if}
+                {if $comment.evaluation lt 1}<img src="{res file=images/star-off.png}" />{/if}
+            </span>
+        </dd>
+        <dd class="explain">评论详情：<span>{$comment.comment|escape|nl2br}</span></dd>
+    </dl>
+</div>
+<div class="tr pr5 pb5 pr">
+    <div class="pagination">
+        {include file=page.bottom.html}
+    </div>
+</div>
+<!-- {/foreach} -->
+{else}
+<div class="ncs-norecord">暂无符合条件的数据记录</div>
+{/if}
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#goodseval').find('a').ajaxContent({
+        event:'click', //mouseover
+        target:'#goodseval'
+    });
+});
+</script> 

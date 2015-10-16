@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*top*/
+#topbox {width:100%;height:40px;margin:0 auto;clear:both;background-color:#efefef;}
+.content1 {width:1200px;margin:0 auto;clear:both;}
+.topl {float:left;width:727px;}
+.welcome {float:left;padding-right:20px;line-height:40px;}
+.login {float:left;padding-top:8px;}
+.input0 {height:22px;border:1px solid #ccc;background-color:#fff;padding:0 2px;line-height:22px;}
+.wid100 {width:100px;}
+.but1 {width:53px;height:22px;background-color:#278200;color:#fff;border:0;cursor:pointer;}
+.topr {float:right;width:473px;padding-top:10px;}
+.toprnav li {float:left;}
+.topgoods {float:left;width:24%;}
+.mymenu {float:left;width:19%;display:block;background:url(../images/img/icon.png) no-repeat 50px -167px;}
+/*logo*/
+.logo {float:left;width:220px;margin:26px 0 24px 0;}
+/*search*/
+.search {float:left;width:500px;margin:20px 78px 0 180px;display:inline;}
+.search1 {float:left;width:418px;border:2px solid #ff0000;height:36px;}
+.search_input {float:left;width:418px;height:36px;margin:0;padding:0 3px 0 27px;background:url(../images/img/icon.png) no-repeat 8px 8px;color:#b4b3b3;display:inline;line-height:36px;border:0;}
+.search2 {float:left;width:78px;}
+.search_but {float:left;width:78px;height:40px;background:#ff0000;font:bold 14px/40px "Microsoft Yahei";color:#fff;border:0;cursor:pointer;}
+.skeyword {display:block;}
+.skeyword a {padding-right:10px;color:#b4b3b3;}
+/*shopping cart*/
+.myshopping {float:left;width:221px;}
+.shoppingul {float:left;width:221px;height:42px;margin-top:19px;border-left:1px solid #ccc;}
+.shoppingul li {float:left;width:109px;height:40px;border:1px solid #ccc;border-left:0;background:url(../images/img/icon.png) no-repeat 80px -157px;position:relative;z-index:199;}
+head-user-menu .my_xb {background:url(../images/img/icon.png) no-repeat 10px -71px;padding:10px 0;text-align:center;}
+
+/*.number {position:absolute;width:20px;height:20px;display:block;background:url(../images/img/icon.png) no-repeat 0 -536px;left:20px;top:-7px;font:normal 12px "Microsoft Yahei";color:#fff;text-align:center;line-height:20px;z-index:200;}
+topmenu*/
+
+/*foot*/
+.footer {width:100%;margin:40px auto 0;clear:both; background:#fff;}
+.footer .bottom{width:1200px; margin:0px auto; padding:20px 0px; overflow:hidden; border-top:2px #f0f0f0 solid; border-bottom:2px #f0f0f0 solid; font-family:"Microsoft Yahei";}
+.bottom_l{width:740px; float:left;}
+.bottom_l li{float:left; text-align:left; line-height:30px; padding-left:24px;}
+.bottom_l li b{font-size:14px;}
+.bottom_l li.pad{padding-left:68px;}
+.bottom_c{width:182px; float:left;}
+.bottom_r{width:278px; float:right;}
+.bottom_r ul li{float:left; padding:0px 0px 0px 34px;}
+.bottom_down{width:645px; margin:0 auto; line-height:26px;	padding:24px 0px; text-align:center; font-family:Arial;}
+.bottom_down p{font-family:"Microsoft Yahei"; line-height:42px;}

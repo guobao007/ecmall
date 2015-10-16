@@ -1,0 +1,51 @@
+{include file=header.html}
+{include file=curlocal.html}
+<link type="text/css" href="{res file=css/layout.css}" rel="stylesheet" />
+<script type="text/javascript" src="{lib file=jquery.masonry.js}" charset="utf-8"></script>
+<div class="nch-container wrapper">
+    <div class="nch-all-menu">
+        <ul class="tab-bar">
+          <li class="current"><a href="javascript:void(0);">{$lang.gcategory}</a></li>
+          <li><a href="{url app=brand}">全部品牌</a></li>
+          <!--<li><a href="">全部商品</a></li>-->
+        </ul>
+    </div>
+    <div class="nch-category-all">
+        <!--{if $gcategorys}-->
+        <ul class="nch-category-container" id="categoryList">
+        <!--{foreach from=$gcategorys item=gcategory}-->
+        <li class="classes">
+            <div class="title">
+                <i></i>
+                <a href="{url app=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a>
+            </div>
+            <!--{if $gcategory.children}-->
+            <!--{foreach from=$gcategory.children item=child}-->
+            <dl>
+                <dt><a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></dt>
+                <dd>
+                    <!--{if $child.children}-->
+                    <!--{foreach from=$child.children item=child2}-->
+                    <a href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a>
+                    <!--{/foreach}-->
+                    <!--{/if}-->
+                </dd>
+            </dl>
+            <!--{/foreach}-->
+            <!--{/if}-->
+        </li>
+        <!--{/foreach}-->
+        </ul>
+        <!--{/if}-->
+    </div>
+</div>
+<script>
+$(function(){
+    $("#categoryList").imagesLoaded( function(){
+        $("#categoryList").masonry({
+                itemSelector : '.classes'
+        });
+    });
+});
+</script> 
+{include file=footer.html}

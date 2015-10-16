@@ -1,0 +1,124 @@
+{include file=member.header.html}
+
+<script type="text/javascript">
+//<!CDATA[
+$(function(){
+  
+
+    $('#membership_card_info_form').validate({
+        errorPlacement: function(error, element){
+            $(element).next('.field_notice').hide();
+            $(element).after(error);
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        onkeyup : false,
+        rules : {
+            user_name : {
+                required   : true,
+                maxlength :20
+            },
+            phone :{
+                required   :true,
+                 checkTel: true
+            }
+            
+        },
+        messages : {
+            user_name  : {
+                required   : '请填写姓名 ',
+                maxlength : '姓名最多20字'
+            },
+            phone: {
+                required : '请填写电话',
+               checkTel   : '电话号码由数字、减号、空格组成,并不能少于6位'
+            }
+        }
+    });
+    regionInit("region");
+});
+
+//]]>
+</script>
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right"> 
+        {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public">
+                <form method="post" id="membership_card_info_form"  enctype="multipart/form-data"  name='membership_card_info_form'>
+                    <div class="information_index">
+                        <div class="add_wrap">
+                            <div class="assort">
+                                <p class="txt">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:<input type="text" maxlength="30"  name="user_name" value="{$data.user_name|escape}" class="text width7" /></p>
+                            </div>
+                            <div class="assort"><p class="txt">会员卡号:{$data.card_num|escape}</p></div>
+                            <div class="assort">
+                                <p class="txt">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:<input type="text"   name="phone" value="{$data.phone|escape}" class="text width7" /></p>
+                            </div>
+                            <div class="assort">
+                                <p class="txt">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:
+                                        <select name="sex"  class="text" >
+                                            <option value="0" <!--{if $data.sex eq 0}-->selected="selected" <!--{/if}-->>男</option>
+                                            <option value="1" <!--{if $data.sex eq 1}-->selected="selected" <!--{/if}-->>女</option>
+                                        </select>
+                                </p>
+                            </div>
+
+                            <div class="assort">
+                                <p class="txt" id="region">
+                                    所在地区:
+                                    <input type="hidden" name="region_id" value="{$data.region_id}" class="mls_id" />
+                                    <input type="hidden" name="region_name" value="{$data.region_name}" class="mls_names" />
+                                    <!-- {if $data.region_id} -->
+                                    <span>{$data.region_name|escape}</span>
+                                    <input type="button" value="{$lang.edit}" class="edit_region" />
+                                    <select style="display:none">
+                                        <option>{$lang.select_pls}</option>
+                                        {html_options options=$regions}
+                                    </select>
+                                    <!-- {else} -->
+                                    <select class="select">
+                                        <option>{$lang.select_pls}</option>
+                                        {html_options options=$regions}
+                                    </select>
+                                    <!-- {/if} -->
+                                </p>
+                            </div>
+
+                            <div class="assort">
+                                <p class="txt">详细地址:<input type="text" maxlength="50"  name="address" value="{$data.address|escape}" class="text width7" /> </p>
+                            </div>
+                            <div class="assort">
+                                <p class="txt">创建时间:
+                                    {$data.create_time|date:Y-m-d H:i}</p>
+                            </div>
+                        </div>
+                        <div class="add_wrap">
+                            <div class="issuance"><input id="submit_group" type="submit" class="btn" value="提交" /></div>
+                        </div>
+                    </div>
+                </form>
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

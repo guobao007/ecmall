@@ -1,0 +1,23 @@
+{include file="header.html"}
+{include file="curlocal.html"}
+<style type="text/css">
+.payment_desc { margin:10px 10px 20px 10px; background:#eee; padding:5px; }
+.payment_desc h3 { margin:5px; border-bottom:#ddd 1px dotted; padding-bottom:5px; }
+.payment_desc .detail { text-indent:2em; }
+.table_form { margin:0px 10px; }
+.table_form td { padding:5px; }
+.table_form .desc { color:#888; font-style:italic; }
+</style>
+<div class="content">
+    <div class="module_common">
+        <div class="payment_desc">
+        <h3>{$lang.payment_desc}</h3>
+        <div class="detail">
+            {$payform.desc}
+        </div>
+        </div>
+        <div style="align:center">{$payform}</div>
+    </div>
+</div>
+{include file="footer.html"}
+

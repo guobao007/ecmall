@@ -1,0 +1,514 @@
+{include file=header.html}
+<link href="{res file=home_goods.css}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{lib file=goodsinfo.js}" charset="utf-8"></script>
+<div id="content" class="wrapper pr">
+    <div class="ncs-detail">
+        <!-- S 商品图片 -->
+        <div id="ncs-goods-picture" class="ncs-goods-picture image_zoom"> </div>
+        <!-- S 商品基本信息 -->
+        <div class="ncs-goods-summary">
+            <div class="name">
+            <h1>{$goods.goods_name|escape}</h1>
+            <strong></strong>
+            </div>
+            <div class="ncs-meta">
+                <!-- S 商品参考价格 -->
+<!--                <dl>
+                    <dt>市 场 价：</dt>
+                    <dd class="cost-price"><strong>{$goods._specs.0.price|price}</strong></dd>
+                </dl>-->
+                <!-- S 商品发布价格 -->
+                <dl>
+                    <dt>商 城 价：</dt>
+                    <dd class="price">
+                      <strong ectype="goods_price">{$goods._specs.0.price|price}</strong>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>品&nbsp;&nbsp;&nbsp;&nbsp;牌：</dt>
+                    <dd>{$goods.brand|escape}</dd>
+                </dl>
+                <dl>
+                    <dt>所在地区：</dt>
+                    <dd>{$store.region_name|escape}</dd>
+                </dl>
+                <!-- S 累计售出数量 -->
+                <dl>
+                    <dt>累计售出：</dt>
+                    <dd><strong><a href="#ncGoodsTraded">{$goods.sales}</a></strong>&nbsp;件</dd>
+                </dl>
+                <!-- E 累计售出数量 --> 
+            </div>
+            <div class="ncs-key">
+                <!-- S 商品规格值-->
+                <!--{if $goods.spec_qty gt 0}-->
+                <dl nctype="nc-spec" class="nc-spec">
+                    <dt>{$goods.spec_name_1|escape}：</dt>
+                    <dd>
+                        <ul nctyle="ul_sign"></ul>
+                    </dd>
+                </dl>
+                <!--{/if}-->
+                <!--{if $goods.spec_qty gt 1}-->
+                <dl nctype="nc-spec" class="nc-spec">
+                    <dt>{$goods.spec_name_2|escape}：</dt>
+                    <dd>
+                        <ul nctyle="ul_sign"></ul>
+                    </dd>
+                </dl>
+                <!--{/if}-->
+                <!-- E 商品规格值--> 
+                <!-- S 购买数量及库存 -->
+                <dl>
+                    <dt>{$lang.quantity}：</dt>
+                    <dd class="ncs-figure-input">
+                        <input type="text" name="" id="quantity" value="1" size="3" maxlength="6" class="text w30">
+                        <a href="javascript:void(0)" class="increase">+</a><a href="javascript:void(0)" class="decrease">-</a> <em>(当前库存<strong ectype="goods_stock">{$goods._specs.0.stock}</strong>件)</em>
+                    </dd>
+                </dl>
+                <!-- E 购买数量及库存 --> 
+                
+                <!-- S 购买按钮 -->
+                
+                <div class="ncs-btn">
+                    <!--{if $goods.spec_qty gt 0}-->
+                    <div nctype="goods_prompt" class="ncs-point" ectype="current_spec"></div>
+                    <!--{/if}-->
+                    <!-- 立即购买--> 
+                    <a href="javascript:void(0);" nctype="buynow_submit" class="buynow <!--{if $goods._specs.0.stock <=0}-->no-buynow<!--{/if}-->" title="立即购买">立即购买</a>
+                    <!-- 加入购物车-->
+                    <a href="javascript:void(0);" nctype="addcart_submit" class="addcart <!--{if $goods._specs.0.stock <=0}-->no-addcart<!--{/if}-->" title="添加购物车"><i class="icon-shopping-cart"></i>添加购物车</a>
+                    
+                    <!-- S 加入购物车弹出提示框 -->
+                    <div class="ncs-cart-popup">
+                        <dl>
+                            <dt>成功添加到购物车<a title="关闭" onClick="$('.ncs-cart-popup').css({'display':'none'});">X</a></dt>
+                            <dd>购物车共有 <strong id="bold_num"></strong> 种商品 总金额为：<em id="bold_mly" class="saleP"></em></dd>
+                            <dd class="btns">
+                                <a href="javascript:void(0);" class="ncs-btn-mini ncs-btn-green" onClick="location.href='{url app=cart}'">查看购物车</a> 
+                                <a href="javascript:void(0);" class="ncs-btn-mini" value="" onClick="$('.ncs-cart-popup').css({'display':'none'});">继续购物</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- E 加入购物车弹出提示框 -->
+                </div>
+                <div class="ncs_share">
+                    <a href="javascript:collect_goods({$goods.goods_id});"><i class="icon-star-empty"></i>收藏商品<em nctype="goods_collect"></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ncs-goods-layout expanded" >
+        <div class="ncs-goods-main" id="main-nav-holder">
+            <nav class="tabbar pngFix" id="main-nav">
+                <div class="ncs-goods-title-nav">
+                    <ul id="categorymenu">
+                        <li class="current"><a id="tabGoodsIntro" href="{url app=goods&id=$goods.goods_id}#content">{$lang.goods_detail}</a></li>
+                        <li><a id="tabGoodsRate" href="{url app=goods&id=$goods.goods_id}#content">{$lang.goods_comment}</a></li>
+                        <li><a id="tabGoodsTraded" href="{url app=goods&id=$goods.goods_id}#content">{$lang.sales_log}</a></li>
+                        <li><a id="tabGuestbook" href="{url app=goods&id=$goods.goods_id}#content">{$lang.qa}</a></li>
+                    </ul>
+                    <div class="switch-bar"><a href="javascript:void(0)" id="fold">&nbsp;</a></div>
+                </div>
+            </nav>
+            <div class="ncs-intro">
+                <div class="content bd" id="ncGoodsIntro">
+                    <div class="ncs-goods-info-content">
+                        {$goods.description|escape:editor}
+                    </div>
+                </div>
+            </div>
+            <div class="ncs-comment">
+                <div class="ncs-goods-title-bar hd">
+                    <h4><a href="javascript:void(0);">商品评价</a></h4>
+                </div>
+                <div class="ncs-goods-info-content bd" id="ncGoodsRate">
+                    <div class="ncs-goods-title-nav">
+                        <ul id="comment_tab">
+                            <li data-type="all" class="current"><a href="javascript:void(0);">商品评论({$count_all})</a></li>
+                            <li data-type="3"><a href="javascript:void(0);">好评({$count_type3})</a></li>
+                            <li data-type="2"><a href="javascript:void(0);">中评({$count_type2})</a></li> 
+                            <li data-type="1"><a href="javascript:void(0);">差评({$count_type1})</a></li>
+                        </ul>
+                    </div>
+                    <!-- 商品评价内容部分 -->
+                    <div id="goodseval" class="ncs-commend-main"></div>
+                </div>
+            </div>
+            <div class="ncg-salelog">
+                <div class="ncs-goods-title-bar hd">
+                    <h4><a href="javascript:void(0);">销售记录</a></h4>
+                </div>
+                <div class="ncs-goods-info-content bd" id="ncGoodsTraded">
+                    <div class="top">
+                        <div class="price">
+                            商 城 价<strong>{$goods.price}</strong>元
+                            <span>购买的价格不同可能是由于店铺往期促销活动引起的，详情可以咨询卖家</span>
+                        </div>
+                    </div>
+                    <!-- 成交记录内容部分 -->
+                    <div id="salelog_demo" class="ncs-loading"> </div>
+                </div>
+            </div>
+            <div class="ncs-consult">
+                <div class="ncs-goods-title-bar hd">
+                    <h4><a href="javascript:void(0);">购买咨询</a></h4>
+                </div>
+                <div class="ncs-goods-info-content bd" id="ncGuestbook"> 
+                    <!-- 咨询留言内容部分 -->
+                    <div class="ncs-guestbook">
+                        <div id="cosulting_demo" class="ncs-loading"> </div>
+                    </div>
+                </div>
+            </div>
+            <!--{if $store.rec_goodslist}-->
+            <div class="ncs-recommend">
+                <div class="title"><h4>热门推荐</h4></div>
+                <div class="content">
+                    <ul>
+                        <!--{foreach from=$store.rec_goodslist item=r_goods}-->
+                        <li>
+                            <dl>
+                                <dt class="goods-name"><a href="{url app=goods&id=$r_goods.goods_id}" target="_blank">{$r_goods.goods_name|escape}</a></dt>
+                                <dd class="goods-pic"><a href="{url app=goods&id=$r_goods.goods_id}" target="_blank"><img src="{$r_goods.default_image}" onload="javascript:DrawImage(this,240,240);" alt="{$r_goods.goods_name|escape}"/></a></dd>                            <dd class="goods-price">¥{$r_goods.price}</dd>
+                            </dl>
+                        </li>
+                        <!--{/foreach}-->
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!--{/if}-->
+        </div>
+        <div class="ncs-sidebar">
+            <div class="nc-s-c-s1">
+                <div class="title">
+                  <h4>商品二维码{$goods.store_data.store_id}</h4>
+                </div>
+                <div class="content">
+                    <div class="ncs-goods-code">
+                        <p><img src="{$goods_qrcode}"></p>
+                        <span class="ncs-goods-code-note"><i></i>扫描二维码，手机查看分享</span> 
+                    </div>
+                </div>
+            </div>
+            <div class="ncs-message-bar">
+                <div class="default">
+                    <h5>{$store.store_name|escape}</h5>
+                </div>
+                <!--{if $store.im_qq || $store.im_ww || $store.im_msn}-->
+                <div class="service-list">
+                    <dl>
+                        <dt>在线客服：</dt>
+                    </dl>
+                    <!--{if $store.im_qq}-->
+                    <dd>
+                        <span>Q&nbsp;Q</span>
+                        <span>
+                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$store.im_qq|escape}&site=qq&menu=yes" title="QQ: {$store.im_qq|escape}"><img border="0" src="http://wpa.qq.com/pa?p=2:{$store.im_qq|escape}:51" style=" vertical-align: middle;"/></a>
+                        </span>
+                    </dd>
+                    <!--{/if}-->
+                    <!--{if $store.im_ww}-->
+                    <dd>
+                        <span>旺旺</span>
+                        <span>
+                            <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&amp;uid={$store.im_ww|escape:url}&site=cntaobao&s=1&charset={$charset}" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=1&charset={$charset}" alt="Wang Wang"/></a>
+                        </span>
+                    </dd>
+                    <!--{/if}-->
+                    <!--{if $store.im_msn}-->
+                    <dd>
+                        <span>MSN</span>
+                        <span>
+                            <a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee={$store.im_msn|escape}"><img src="http://messenger.services.live.com/users/{$store.im_msn|escape}/presenceimage/" alt="status" /></a>
+                        </span>
+                    </dd>
+                    <!--{/if}-->
+                </div>
+                <!--{/if}-->
+            </div>
+            {include file=goods.left.html}
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{$mallStyle}/js/waypoints.js"></script>
+<script type="text/javascript">
+/** 辅助浏览 **/
+jQuery(function($){
+	//产品图片
+	$.getScript('{res file=js/ImageZoom.js}', function(){
+		var 
+		zoomController,
+		zoomControllerUl,
+		zoomControllerUlLeft = 0,
+		shell = $('#ncs-goods-picture'),
+		shellPanel = shell.parent().hide(),
+		heightOffset = 80,
+		minGallerySize = [380, shellPanel.height() - heightOffset],
+		imageZoom = new ImageZoom({
+			shell: shell,
+			basePath: '',
+			levelASize: [60, 60],
+			levelBSize: [360, 360],
+			gallerySize: minGallerySize,
+			onBeforeZoom: function(index, level){
+				if(!zoomController){
+					zoomController = shell.find('div.controller');
+				}
+
+				var 
+				self = this,
+				duration = 320,
+				width = minGallerySize[0], 
+				height = minGallerySize[1],
+				zoomFx = function(){
+					self.ops.gallerySize = [width, height];
+					self.galleryPanel.stop().animate({width:width, height:height}, duration);
+					shellPanel.stop().animate({height:height + heightOffset}, duration);
+					zoomController.animate({width:width-22}, duration);
+					shell.stop().animate({width:width}, duration);
+				};
+				if(level !== this.level && this.level !== 0){
+					if(this.level === 1 && level > 1){
+						height = Math.max(520, shellPanel.height());
+						width = shellPanel.width();
+						zoomFx();
+					}
+					else if(level === 1){
+						zoomFx();
+					}
+				}
+			},
+			onZoom: function(index, level, prevIndex){
+				if(index !== prevIndex){
+					if(!zoomControllerUl){
+						zoomControllerUl = zoomController.find('ul').eq(0);
+					}
+					var 
+					width = 76, 
+					ops = this.ops,
+					count = ops.items.length,
+					panelVol = ~~((zoomController.width() + 10)/width),
+					minLeft = width * (panelVol - count),
+					left = Math.min(0, Math.max(minLeft, -width * ~~(index-panelVol/2)));
+
+					if(zoomControllerUlLeft !== left){
+						zoomControllerUl.stop().animate({left: left}, 320);
+						zoomControllerUlLeft = left;
+					}
+				}
+				shell.find('a.prev,a.next')[level<3 ? 'removeClass' : 'addClass']('hide');
+				shell.find('a.close').css('display', [level>1 ? 'block' : 'none']);
+			},
+			items: [
+                            <!--{foreach from=$goods._images item=goods_image name=fe_goods_image}-->
+                            { title : '', levelA : '{$goods_image.thumbnail}', levelB : '{$goods_image.thumbnail}', levelC : '{$goods_image.image_url}', levelD : '{$goods_image.image_url}'}{if $smarty.foreach.fe_goods_image.last}{else},{/if}
+                            <!--{/foreach}-->
+                            ]
+		});
+		shell.data('imageZoom', imageZoom);
+
+		shellPanel.show();
+	});
+
+});
+</script> 
+
+<script>
+var specs = new Array();
+<!--{foreach from=$goods._specs item=spec}-->
+specs.push(new spec({$spec.spec_id}, '{$spec.spec_1|escape}', '{$spec.spec_2|escape}', {$spec.price}, {$spec.stock}));
+<!--{/foreach}-->
+var specQty = {$goods.spec_qty};
+var defSpec = {$goods.default_spec|escape};
+var goodsspec = new goodsspec(specs, specQty, defSpec);
+$(function(){
+    /* 商品购买数量增减js */
+    // 增加
+    $('.increase').click(function(){
+        num = parseInt($('#quantity').val());
+        max = parseInt($('[nctype="goods_stock"]').text());
+        if(num < max){
+            $('#quantity').val(num+1);
+        }
+    });
+    //减少
+    $('.decrease').click(function(){
+        num = parseInt($('#quantity').val());
+        if(num > 1){
+                $('#quantity').val(num-1);
+        }
+    });
+    // 加入购物车
+    $('a[nctype="addcart_submit"]').click(function(){
+        var spec_id = get_spec_id();
+        addcart(spec_id, checkQuantity());
+    });
+    // 立即购买
+    $('a[nctype="buynow_submit"]').click(function(){
+        var spec_id = get_spec_id();
+        buynow(spec_id,checkQuantity());
+    });
+    
+    // 商品内容部分折叠收起侧边栏控制
+    $('#fold').click(function(){
+        $('.ncs-goods-layout').toggleClass('expanded');
+    });
+    // 商品内容介绍Tab样式切换控制
+    $('#categorymenu').find("li").click(function(){
+        $('#categorymenu').find("li").removeClass('current');
+        $(this).addClass('current');
+    });
+    // 商品详情默认情况下显示全部
+    $('#tabGoodsIntro').click(function(){
+        $('.bd').css('display','');
+        $('.hd').css('display','');	
+    });
+    // 点击评价隐藏其他以及其标题栏
+    $('#tabGoodsRate').click(function(){
+        $('.bd').css('display','none');
+        $('#ncGoodsRate').css('display','');
+        $('.hd').css('display','none');
+    });
+    // 点击成交隐藏其他以及其标题
+    $('#tabGoodsTraded').click(function(){
+        $('.bd').css('display','none');
+        $('#ncGoodsTraded').css('display','');
+        $('.hd').css('display','none');
+    });
+    // 点击咨询隐藏其他以及其标题
+    $('#tabGuestbook').click(function(){
+        $('.bd').css('display','none');
+        $('#ncGuestbook').css('display','');
+        $('.hd').css('display','none');
+    });
+    //商品排行Tab切换
+    $(".ncs-top-tab > li > a").mouseover(function(e) {
+        if (e.target == this) {
+            var tabs = $(this).parent().parent().children("li");
+            var panels = $(this).parent().parent().parent().children(".ncs-top-panel");
+            var index = $.inArray(this, $(this).parent().parent().find("a"));
+            if (panels.eq(index)[0]) {
+                tabs.removeClass("current ").eq(index).addClass("current ");
+                panels.addClass("hide").eq(index).removeClass("hide");
+            }
+        }
+    });
+    //信用评价动态评分打分人次Tab切换
+    $(".ncs-rate-tab > li > a").mouseover(function(e) {
+        if (e.target == this) {
+            var tabs = $(this).parent().parent().children("li");
+            var panels = $(this).parent().parent().parent().children(".ncs-rate-panel");
+            var index = $.inArray(this, $(this).parent().parent().find("a"));
+            if (panels.eq(index)[0]) {
+                tabs.removeClass("current ").eq(index).addClass("current ");
+                panels.addClass("hide").eq(index).removeClass("hide");
+            }
+        }
+    });
+    //加载销量
+    $("#salelog_demo").load('index.php?app=goods&act=ajax_saleslog&id={$goods.goods_id}');
+    //加载咨询
+    $("#cosulting_demo").load('index.php?app=goods&act=ajax_cosulting&id={$goods.goods_id}&store_id={$store.store_id}');
+    
+    //浮动导航  waypoints.js
+    $('#main-nav').waypoint(function(event, direction) {
+        $(this).parent().parent().parent().toggleClass('sticky', direction === "down");
+        event.stopPropagation();
+    });
+});
+
+/* 获取规格ID */
+function get_spec_id()
+{
+    if (goodsspec.getSpec() == null)
+    {
+        alert(lang.select_specs);
+        return;
+    }
+    var spec_id = goodsspec.getSpec().id;
+    return spec_id;
+}
+
+// 验证购买数量
+function checkQuantity(){
+    var quantity = parseInt($("#quantity").val());
+    if (quantity < 1) {
+        alert("请填写购买数量");
+        $("#quantity").val('1');
+        return false;
+    }
+    max = parseInt($('[nctype="goods_stock"]').text());
+    if(quantity > max){
+        alert("库存不足");
+        return false;
+    }
+    return quantity;
+}
+
+// 立即购买js
+function buynow(spec_id,quantity){
+    if (!quantity) {
+        return;
+    }
+    {if $smarty.session.user_info.store_id == $store.store_id}
+    alert('不能购买自己店铺的商品');return;
+    {/if}
+    var url = SITE_URL + '/index.php?app=cart&act=add';
+    $.getJSON(url, {'spec_id':spec_id, 'quantity':quantity}, function(data){
+        if(data != null){
+            if (data.done){
+                window.location.href= SITE_URL + '/index.php?app=order&goods=cart&store_id={$goods.store_id}';
+            }else{
+                alert(data.msg);
+            }
+        }
+    });
+}
+
+/* 加入购物车 */
+function addcart(spec_id, quantity)
+{
+    if (!quantity) return false;
+    {if $smarty.session.user_info.store_id == $store.store_id}
+    alert('不能购买自己店铺的商品');return;
+    {/if}
+    var url = SITE_URL + '/index.php?app=cart&act=add';
+    $.getJSON(url, {'spec_id':spec_id, 'quantity':quantity}, function(data){
+    	if(data != null){
+    		if (data.done)
+            {
+                $('#bold_num').html(data.retval.cart.kinds);
+                $('#bold_mly').html(price_format(data.retval.cart.amount));
+                $('.ncs-cart-popup').fadeIn('fast');
+//                 setTimeout(slideUp_fn, 5000);
+                // 头部加载购物车信息
+                load_cart_information();
+            }
+            else
+            {
+                alert(data.msg);
+            }
+    	}
+    });
+}
+
+//评价列表
+$(document).ready(function(){
+    $('#comment_tab').on('click', 'li', function() {
+        $('#comment_tab li').removeClass('current');
+        $(this).addClass('current');
+        load_goodseval($(this).attr('data-type'));
+    });
+
+    load_goodseval('all');
+
+    function load_goodseval(type) {
+        var url = 'index.php?app=goods&act=ajax_comments&id={$goods.goods_id}';
+        url += '&type=' + type;
+        $("#goodseval").load(url);
+    }
+});
+</script>
+{include file=footer.html}

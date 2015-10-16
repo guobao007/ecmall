@@ -1,0 +1,193 @@
+{include file="top.html"}
+<script type="text/javascript">
+$(function(){
+    $('#register_form').validate({
+        errorPlacement: function(error, element){
+            var error_td = element.parent('dd');
+            error_td.find('label').hide();
+            error_td.append(error);
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        onkeyup: false,
+        rules : {
+            user_name : {
+                required : true,
+                byteRange: [3,15,'{$charset}'],
+                remote   : {
+                    url :'index.php?app=member&act=check_user&ajax=1',
+                    type:'get',
+                    data:{
+                        user_name : function(){
+                            return $('#user_name').val();
+                        }
+                    },
+                    beforeSend:function(){
+                        var _checking = $('#checking_user');
+                        _checking.prev('.field_notice').hide();
+                        _checking.next('label').hide();
+                        $(_checking).show();
+                    },
+                    complete :function(){
+                        $('#checking_user').hide();
+                    }
+                }
+            },
+            password : {
+                required : true,
+                minlength: 6
+            },
+            password_confirm : {
+                required : true,
+                equalTo  : '#password'
+            },
+            email : {
+                required : true,
+                email    : true
+            },
+            captcha : {
+                required : true,
+                remote   : {
+                    url : 'index.php?app=captcha&act=check_captcha',
+                    type: 'get',
+                    data:{
+                        captcha : function(){
+                            return $('#captcha1').val();
+                        }
+                    }
+                }
+            },
+            agree : {
+                required : true
+            }
+        },
+        messages : {
+            user_name : {
+                required : '{$lang.user_name_required}',
+                byteRange: '{$lang.user_name_limit}',
+                remote   : '{$lang.user_already_taken}'
+            },
+            password  : {
+                required : '{$lang.password_required}',
+                minlength: '{$lang.password_length_limit}'
+            },
+            password_confirm : {
+                required : '{$lang.password_confirm_please}',
+                equalTo  : '{$lang.password_inconsistent}'
+            },
+            email : {
+                required : '{$lang.email_required}',
+                email    : '{$lang.email_invalid}'
+            },
+            captcha : {
+                required : '{$lang.captcha_required}',
+                remote   : '{$lang.captcha_error}'
+            },
+            agree : {
+                required : '{$lang.agree_required}'
+            }
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	poshytip_message($('#user_name'));
+	poshytip_message($('#password'));
+	poshytip_message($('#password_confirm'));	
+	poshytip_message($('#email'));
+	poshytip_message($('#captcha1'));
+});
+</script>
+<style>
+.w{width:990px;}
+</style>
+<div id="main" class="w-full">
+<div id="page-register" class="w login-register mt20 mb20">
+	<div class="w logo mb10">
+		<p><a href="{$site_url}" title="{$site_title}"><img alt="{$site_title}" src="{$site_logo}" /></a></p>
+	</div>
+	<div class="w clearfix">
+		<div class="col-main">
+    	<ul class="clearfix">
+        	<li class="icon_1"><i></i>{$lang.buy_goods_and_pay}</li>
+			<li class="icon_2"><i></i>{$lang.open_store_and_sale}</li>
+			<li class="icon_3"><i></i>{$lang.collect_your_favorite_goods}</li>
+			<li class="icon_4"><i></i>{$lang.collect_your_favorite_store}</li>
+			<li class="icon_5"><i></i>{$lang.goods_consulting_services_evaluation}</li>
+			<li class="icon_6"><i></i>{$lang.security_transaction_integrity_carefree}</li>
+        </ul>
+		<h4>{$lang.if_member}</h4>
+		<div class="login-field">
+			<span>{$lang.im_member_go_register}<a href="index.php?app=member&act=login" class="login-field-btn">{$lang.login}</a></span>
+			<span>{$lang.huozhe} <a href="index.php?app=find_password" class="find-password">{$lang.find_password}</a></span>
+		</div>
+	</div>
+		<div class="col-sub">
+		<div class="form">
+    		<div class="title">{$lang.user_register}</div>
+       	 	<div class="content">
+				<form name="" id="register_form" method="post" action="">
+        			<dl class="clearfix">
+                		<dt>{$lang.user_name}</dt>
+                    	<dd>
+                    		<input type="text" style="width:245px;height:26px;" id="user_name" class="input"  name="user_name" title="{$lang.user_name_tip}"  />
+                        	<br /><label></label>
+                    	 </dd>
+                	</dl>
+             		<dl class="clearfix">
+                		<dt>{$lang.password}</dt>
+                    	<dd>
+                    		<input class="input" type="password" id="password" name="password" title="{$lang.password_tip}" />
+                        	<div class="clr"></div><label></label>
+                    	</dd>
+                	</dl>
+                	<dl class="clearfix">
+              			<dt>{$lang.password_confirm}</dt>
+                    	<dd>
+                    		<input class="input" type="password" id="password_confirm" name="password_confirm" title="{$lang.password_confirm_tip}" />
+                        	<div class="clr"></div><label></label>
+                   	 	</dd>
+                	</dl>
+                	<dl class="clearfix">
+                		<dt>{$lang.email}</dt>
+                    	<dd>
+                    		<input class="input" type="text" id="email" name="email" title="{$lang.email_tip}" />
+                        	<div class="clr"></div><label></label>
+                    	</dd>
+                	</dl>
+            		<!--{if $captcha}-->
+                	<dl class="clearfix">
+                		<dt>{$lang.captcha}</dt>
+                    	<dd class="captcha clearfix">
+                    		<input type="text" class="input float-left" name="captcha"  id="captcha1" title="{$lang.captcha_tip}" />
+                        	<img height="26" id="captcha" src="index.php?app=captcha&amp;{$random_number}" class="float-left" />
+                        	<a href="javascript:change_captcha($('#captcha'));" class="float-left">{$lang.next_captcha}</a>
+                        	<div class="clr"></div><label></label>
+                    	</dd>
+                	</dl>
+           			<!--{/if}-->
+           			<dl class="clearfix">
+                		<dt>&nbsp;</dt>
+                    	<dd class="mall-eula">
+                    		<input id="clause" type="checkbox" name="agree" value="1" class="agree-checkbox" checked="checked" />
+                 			<span>{$lang.i_have_read} <a href="{url app=article&act=system&code=eula}" target="_blank">{$lang.mall_eula}</a></span>
+                        	<div class="clr"></div><label></label>
+                    	</dd>
+               	 	</dl>
+                	<dl class="clearfix">
+                		<dt>&nbsp;</dt>
+                    	<dd>
+                 			<input type="submit" name="Submit"value="{$lang.register_now}"class="register-submit"title="{$lang.register_now}" />
+                  			<input type="hidden" name="ret_url" value="{$ret_url}" />
+                    	 </dd>
+                	</dl>
+      			</form>                  
+   			</div>
+		</div>
+    </div>
+    </div>
+</div>
+</div>
+{include file="footer.html"}

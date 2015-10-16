@@ -1,0 +1,71 @@
+{include file=header.html}
+{include file=curlocal.html}
+<link type="text/css" href="{res file=css/layout.css}" rel="stylesheet" />
+<div class="nch-container wrapper">
+    <div class="nch-all-menu">
+        <ul class="tab-bar">
+          <li><a href="{url app=category}">{$lang.gcategory}</a></li>
+          <li class="current"><a href="javascript:void(0);">全部品牌</a></li>
+          <!--<li><a href="">全部商品</a></li>-->
+        </ul>
+    </div>
+    <!--{if $recommended_brands}-->
+    <div class="nch-recommend-borand">
+        <div class="title" title="{$lang.recommended_brands}"></div>
+        <div class="nch-barnd-list">
+            <ul>
+                <!--{foreach from=$recommended_brands item=brand}-->
+                <li>
+                    <dl>
+                      <dt><a href="{url app=search&brand=$brand.brand_name}"><img src="{$brand.brand_logo}" alt="{$brand.brand_name}" /></a></dt>
+                      <dd><a href="{url app=search&brand=$brand.brand_name}">{$brand.brand_name}</a></dd>
+                    </dl>
+                </li>
+                <!--{/foreach}-->
+            </ul>
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="nch-brand-class">
+        <div class="nch-brand-class-tab">
+            <!--{if $brands_class}-->
+            <ul class="tabs-nav">
+            <!--{foreach from=$brands_class item=brands_c key=key}-->
+            <li <!--{if $key==0}-->class="tabs-selected"<!--{/if}-->>
+                <a href="javascript:void(0);"><!--{if $brands_c}-->{$brands_c}<!--{else}-->{$lang.other}<!--{/if}--></a>
+            </li>
+            <!--{/foreach}-->
+            </ul>
+            <!--{/if}-->
+        </div>
+        <!--{foreach from=$brands item=brand key=key}-->
+        <div class="nch-barnd-list tabs-panel <!--{if $key!=0}-->tabs-hide<!--{/if}-->">
+            <ul>
+                <!--{foreach from=$brand.brands item=b}-->
+                <li>
+                    <dl>
+                        <dt><a href="{url app=search&brand=$b.brand_name}"><img src="{$b.brand_logo}" alt="{$b.brand_name}"/></a></dt>
+                        <dd><a href="{url app=search&brand=$b.brand_name}">{$b.brand_name}</a></dd>
+                    </dl>
+                </li>
+                <!--{/foreach}-->
+            </ul>
+        </div>
+        <!--{/foreach}-->
+    </div>
+</div>
+<script>
+//首页Tab标签卡滑门切换
+$(".tabs-nav > li > a").live('mousedown', (function(e) {
+	if (e.target == this) {
+		var tabs = $(this).parents('ul:first').children("li");
+		var panels = $(this).parents('.nch-brand-class:first').children(".tabs-panel");
+		var index = $.inArray(this, $(this).parents('ul:first').find("a"));
+		if (panels.eq(index)[0]) {
+			tabs.removeClass("tabs-selected").eq(index).addClass("tabs-selected");
+			panels.addClass("tabs-hide").eq(index).removeClass("tabs-hide");
+		}
+	}
+}));
+</script>
+{include file=footer.html}

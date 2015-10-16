@@ -1,0 +1,78 @@
+@charset "utf-8";
+img, a img {
+vertical-align: middle;
+border: 0;
+}
+/*-focus-*/
+.main_image {width:100%; height:380px; overflow:hidden; margin:0 auto; position:relative;}
+.main_image ul {width:9999px; height:380px; overflow:hidden; position:absolute; top:0; left:0}
+.main_image li {float:left; width:100%; height:380px;}
+.main_image li span {display:block; width:100%; height:380px}
+.main_image li a {display:block; width:100%; height:380px}
+div.flicking_con {width:990px; margin:0 auto; position:relative}
+div.flicking_con .flicking_inner {position:absolute; top:350px; left:450px; z-index:999; width:300px; height:21px}
+div.flicking_con a {float:left; width:21px; height:21px; margin:0; padding:0; background:url('../images/oicon.png') no-repeat 0 -329px; display:block; text-indent:-1000px}
+div.flicking_con a.on {background-position:0 -408px;}
+#btn_prev,#btn_next{z-index:11111;position:absolute;display:block;width:73px!important;height:74px!important;top:50%;margin-top:-37px;display:none;}
+
+/*live_nav*/
+.main_content{overflow:hidden; background:#f6f6f6;}
+.live_nav{width:1198px; margin:60px auto 0px; border-right:2px #f0f0f0 solid;}
+.live_nav_one{width:297px; height:260px; float:left; border-left:2px #f0f0f0 solid; text-align:center;}
+.live_nav_one h1{font:bold 14px "Microsoft Yahei"; color:#999; letter-spacing:2px;}
+.live_nav_one h2{font:normal 14px "Arial"; color:#dadada; text-transform:uppercase;}
+.live_nav_one .arrow{width:14px; height:8px; margin:10px auto 4px; background:url(../images/arrow.png) 0px 0px no-repeat;}
+.live_nav_one ul li{font:normal 12px/28px "Microsoft Yahei"; color:#999; letter-spacing:3px;}
+.live_nav_one a:hover h1{color:#00cc99;}
+.live_nav_one a:hover h2{color:#a0f9e3;}
+.live_nav_one a:hover .arrow{background:url(../images/arrow.png) -21px 0px no-repeat;}
+.live_nav_one a:hover ul li{color:#00cc99;}
+.live_nav_one a:hover{text-decoration:none;}
+.live_nav_one .food,.live_nav_one .hotel,.live_nav_one .enter,.live_nav_one .life{width:72px; height:72px; margin:0px auto 14px; background:url(../images/icon.png) 0px 0px no-repeat;}
+.live_nav_one .hotel{background-position:-73px 0px;}
+.live_nav_one .enter{background-position:-147px 0px}
+.live_nav_one .life{background-position:-220px 0px;}
+.live_nav_one a:hover .food{background-position:0px -77px;}
+.live_nav_one a:hover .hotel{background-position:-73px -77px;}
+.live_nav_one a:hover .enter{background-position:-147px -77px;}
+.live_nav_one a:hover .life{background-position:-220px -77px;}
+
+.live_nav_one .lam1,.live_nav_one .lam12,.live_nav_one .lam13,.live_nav_one .lam14{width:72px; height:72px; margin:0px auto 14px; background:url(../images/icont.png) 0px 0px no-repeat;}
+.live_nav_one .lam12{background-position:-73px 0px;}
+.live_nav_one .lam13{background-position:-147px 0px}
+.live_nav_one .lam14{background-position:-220px 0px;}
+
+
+.cur .food{background-position:0px -77px;}
+.cur .hotel{background-position:-73px -77px;}
+.cur .enter{background-position:-147px -77px;}
+.cur .life{background-position:-220px -77px;}
+.cur h1{color:#00cc99;}
+.cur h2{color:#a0f9e3;}
+.cur @a{ color:#00cc99}
+.cur .arrow{background:url(../images/arrow.png) -21px 0px no-repeat;}
+.cur ul li{color:#00cc99;}
+
+/*floor*/
+.floor{width:1200px; margin:0px auto;}
+.floor_one{margin:60px auto 0px;}
+.floor_left{width:280px; float:left;}
+.floor_content{width:920px; float:right; overflow:hidden;}
+.floor_content ul li{width:220px; height:260px; float:left; position:relative; margin-left:10px; background:#fff;}
+.floor_content ul li .box{position:absolute;left:0;top:0;}
+.floor_content ul li .box h4{position:absolute; left:20px; top:205px; font:normal 12px/20px "Microsoft Yahei"; overflow:hidden;}
+.floor_content ul li .box p{position:absolute; left:20px; top:228px; height:24px; line-height:24px; font-size:14px; color:#ff0066;font-family:"Arial";}
+.floor_content ul li .box p b{font-size:26px; font-weight:normal;}
+.floor_content ul li .box p span{color:#999; text-decoration:line-through; margin:0px 0px 0px 5px;}
+.floor_content ul li .box .shoppingcar{position:absolute; right:10px; top:228px;}
+.floor_content ul li .box .food_sales,.floor_content ul li .box .hotel_sales,.floor_content ul li .box .enter_sales,.floor_content ul li .box .life_sales{position:absolute; left:83px; top:152px; width:53px; height:42px; padding:11px 0px 0px; background:url(../images/sales_bg.png) 0px 0px no-repeat; color:#fff; font:normal 18px/17px "Arial"; text-align:center;}
+.floor_content ul li .box .food_sales span,.floor_content ul li .box .hotel_sales span,.floor_content ul li .box .enter_sales span,.floor_content ul li .box .life_sales span{font-size:12px;}
+.floor_content ul li .box .hotel_sales{background-position:-55px 0px;}
+.floor_content ul li .box .enter_sales{background-position:-110px 0px;}
+.floor_content ul li .box .life_sales{background-position:-165px 0px;}
+.floor_content ul li .box .yellow{height:3px; background:#ff9900;}
+.floor_content ul li .box .plum{height:3px; background:#f55d9a;}
+.floor_content ul li .box .blue{height:3px; background:#00cccc;}
+.floor_content ul li .box .green{height:3px; background:#b0cd2a;}
+.mt10{margin-top:10px;}
+.store_img{padding-top:20px; text-align:center; width:100%;font-size:14px;letter-spacing:1px }

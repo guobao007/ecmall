@@ -1,0 +1,34 @@
+{include file=header.html}
+<div id="main" class="w-full">
+<div id="page-article" class="w mb20 mt10 clearfix">
+   <div class="col-sub">
+	  <div class="title">{$lang.acategory}</div>
+	  <ul class="content mb10">
+	     <!-- {foreach from=$acategories item=acategory} -->
+         <li><a href="{url app=article&cate_id=$acategory.cate_id}">{$acategory.cate_name|escape}</a></li>
+         <!-- {/foreach} -->
+	  </ul>
+	  <div class="title">{$lang.new_article}</div>
+	  <ul class="content">
+	      <!-- {foreach from=$new_articles item=new_article} -->
+          <li><a {if $new_article.link}target="_blank"{/if} href="{url app=article&act=view&article_id=$new_article.article_id}">{$new_article.title|escape}</a></li>
+		  <!-- {foreachelse} -->
+		  <li>{$lang.no_new_article}</li>
+          <!-- {/foreach} -->
+	  </ul>
+   </div>
+   <div class="col-main">
+      <div class="title">{include file=curlocal.html}</div>
+      <ul class="content">
+	     <!-- {foreach from=$articles item=article} -->
+	     <li><b></b><a {if $article.link}target="_blank"{/if} href="{url app=article&act=view&article_id=$article.article_id}" class="lebioa">{$article.title|escape}</a> <span>{$article.add_time|date:Y.m.d}</span></li>
+		 <!-- {foreachelse} -->
+		 <li>{$lang.no_records}</li>
+		 <!-- {/foreach} -->
+	  </ul>
+	 {include file=page.bottom.html}
+   </div>
+</div>
+</div>
+{include file=server.html}
+{include file=footer.html}

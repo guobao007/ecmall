@@ -1,0 +1,20 @@
+
+{include file="header.html"}
+<style type="text/css">
+.mall-nav{ display:none}
+</style>
+<div id="main" class="w-full">
+<div id="page-cashier" class="w">
+   {include file="curlocal.html"}
+   <div class="order-form payform clearfix border mt10 mb20">
+      <div class="title padding5 strong"> 微信扫码支付</div>
+      
+      <div class="form padding10">
+          {$payform}
+        </div>
+    </div>
+</div>
+</div>
+{include file=server.html}
+{include file="footer.html"}
+

@@ -1,0 +1,250 @@
+﻿<script type="text/javascript" src="{lib file=mlselection.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=jquery.plugins/jquery.validate.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=dialog/dialog.js}" id="dialog_js" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=jquery.ui/jquery.ui.js}" id="dialog_js" charset="utf-8"></script>
+<script type="text/javascript">
+                var shippings = {$shippings};
+                var addresses = {$addresses};
+                var goods_amount = {$goods_info.amount};
+                var goods_quantity = {$goods_info.quantity};
+                $(function(){
+                    regionInit("region");
+                    $('#order_form').validate({
+                        invalidHandler:function(e, validator){
+                         var err_count = validator.numberOfInvalids();
+                         var msg_tpl = '{$lang.order_have_error}';
+                         var d = DialogManager.create('show_error');
+                         d.setWidth(400);
+                         d.setTitle(lang.error);
+                         d.setContents('message', {type:'warning', text:$.format(msg_tpl, err_count)});
+                         d.show('center');
+                        },
+                        errorPlacement: function(error, element){
+                            var _message_box = $(element).parent().find('.field_message');
+                            _message_box.find('.field_notice').hide();
+                            _message_box.append(error);
+                        },
+                        success       : function(label){
+                            label.addClass('validate_right').text('OK!');
+                        },
+                        rules : {
+                            consignee : {
+                                required : true
+                            },
+                            region_id : {
+                                required : true,
+                                min   : 1
+                            },
+                            address   : {
+                                required : true
+                            },
+                            phone_tel : {
+                                required : check_phone,
+                                minlength:6,
+                                checkTel : true
+                            },
+                            phone_mob : {
+                                required : check_phone,
+                                minlength:6,
+                                digits : true
+                            }
+                        },
+                        messages : {
+                            consignee : {
+                                required : '{$lang.consignee_required}'
+                            },
+                            region_id : {
+                                required : '{$lang.region_required}',
+                                min  : '{$lang.region_required}'
+                            },
+                            address   : {
+                                required : '{$lang.address_required}'
+                            },
+                            phone_tel : {
+                                required : '{$lang.phone_required}',
+                                minlength: '{$lang.phone_tel_error}',
+                                checkTel : '{$lang.phone_tel_error}'
+                            },
+                            phone_mob : {
+                                required : '{$lang.phone_required}',
+                                minlength: '{$lang.phone_mob_error}',
+                                digits : '{$lang.phone_mob_error}'
+                            }
+                        }
+                    });
+
+                    $('ul[shipping_id]').each(function(){
+                        var _shipping_fee = get_shipping_fee($(this).attr('shipping_id'));
+                        $(this).find('[ectype="shipping_fee"]').html(price_format(_shipping_fee));
+                    }).click(function(){
+                        $(this).find('input[name="shipping_id"]').attr('checked', true);
+						$('.shipping_item').removeClass('selected');
+						$(this).addClass('selected');
+                        set_order_amount($(this).attr('shipping_id'));
+                    });
+
+                    //select first
+                    $($('ul[shipping_id]')[0]).click();
+                });
+                function set_order_amount(shipping_id){
+                    var _shipping_fee = get_shipping_fee(shipping_id);
+                    var _amount  = goods_amount + _shipping_fee;
+                    $('#order_amount').html(price_format(_amount));
+                }
+                function get_shipping_fee(shipping_id){
+                    var shipping_data = shippings[shipping_id];
+                    var first_price   = Number(shipping_data['first_price']);
+                    var step_price   = Number(shipping_data['step_price']);
+                    return first_price + (goods_quantity - 1) * step_price;
+                }
+                function check_phone(){
+                    return ($('#phone_tel').val() == '' && $('#phone_mob').val() == '');
+                }
+                function hide_error(){
+                    $('#region').find('.error').hide();
+                }
+                </script>
+<script type="text/javascript">
+                //<![CDATA[
+                $(function(){
+                    //$("input[name='address_options']").click(set_address);
+                    $('.address_item').click(function(){
+                        $(this).find("input[name='address_options']").attr('checked', true);
+                        $('.address_item').removeClass('selected_address');
+                        $(this).addClass('selected_address');
+                        set_address();
+                    });
+                    //init
+                    set_address();
+                });
+                function set_address(){
+                    var addr_id = $("input[name='address_options']:checked").val();
+                    if(addr_id == 0)
+                    {
+                        $('#consignee').val("");
+                        $('#region_name').val("");
+                        $('#region_id').val("");
+                        $('#region select').show();
+                        $("#edit_region_button").hide();
+                        $('#region_name_span').hide();
+
+                        $('#address').val("");
+                        $('#zipcode').val("");
+                        $('#phone_tel').val("");
+                        $('#phone_mob').val("");
+
+                        $('#address_form').show();
+                    }
+                    else
+                    {
+                        $('#address_form').hide();
+                        fill_address_form(addr_id);
+                    }
+                }
+                function fill_address_form(addr_id){
+                    var addr_data = addresses[addr_id];
+                    for(k in addr_data){
+                        switch(k){
+                            case 'consignee':
+                            case 'address':
+                            case 'zipcode':
+                            case 'email':
+                            case 'phone_tel':
+                            case 'phone_mob':
+                            case 'region_id':
+                                $("input[name='" + k + "']").val(addr_data[k]);
+                            break;
+                            case 'region_name':
+                                $("input[name='" + k + "']").val(addr_data[k]);
+                                $('#region select').hide();
+                                $('#region_name_span').text(addr_data[k]).show();
+                                $("#edit_region_button").show();
+                            break;
+                        }
+                    }
+                }
+                //]]>
+              </script>
+<div id="select-address" class="w mt20">
+   <div class="title w mb10">
+      <b class="fs14">{$lang.consignee_address}</b>
+	  <a href="{url app=my_address}" target="_blank">[{$lang.manage_address}]</a>
+   </div>
+   <!--{if $my_address}-->
+   <div class="oldaddress w">
+      <!--{foreach from=$my_address item=address name=address_select}-->
+      <dl class="f66 clearfix address_item{if $smarty.foreach.address_select.iteration == 1} selected_address{/if}">
+         <dt class="float-left"><input id="address_{$address.addr_id}" type="radio"{if $smarty.foreach.address_select.iteration == 1} checked="true"{/if} name="address_options" value="{$address.addr_id}" /></dt>
+		 <dd class="float-left">
+         	{$address.consignee|escape}
+         	{$address.region_name|escape}{$address.address|escape}
+         	<!--{if $address.phone_mob}-->{$address.phone_mob}<!--{else}-->{$address.phone_tel}<!--{/if}-->
+         </dd>
+      </dl>
+      <!--{/foreach}-->
+   </div>
+   <!--{/if}-->
+   <div class="f66 w newaddress address_item">
+    <input class="mb5" type="radio" name="address_options" id="use_new_address" value="0" {if !$my_address} checked="true" {/if}/> {$lang.use_new_address}
+   </div>
+   <div class="newaddressform w">
+      <ul class="fill_in_content mt10" id="address_form">
+         <li>
+            {$lang.consignee}{$lang.colon}<input type="text" name="consignee" id="consignee"  />
+            <span class="field_message explain"><span class="field_notice">{$lang.consignee_desc}</span></span>
+         </li>
+         <li class="clearfix">
+		     <div class="float-left">{$lang.region}{$lang.colon}</div>
+             <div id="region" class="float-left">
+                <span style="display:none;" id="region_name_span"></span>
+                <input id="edit_region_button" type="button" class="edit_region" value="{$lang.edit}" style="display:none;" />
+                <select onchange="hide_error();">
+                   <option value="0">{$lang.select_pls}</option>
+                   {html_options options=$regions}
+                </select>
+                <input type="hidden" class="mls_id" name="region_id" id="region_id"/>
+			    <input type="hidden" name="region_name" class="mls_names" id="region_name"/>
+                <span class="field_message explain"><span class="field_notice">{$lang.region_desc}</span></span>
+             </div>
+          </li>
+          <li>
+             {$lang.address}{$lang.colon}<input type="text" name="address" id="address" />
+             <span class="field_message explain"><span class="field_notice">{$lang.address_desc}</span></span>
+          </li>
+          <li>
+             {$lang.zipcode}{$lang.colon}<input type="text" name="zipcode" id="zipcode" />
+             <span class="field_message explain"><span class="field_notice">{$lang.zipcode_desc}</span></span>
+          </li>
+          <li>
+             {$lang.phone_tel}{$lang.colon}<input type="text" name="phone_tel" id="phone_tel"/>
+             <span class="field_message explain"><span class="field_notice">{$lang.phone_tel_desc}</span></span>
+          </li>
+          <li>
+             {$lang.phone_mob}{$lang.colon}<input type="text" id="phone_mob" name="phone_mob" /> 
+             <span class="field_message explain"><span class="field_notice">{$lang.phone_mob_desc}</span></span>
+          </li>
+          <li><input  style="border:0;" type="checkbox" value="1" id="save_address" name="save_address"><span class="explain f66">{$lang.save_address}({$lang.save_address_desc})</span></li>
+       </ul>
+   </div>
+</div>
+<div id="select-shipping" class="mt10">
+   <div class="title fs14 strong mb10">{$lang.select_shipping}</div>
+   <div class="content f66">
+      <!--{foreach from=$shipping_methods item=shipping_method name=shipping_select}-->
+      <ul class="shipping_item" shipping_id="{$shipping_method.shipping_id}">
+       <li>
+	      <input class="mb5" type="radio" name="shipping_id" value="{$shipping_method.shipping_id}" />  
+	      {$shipping_method.shipping_name|escape}
+	      {$lang.shipping_fee}{$lang.colon}<span class="money" ectype="shipping_fee">&yen; 0.00</span>
+		  {$lang.first_price}{$lang.colon}{$shipping_method.first_price}{$lang.step_price}{$lang.colon}{$shipping_method.step_price}
+	      {$shipping_method.shipping_desc|escape}
+	   </li>
+       </ul>
+       <!--{/foreach}-->
+   </div> 
+</div>
+
+
+
+
+

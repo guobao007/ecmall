@@ -1,0 +1,13 @@
+<div class="nch-breadcrumb-layout">
+    <!--{if $_curlocal}-->
+    <div class="nch-breadcrumb wrapper"><i class="icon-home"></i>
+    <!--{foreach from=$_curlocal item=lnk}-->
+    <!--{if $lnk.url}-->
+    <span><a href="{$lnk.url}">{$lnk.text|escape}</a></span><span class="arrow">></span>
+    <!--{else}-->
+    <span>{$lnk.text|escape}</span>
+    <!--{/if}-->
+    <!--{/foreach}-->
+    </div>
+    <!--{/if}-->
+</div>

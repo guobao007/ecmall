@@ -1,0 +1,163 @@
+{include file=header.html}
+<script type="text/javascript" src="{res file=js/search_goods.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{res file=js/class_area_array.js}" charset="utf-8"></script>
+<link type="text/css" href="{res file=css/layout.css}" rel="stylesheet" />
+<script type="text/javascript">
+$(function(){
+    var order = '{$smarty.get.order}';
+    var css = 'selected';
+    <!--{if $smarty.get.order}-->
+	order_arr = order.split(' ');
+        order_id = order_arr[0];
+        order_css = order_arr[1];
+	$('#'+order_id).attr('class',css);
+        $('#'+order_id+' a').attr('class',order_css);
+    <!--{/if}-->
+    $(".nch-sortbar-array li").click(function(){
+        if(this.id==''){
+            dropParam('order');// default order
+            return false;
+        }
+        else
+        {
+            dd = " desc";
+            if(order != '') {
+                order_arr = order.split(' ');
+                if(order_arr[0]==this.id && order_arr[1]=="desc")
+                        dd = " asc";
+                else dd = " desc";
+            }
+            replaceParam('order', this.id+dd);
+            return false;
+        }
+    });
+});
+</script>
+
+{include file=curlocal.html}
+
+<div class="nch-container wrapper" >
+    <div class="left">
+        <!--{if $recommended_brands}-->
+        <div class="nch-module nch-module-style01">
+            <div class="title">
+                <h3>推荐品牌</h3>
+            </div>
+            <div class="content">
+                <ul class="nch-sidebar-brand">
+                    <!--{foreach from=$recommended_brands item=brand}-->
+                    <li class="picture"> <a href="{url app=search&brand=$brand.brand_name}" target="_blank"> <span class="brand-logo"><img src="{$brand.brand_logo}" alt="{$brand.brand_name}" /></span> <span class="brand-name">{$brand.brand_name}</span></a> </li>
+                    <!--{/foreach}-->
+                </ul>
+            </div>
+        </div>
+        <!--{/if}-->
+        <!--{if $category_array}-->
+        <div class="nch-module nch-module-style02">
+            <div class="title">
+                <h3>分类筛选</h3>
+            </div>
+            <div class="contents">
+                <ul id="files" class="tree">
+                    <!--{foreach from=$category_array item=category name=fe_category}-->
+                    <li>
+                        <i class="tree-parent tree-parent-collapsed"></i>
+                        <a href="{url app=search&cate_id=$category.cate_id}" <!--{if $category.cate_id == $smarty.get.cate_id}-->class="selected"<!--{/if}-->>{$category.cate_name|escape}</a>
+                        <!--{if $category.class2}-->
+                        <ul>
+                            <!--{foreach from=$category.class2 item=class2}-->
+                            <li class="tree-parent tree-parent-collapsed"><i class="tree-parent tree-parent-collapsed"></i><a href="{url app=search&cate_id=$class2.cate_id}" <!--{if $class2.cate_id == $smarty.get.cate_id}-->class="selected"<!--{/if}-->>{$class2.cate_name|escape}</a>
+                            <!--{if $class2.class3}-->    
+                            <ul>
+                                <!--{foreach from=$class2.class3 item=class3}-->
+                                <li class="tree-parent tree-parent-collapsed"><i></i><a href="{url app=search&cate_id=$class3.cate_id}" <!--{if $class3.cate_id == $smarty.get.cate_id}-->class="selected"<!--{/if}-->>{$class3.cate_name|escape}</a></li>
+                                <!--{/foreach}-->
+                            </ul>
+                            <!--{/if}-->
+                            </li>
+                            <!--{/foreach}-->
+                        </ul>
+                        <!--{/if}-->
+                    </li>
+                    <!--{/foreach}-->
+                </ul>
+            </div>
+        </div>
+        <!--{/if}-->
+        <div class="nch-module nch-module-style03">
+            <div class="title">
+                <h3>最近浏览</h3>
+            </div>
+            <div class="content2">
+                <!--{foreach from=$goods_history item=gh_goods}-->
+                <dl class="nch-sidebar-bowers">
+                    <dt class="goods-name"><a href="{url app=goods&id=$gh_goods.goods_id}">{$gh_goods.goods_name|escape}</a></dt>
+                    <dd class="goods-pic"><a href="{url app=goods&id=$gh_goods.goods_id}"><img src="{$gh_goods.default_image}" title="{$gh_goods.goods_name|escape}" alt="{$gh_goods.goods_name|escape}" ></a></dd>
+                    <dd class="goods-price">¥{$gh_goods.price}</dd>
+                </dl>
+                <!--{/foreach}-->
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="shop_con_list" id="main-nav-holder">
+            <nav class="sort-bar" id="main-nav">
+                <div class="pagination">
+                    <ul>
+                        <!--{if $page_info.prev_link}-->
+                        <li><a href="{$page_info.prev_link}" class="demo"><span>上一页</span></a></li>
+                        <!--{else}-->
+                        <li><span>上一页</span></li>
+                        <!--{/if}-->
+                        <!--{if $page_info.next_link}-->
+                        <li><a href="{$page_info.next_link}" class="demo"><span>下一页</span></a></li>
+                        <!--{else}-->
+                        <li><span>下一页</span></li>
+                        <!--{/if}-->
+                    </ul>
+                </div>
+                <div class="nch-all-category">
+                    <div class="all-category">
+                        {include file=home_goods_class.html}
+                    </div>
+                </div>
+                <div class="nch-sortbar-array"> 排序方式：
+                    <ul>
+                        <li id="" <!--{if !$smarty.get.order}-->class="selected"<!--{/if}-->><a href="{url app=search&cate_id=$smarty.get.cate_id}"  title="默认排序">默认</a></li>
+                        <li id="sales">
+                            <a href="{url app=search&cate_id=$smarty.get.cate_id&order=sales desc}">销量<i></i></a>
+                        </li>
+                        <li id="views">
+                            <a href="{url app=search&cate_id=$smarty.get.cate_id&order=views desc}">人气<i></i></a>
+                        </li>
+                        <li id="price">
+                            <a href="{url app=search&cate_id=$smarty.get.cate_id&order=price desc}">价格<i></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+            {include file=goods.squares.html}
+            </div>
+            <div class="tc mt20 mb20">
+                <div class="pagination">{include file=page.bottom.html}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{res file=js/waypoints.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{res file=js/search_category_menu.js}" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#files').tree({
+            expanded: 'li:lt(2)'
+        });
+        //浮动导航  waypoints.js
+        $('#main-nav-holder').waypoint(function(event, direction) {
+            $(this).parent().toggleClass('sticky', direction === "down");
+            event.stopPropagation();
+        });
+    });
+</script>
+{include file=footer.html}

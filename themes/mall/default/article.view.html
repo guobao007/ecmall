@@ -1,0 +1,57 @@
+{include file=header.html}
+{include file=curlocal.html}
+<link type="text/css" href="{res file=css/layout.css}" rel="stylesheet" />
+<div class="nch-container wrapper">
+    <div class="left">
+        <div class="nch-module nch-module-style01">
+            <div class="title"><h3>{$lang.acategory}</h3></div>
+            <div class="content">
+                <ul class="nch-sidebar-article-class">
+                    <!-- {foreach from=$acategories item=acategory} -->
+                    <li><a href="{url app=article&cate_id=$acategory.cate_id}">{$acategory.cate_name|escape}</a></li>
+                    <!-- {/foreach} -->
+                </ul>
+            </div>
+        </div>
+        <div class="nch-module nch-module-style03">
+            <div class="title">
+                <h3>{$lang.new_article}</h3>
+            </div>
+            <div class="content">
+                <ul class="nch-sidebar-article-list">
+                    <!-- {foreach from=$new_articles item=new_article} -->
+                    <li><i></i><a {if $new_article.link}target="_blank"{/if} href="{url app=article&act=view&article_id=$new_article.article_id}">{$new_article.title|escape}</a></li>
+                    <!-- {foreachelse} -->
+                    <li>{$lang.no_new_article}</li>
+                    <!-- {/foreach} -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="nch-article-con">
+            <h1>{$article.title|escape}</h1>
+            <h2>{$article.add_time|date:Y-m-d H:i}</h2>
+            <div class="default">
+                <p>
+                    <!-- {if $article.store_id} -->
+                    {$article.content|escape:editor}
+                    <!-- {else} -->
+                    {$article.content}
+                    <!-- {/if} -->
+                </p>
+            </div>
+            <div class="more_article">
+                <span class="fl">
+                    {$lang.pre_article}：
+                    <!--{if $pre_article}--><a target="{$pre_article.target}" href="{url app=article&act=view&article_id=$pre_article.article_id}">{$pre_article.title|escape}</a> <time>{$pre_article.add_time|date:Y-m-d H:i}</time><!--{else}-->{$lang.no_records}<!--{/if}-->
+                </span>
+                <span class="fr">
+                    {$lang.next_article}：
+                    <!--{if $next_article}--><a target="{$next_article.target}" href="{url app=article&act=view&article_id=$next_article.article_id}">{$next_article.title|escape}</a> <time>{$next_article.add_time|date:Y-m-d H:i}</time><!--{else}-->{$lang.no_records}<!--{/if}-->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{include file=footer.html}

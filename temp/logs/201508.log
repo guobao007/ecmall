@@ -1,0 +1,33 @@
+Mon, 03 Aug 2015 01:33:48 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:33:51 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:33:52 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:33:56 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:34:01 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:36:27 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:38:52 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:42:31 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:43:18 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:44:32 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:44:53 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:44:58 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:45:16 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 01:47:29 +0000	[2]strlen() expects parameter 1 to be string, array given	\eccore\model\model.base.php	969
+Mon, 03 Aug 2015 06:10:39 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Mon, 03 Aug 2015 06:10:58 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Wed, 05 Aug 2015 06:17:50 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Wed, 05 Aug 2015 06:31:45 +0000	[2]filemtime(): stat failed for F:\wamp\www\ecmall/data/crond.lock	\includes\libraries\cron.lib.php	132
+Wed, 05 Aug 2015 07:38:54 +0000	[2]unlink(F:\wamp\www\ecmall/): Permission denied	\includes\models\uploadedfile.model.php	64
+Wed, 05 Aug 2015 07:39:01 +0000	[2]unlink(F:\wamp\www\ecmall/): Permission denied	\includes\models\uploadedfile.model.php	64
+Wed, 05 Aug 2015 08:27:13 +0000	[2]unlink(F:\wamp\www\ecmall/): Permission denied	\includes\models\uploadedfile.model.php	64
+Wed, 05 Aug 2015 08:27:16 +0000	[2]unlink(F:\wamp\www\ecmall/): Permission denied	\includes\models\uploadedfile.model.php	64
+Wed, 05 Aug 2015 08:36:19 +0000	[2]unlink(F:\wamp\www\ecmall/): Permission denied	\includes\models\uploadedfile.model.php	64
+Thu, 06 Aug 2015 05:37:35 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 06 Aug 2015 05:49:58 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 06 Aug 2015 05:50:03 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 06 Aug 2015 05:55:10 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 06 Aug 2015 05:55:12 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Fri, 07 Aug 2015 07:21:20 +0000	[256]MySQL Error[1054]: Unknown column 'alipay' in 'where clause'
+MySQL Query:SELECT *,payment.payment_id FROM ecm_payment payment WHERE payment_code=alipay
+Wrong File:  F:\wamp\www\ecmall\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Fri, 07 Aug 2015 08:08:21 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Mon, 10 Aug 2015 00:56:43 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89

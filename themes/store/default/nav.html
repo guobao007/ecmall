@@ -1,0 +1,54 @@
+<nav class="public-nav-layout">
+    <div class="wrapper">
+        <div class="all-category">
+            <div class="title">
+                <h3><a href="{url app=category}">所有商品分类</a></h3>
+                <i class="arrow"></i>
+            </div>
+            <div class="category">
+                <ul class="menu">
+                    <!--{if $header_gcategories}-->
+                    <!--{foreach from=$header_gcategories item=category name=fe_category key=key}-->
+                    <li cat_id="{$category.id}" class="{if $key%2 == 1}odd{else}even{/if}">
+                        <div class="class">
+                            <!--{if $category.pic}-->
+                            <span class="ico"><img src="http://fesh.chinammt.com/data/upload/shop/common/category-pic-1832.jpg"></span>
+                            <!--{/if}-->
+                            
+                            <h4><a href="{url app=search&cate_id=$category.id}">{$category.value|escape}</a></h4>
+                            <span class="arrow"></span> 
+                        </div>
+                        <div cat_menu_id="{$category.id}" class="sub-class">
+                            <!--{if $category.children}-->
+                            <!--{foreach from=$category.children item=child name=fe_child}--> 
+                            <dl>
+                                <dt>
+                                <h3><a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></h3>
+                                </dt>
+                                <dd class="goods-class">
+                                    <!--{if $child.children}-->
+                                    <!--{foreach from=$child.children item=child2 name=fe_child2}-->
+                                    <a href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a>
+                                    <!--{/foreach}-->
+                                    <!--{/if}-->
+                                </dd>
+                            </dl>
+                            <!--{/foreach}-->
+                            <!--{/if}-->
+                        </div>
+                    </li>
+                    <!--{/foreach}-->
+                    <!--{/if}-->
+                </ul>
+            </div>
+        </div>
+        <ul class="site-menu">
+            <li><a class="{if $index}current{/if}" href="index.php"><span>{$lang.index}</span></a></li>
+            <!--{foreach from=$navs.middle item=nav}-->
+            <li><a class="{if !$index and $nav.link eq $current_url}current{/if}" href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}</a></li>
+            <!--{/foreach}-->
+            <li><a class="{if $zslm}current{/if}" href="{url app=zslm}"><span>招商入驻</span></a></li>
+        </ul>
+    </div>
+    <div class="shadow"></div>
+</nav>

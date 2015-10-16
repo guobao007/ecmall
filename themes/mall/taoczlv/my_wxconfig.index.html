@@ -1,0 +1,83 @@
+{include file=member.header.html}
+<script type="text/javascript">
+//<!CDATA[
+    $(function() {
+        $('#my_wxconfig_form').validate({
+            errorPlacement: function(error, element) {
+                $(element).next('.field_notice').hide();
+                if ($(element).parent().parent().is('b'))
+                {
+                    $(element).parent().parent('b').next('.explain').hide();
+                    $(element).parent().parent('b').after(error);
+                }
+                else
+                {
+                    $(element).after(error);
+                }
+            },
+            rules: {
+                url: {
+                    required: true,
+                },
+                token: {
+                    required: true,
+                }
+            },
+            messages: {
+                url: {
+                    required: '{$lang.not_empty}',
+                },
+                token: {
+                    required: '{$lang.not_empty}',
+                }
+            }
+        });
+    });
+
+//]]>
+
+</script>
+{$build_editor}
+<div class="content">
+    <div class="totline"></div>
+    <div class="botline"></div>
+    {include file=member.menu.html}
+    <div id="right"> {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public">
+                <div class="information">
+                    <div class="setup info shop">
+                        <form method="post"  id="my_wxconfig_form">
+                            <table style="width: 100%">
+                                
+                                <tr>
+                                    <th class="width2">{$lang.my_wxconfig_url}</th>
+                                    <td>
+                                        <p class="td_block"><input id="url" type="text" class="text width_normal" name="url" value="{$wx_config.url|escape}" style="width:480px;" readonly/></p>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>{$lang.my_wxconfig_token}</th>
+                                    <td>
+                                        <p class="td_block"><input type="text" name="token" class="text width_normal" id="token" value="{$wx_config.token|escape}" readonly/></p>
+                                        <a href="static/weixin/help/index.html" target="_blank" class="btn1">{$lang.my_wxconfig_word}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="issuance"><input type="submit" class="btn" value="{$lang.submit}" /></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

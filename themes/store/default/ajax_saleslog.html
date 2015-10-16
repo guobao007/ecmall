@@ -1,0 +1,39 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="mt10">
+    <thead>
+        <tr>
+            <th class="w200">买家</th>
+            <th class="w100">购买价</th>
+            <th class="">购买数量</th>
+            <th class="w200">购买时间</th>
+        </tr>
+    </thead>
+    {if $sales_list}
+    <tbody>
+    <!-- {foreach from=$sales_list item=sales} -->
+    <tr>
+        <td><a>{$sales.buyer_name}</a></td>
+        <td><em class="price">{$sales.price}</em> <i style="color:red;"></i></td>
+        <td>{$sales.quantity} <span>{if $sales.specification}{$lang.left_bracket}{$sales.specification|escape}{$lang.right_bracket}{/if}</span></td>
+        <td><time>{$sales.add_time|date}</time></td>
+    </tr>
+    <!-- {/foreach} -->
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10" class="tr" >
+                <div class="pagination">{include file=page.bottom.html}</div>
+            </td>
+        </tr>
+    </tfoot>
+    {else}
+    <div class="ncs-norecord">暂无符合条件的数据记录</div>
+    {/if}
+</table>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#salelog_demo').find('.demo').ajaxContent({
+            event:'click', //mouseover
+            target:'#salelog_demo'
+    });
+});
+</script>
