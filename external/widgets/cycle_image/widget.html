@@ -1,0 +1,11 @@
+<!--{if !$widget_data}-->
+<div style="padding:10px; text-align:center;">请配置</div>
+<!--{else}-->
+<ul id="fullScreenSlides" class="full-screen-slides">
+    <!-- {foreach from=$widget_data item=image name=fe_image} -->
+    <li style="background: url('{$image.ad_image_url}') no-repeat center top">
+        <a href="{$image.ad_link_url}" target="_blank">&nbsp;</a>
+    </li>
+    <!-- {/foreach} -->      
+</ul>
+<!--{/if}-->

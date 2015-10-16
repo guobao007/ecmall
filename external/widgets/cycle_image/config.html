@@ -1,0 +1,55 @@
+<script type="text/javascript" src="{lib file=uploader.js}" charset="utf-8"></script>
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(350);
+_d.setPosition('center');
+$('#add_image').click(function(){
+    $fileLen = $('.field_item').length;
+    $(this).before('<div class="field_item">' +
+        '<label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式</span>)</label>' +
+        '<p><div id="filePicker'+$fileLen+'">选择图片</div><input type="hidden" name="ad_image_url[]" id="ad_image_url'+$fileLen+'" value="" /></p>'+
+        '<p id="fileList'+$fileLen+'"></p>' +
+        '<label>链接地址:</label>' +
+        '<p style="overflow:hidden;"><input type="text" name="ad_link_url[]" value="{$image.ad_link_url}" />' +
+        '<input type="button" value="删除图片" onclick="drop_image(this)" /></p></div>');
+    uploadImg('fileList'+$fileLen,'filePicker'+$fileLen,'ad_image_url'+$fileLen,60,15);
+});
+function drop_image(btnObj)
+{
+    $(btnObj).parents('.field_item').remove();
+}
+</script>
+<!-- {if $options} -->
+<!-- {foreach from=$options item=image key=key} -->
+<div class="field_item">
+    <label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式</span>)</label>
+    <p><div id="filePicker{$key}">选择图片</div><input type="hidden" name="ad_image_url[]" id="ad_image_url{$key}" value="{$image.ad_image_url}" /></p>
+    <p id="fileList{$key}"><img src="{$image.ad_image_url}" height="15" /></p>
+    <label>链接地址:</label>
+    <p style="overflow:hidden;"><input type="text" name="ad_link_url[]" value="{$image.ad_link_url}" />
+    <input  type="button" value="删除图片" onclick="drop_image(this)" /></p>
+</div>
+<!-- {/foreach} -->
+<!-- {else} -->
+<div class="field_item">
+    <label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式</span>)</label>
+    <p><div id="filePicker0">选择图片</div><input type="hidden" name="ad_image_url[]" id="ad_image_url0" value="" /></p>
+    <p id="fileList0"></p>
+    <label>链接地址:</label>
+    <p style="overflow:hidden;"><input type="text" name="ad_link_url[]" value="{$image.ad_link_url}" />
+    <input type="button" value="删除图片" onclick="drop_image(this)" /></p>
+</div>
+<!-- {/if} -->
+<input type="button" id="add_image" value="新增图片" />
+
+<script type="text/javascript">
+    $(function(){
+        <!--{if $options}-->
+        <!-- {foreach from=$options item=image key=key} -->
+        uploadImg('fileList{$key}','filePicker{$key}','ad_image_url{$key}',60,15);
+        <!-- {/foreach} -->
+        <!--{else}-->
+        uploadImg('fileList0','filePicker0','ad_image_url0',60,15);
+        <!-- {/if} -->
+    });
+</script>

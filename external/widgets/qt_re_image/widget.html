@@ -1,0 +1,49 @@
+<script type="text/javascript">
+$(function(){
+    $('#preferential').attr('src',SITE_URL+'/themes/mall/default/styles/default/images/preferential.gif');
+});
+</script>
+<!-- {if $widget_data.re_images} -->
+<div class="preferential_first">
+    <a href="{$widget_data.re_images.0.re_link_url}" target="_blank">
+        <img src="{$widget_data.re_images.0.re_image_url}" title="{$widget_data.re_images.0.re_title_url}" />
+    </a>
+    <h3 class="preferential_title">
+        <img id="preferential" alt="今日特惠" width="220" height="26"/>
+    </h3>
+</div>
+<ul class="preferental_ul">
+    <li class="prepic1">
+        <a href="{$widget_data.re_images.1.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.1.re_title_url}" src="{$widget_data.re_images.1.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+    <li class="prepic1">
+        <a href="{$widget_data.re_images.2.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.2.re_title_url}" src="{$widget_data.re_images.2.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+    <li class="prepic2">
+        <a href="{$widget_data.re_images.3.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.3.re_title_url}" src="{$widget_data.re_images.3.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+    <li class="prepic2">
+        <a href="{$widget_data.re_images.4.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.4.re_title_url}" src="{$widget_data.re_images.4.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+</ul>
+<ul class="preferental_ul">
+    <li class="prepic3">
+        <a href="{$widget_data.re_images.5.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.5.re_title_url}" src="{$widget_data.re_images.5.re_image_url}" width="240" height="359" alt="{$image.re_title_url}" /></a>
+    </li>
+    <li class="prepic1">
+        <a href="{$widget_data.re_images.6.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.6.re_title_url}" src="{$widget_data.re_images.6.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+    <li class="prepic2">
+        <a href="{$widget_data.re_images.7.re_link_url}" target="_blank">
+            <img title="{$widget_data.re_images.7.re_title_url}" src="{$widget_data.re_images.7.re_image_url}" width="240" height="177" alt="{$image.re_title_url}" /></a>
+    </li>
+</ul>
+<!--{else}-->
+<div style="padding:10px; text-align:center;">请配置</div>
+<!--{/if}-->

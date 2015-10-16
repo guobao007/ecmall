@@ -1,0 +1,20 @@
+<script type="text/javascript" src="{lib file=uploader.js}" charset="utf-8"></script>
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(350);
+_d.setPosition('center');
+</script>
+<div class="field_item">
+    <label>上传广告图片:(<span>支持 gif|jpg|jpeg|png 格式</span>)</label>
+    <p><div id="filePicker">选择图片</div><input type="hidden" name="ad_image_url" id="ad_image_url" value="{$options.ad_image_url}" /></p>
+    <p id="fileList"><!-- {if $options.ad_image_url} --><img src="{$options.ad_image_url}" height="20" /><!-- {/if} --></p>
+</div>
+<div class="field_item">
+    <label>广告链接地址:</label>
+    <p><input type="text" name="ad_link_url" value="{$options.ad_link_url}" /></p>
+</div>
+<script type="text/javascript">
+    $(function(){
+        uploadImg('fileList','filePicker','ad_image_url',200,20);
+    });
+</script>

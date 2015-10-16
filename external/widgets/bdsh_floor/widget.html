@@ -1,0 +1,40 @@
+<div class="floor_one">
+    <div class="floor_left">
+        <img src="{$widget_data.ad1_image_url}" alt="{$widget_data.model_name}" />
+        <a  href="{$widget_data.ad2_link_url}"  target="_blank" >
+            <img src="{$widget_data.ad2_image_url}"  width="280" height="430"/></a>
+    </div>
+    <div class="floor_content">
+        <ul>
+            <!--{foreach from=$widget_data.bd_images_list item=bd_images key=key}-->
+                <!--{if $key >=0 && $key < 4}-->
+                <li>
+                    <div class="box">
+                        <a  href="{$bd_images.bd_link_url}"  target="_blank" >
+                            <img  title="{$bd_images.bd_title}" src="{$bd_images.bd_image_url}"  width="220" height="178"/>
+                        </a>
+                        <div class="yellow"></div>
+                        <div class="food_sales">100<br /><span>OFF</span></div>
+                        <h4><a href="{$bd_images.bd_link_url}" target="_blank" title="{$bd_images.bd_title}">{$bd_images.bd_title}</a></h4>
+                        <p>￥<b>{$bd_images.bd_price}</b><span>￥{$bd_images.bd_priceold}</span></p>
+                        <div class="shoppingcar"><a href="{$bd_images.bd_link_url}" target="_blank"><img src="themes/mall/default/styles/default/images/shoppingcar.jpg" width="22" height="24" alt="" /></a></div>
+                    </div>
+                </li>
+                <!--{elseif $key >=4 && $key < 8}-->
+                <li class="mt10">
+                    <div class="box">
+                        <a  href="{$bd_images.bd_link_url}"  target="_blank" >
+                            <img  title="{$bd_images.bd_title}" src="{$bd_images.bd_image_url}"  width="220" height="178"/>
+                        </a>
+                        <div class="yellow"></div>
+                        <div class="food_sales">100<br /><span>OFF</span></div>
+                        <h4><a href="{$bd_images.bd_link_url}" target="_blank" title="{$bd_images.bd_title}">{$bd_images.bd_title}</a></h4>
+                        <p>￥<b>{$bd_images.bd_price}</b><span>￥{$bd_images.bd_priceold}</span></p>
+                        <div class="shoppingcar"><a href="{$bd_images.bd_link_url}" target="_blank"><img src="themes/mall/default/styles/default/images/shoppingcar.jpg" width="22" height="24" alt="" /></a></div>
+                    </div>
+                </li>
+                <!--{/if}-->
+            <!--{/foreach}-->
+        </ul>
+    </div>
+</div>

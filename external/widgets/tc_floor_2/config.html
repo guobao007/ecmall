@@ -1,0 +1,67 @@
+<script type="text/javascript" src="{lib file=uploader.js}" charset="utf-8"></script>
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(400);
+_d.setPosition('center');
+
+$('#add_image').click(function(){
+    $fileLen = $('.fileImg').length;
+    $(this).before('<div class="field_item fileImg">' +
+        '<label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式, 263px * 401px</span>)</label>' +
+        '<p><div id="filePicker'+$fileLen+'">选择图片</div><input type="hidden" name="tc2_image_url[]" id="tc2_image_url'+$fileLen+'" value="" /></p>'+
+        '<p id="fileList'+$fileLen+'"></p>' +
+	'<label>图片标题:</label>' +
+        '<p style="overflow:hidden;"><input type="text" name="tc2_title[]" value="{$image.tc2_title}" />' +
+        '<label>链接地址:</label>' +
+        '<p style="overflow:hidden;"><input type="text" name="tc2_link_url[]" value="{$image.tc2_link_url}" />' +
+        '<input type="button" value="删除图片" onclick="drop_image(this)" /></p></div>');
+    uploadImg('fileList'+$fileLen,'filePicker'+$fileLen,'tc2_image_url'+$fileLen,60,40);
+});
+function drop_image(btnObj)
+{
+    $(btnObj).parents('.field_item').remove();
+}
+</script>
+<div style="height:500px;overflow:scroll;">
+    <div class="field_item">
+    <label><font color="red">最大图片数量为6张，图片会按照顺序排列显示</font></label>
+    </div>
+    <!-- {if $options.tc2_image_list} -->
+    <!-- {foreach from=$options.tc2_image_list item=image key=key} -->
+    <div class="field_item fileImg">
+        <label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式, 263px * 401px</span>)</label>
+        <p><div id="filePicker{$key}">选择图片</div>
+        <input type="hidden" name="tc2_image_url[]" id="tc2_image_url{$key}" value="{$image.tc2_image_url}" /></p>
+        <p id="fileList{$key}"><img src="{$image.tc2_image_url}" height="40" /></p>
+        <label>图片标题:</label>
+        <p style="overflow:hidden;"><input type="text" name="tc2_title[]" value="{$image.tc2_title}" /></p>
+        <label>链接地址:</label>
+        <p style="overflow:hidden;"><input type="text" name="tc2_link_url[]" value="{$image.tc2_link_url}" />
+        <input  type="button" value="删除图片" onclick="drop_image(this)" /></p>
+    </div>
+    <!-- {/foreach} -->
+    <!-- {else} -->
+    <div class="field_item fileImg">
+        <label>上传图片:(<span>支持 gif|jpg|jpeg|png 格式  263px * 401px</span>)</label>
+        <p><div id="filePicker0">选择图片</div><input type="hidden" name="tc2_image_url[]" id="tc2_image_url0" value="" /></p>
+        <p id="fileList0"></p>   
+        <label>图片标题:</label>
+        <p style="overflow:hidden;"><input type="text" name="tc2_title[]" value="{$image.tc2_title}" /></p>
+        <label>链接地址:</label>
+        <p style="overflow:hidden;"><input type="text" name="tc2_link_url[]" value="{$image.tc2_link_url}" />
+        <input type="button" value="删除图片" onclick="drop_image(this)" /></p>
+    </div>
+    <!-- {/if} -->
+    <input type="button" id="add_image" value="新增图片" />
+</div>
+<script type="text/javascript">
+    $(function(){
+        <!--{if $options.tc2_image_list}-->
+        <!-- {foreach from=$options.tc2_image_list item=image key=key} -->
+        uploadImg('fileList{$key}','filePicker{$key}','tc2_image_url{$key}',60,40);
+        <!-- {/foreach} -->
+        <!--{else}-->
+        uploadImg('fileList0','filePicker0','tc2_image_url0',60,40);
+        <!-- {/if} -->
+    });
+</script>

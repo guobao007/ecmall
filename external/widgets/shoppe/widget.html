@@ -1,0 +1,16 @@
+<ul class="new_ul">
+    <!--{foreach from=$widget_data.goods_list item=goods key=key}-->
+    <li>
+        <dl>
+            <dt>
+                <a target="_blank" href="{$goods.zg_link_url}">
+                    <img id="picture_0" width="350" height="235" src="{$goods.zg_image_url}" title="{$goods.zg_title}">
+                </a>
+            </dt>
+            <dt> </dt>
+            <dd class="dt1">¥<span class="dd1">{$goods.zg_price}</span><span id="priceold_0" class="dd2">¥{$goods.zg_priceold}</span></dd>
+            <dt class="dt2"><a target="_blank" href="{$goods.zg_link_url}">{$goods.zg_title}</a></dt>
+        </dl>
+    </li>
+    <!--{/foreach}-->
+</ul>

@@ -1,0 +1,166 @@
+<div class="floor_title">
+    <div class="l_one">{$widget_data.model_name}</div>
+    <div class="l_one_more">
+        <a href="{$widget_data.link}"  target="_blank">MORE>></a>
+    </div>
+    <div class="l_one_r">
+        <!--{foreach from=$widget_data.keywords item=k}-->
+        <a href="{url app=search&keyword=$k|escape:url}" title="{$k}" target="_blank">{$k}</a>&nbsp;|&nbsp;
+        <!--{/foreach}-->
+    </div>
+</div>
+<div class="floor_down2">
+    
+    <div class="floorLeft2" style="background-image:url({$widget_data.bg_image_file});">
+        <div class="loufont_left2">
+            <ul>
+                <!--{foreach from=$widget_data.ad_text_list item=ad_text}-->
+                <li>
+                    <a href="{$ad_text.ad_link_url}" title="{$ad_text.ad_link_text}" target="_blank">{$ad_text.ad_link_text}</a>
+                </li>
+            <!--{/foreach}-->
+            </ul>
+        </div>
+    </div>
+    
+    <div class="floorRight">
+        <div id="slideBox{$widget_data.model_id}" class="slideBox2">
+            <div class="hd">
+                <ul>
+                    <!--{foreach from=$widget_data.ad_images_f1 item=ad_image key=key}-->
+                    <li>{$key}</li>
+                    <!--{/foreach}-->
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <!--{foreach from=$widget_data.ad_images_f1 item=ad_image key=key}-->
+                    <li>
+                        <a href="{$ad_image.f1_link_url}" target="_blank">
+                            <img title="{$ad_image.f1_title_url}" src="{$ad_image.f1_image_url}" width="263" height="401" alt="{$ad_image.f1_title_url}">
+                        </a>
+                    </li>
+                    <!--{/foreach}-->
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+                var slideBox = "#slideBox" + {$widget_data.model_id};
+                jQuery(slideBox).slide({
+                    mainCell: ".bd ul",
+                    effect: "left",
+                    autoPlay: true
+                });
+        </script>
+    </div>
+    
+    <div class="floorCentent2">
+        <ul>
+            <!--{foreach from=$widget_data.goods_list item=goods name=fe_goods key=key}-->
+            <!--{if $key < 2 || ($key > 2 && $key < 5)}-->
+            <li>
+                <div class="box">
+                    <h4>
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank" id="title_{$key}"  title="{$goods.goods_name}">{$goods.goods_name|escape|truncate:30}
+                        </a>
+                    </h4>
+                    <p>
+                        <span class="span1" id="price_{$key}">{$goods.price|price}</span>
+                        <span class="span2" id="priceold_{$key}">{$goods.price|price}</span>
+                    </p>
+                    <div class="transparent_bg"></div>
+                    <div>
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank">
+                            <img id="picture_{$key}" title="{$goods.goods_name}" src="{$goods.default_image}" width="238" height="200" alt="{$goods.goods_name}">
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <!--{elseif $key == 2 || $key == 5}-->
+            <li class="min">
+                <div class="box">
+                    <h4>
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank" id="title_{$key}"  title="{$goods.goods_name}">{$goods.goods_name|escape|truncate:30}
+                        </a>
+                    </h4>
+                    <p>
+                        <span class="span1" id="price_{$key}">{$goods.price|price}</span>
+                        <span class="span2" id="priceold_{$key}">{$goods.price|price}</span>
+                    </p>
+                    <div class="transparent_bg"></div>
+                    <div>
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank">
+                            <img id="picture_{$key}" title="{$goods.goods_name}" src="{$goods.default_image}" width="238" height="200" alt="{$goods.goods_name}">
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <!--{/if}-->
+            <!--{/foreach}-->
+        </ul>
+    </div>
+</div>
+<div class="floorCentent3">
+    <ul>
+        <!--{foreach from=$widget_data.goods_list item=goods key=key}-->
+        <!--{if $key==6}-->
+        <li class="lmin">
+            <div class="box">
+                <h4>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank" id="title_{$key}"  title="{$goods.goods_name}">{$goods.goods_name|escape|truncate:30}
+                    </a>
+                </h4>
+                <p>
+                    <span class="span1" id="price_{$key}">{$goods.price|price}</span>
+                    <span class="span2" id="priceold_{$key}">{$goods.price|price}</span>
+                </p>
+                <div class="transparent_bg"></div>
+                <div>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank">
+                        <img id="picture_{$key}" title="{$goods.goods_name}" src="{$goods.default_image}" width="238" height="200" alt="{$goods.goods_name}">
+                    </a>
+                </div>
+            </div>
+        </li>
+        <!--{elseif $key==7}-->
+        <li class="cmin">
+            <div class="box">
+                <h4>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank" id="title_{$key}"  title="{$goods.goods_name}">{$goods.goods_name|escape|truncate:30}
+                    </a>
+                </h4>
+                <p>
+                    <span class="span1" id="price_{$key}">{$goods.price|price}</span>
+                    <span class="span2" id="priceold_{$key}">{$goods.price|price}</span>
+                </p>
+                <div class="transparent_bg"></div>
+                <div>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank">
+                        <img id="picture_{$key}" title="{$goods.goods_name}" src="{$goods.default_image}" width="238" height="200" alt="{$goods.goods_name}">
+                    </a>
+                </div>
+            </div>
+        </li>
+        <!--{elseif $key > 7}-->
+        <li>
+            <div class="box">
+                <h4>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank" id="title_{$key}"  title="{$goods.goods_name}">{$goods.goods_name|escape|truncate:30}
+                    </a>
+                </h4>
+                <p>
+                    <span class="span1" id="price_{$key}">{$goods.price|price}</span>
+                    <span class="span2" id="priceold_{$key}">{$goods.price|price}</span>
+                </p>
+                <div class="transparent_bg"></div>
+                <div>
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank">
+                        <img id="picture_{$key}" title="{$goods.goods_name}" src="{$goods.default_image}" width="238" height="200" alt="{$goods.goods_name}">
+                    </a>
+                </div>
+            </div>
+        </li>
+        <!--{/if}-->
+        <!--{/foreach}-->
+    </ul>
+</div>
