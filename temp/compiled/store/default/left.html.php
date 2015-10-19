@@ -154,7 +154,7 @@
             <h2 class="common_title veins1">
                 <div class="ornament1"></div>
                 <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">友情链接</span></span>
+                <span class="ico1"><span class="ico2">partner</span></span>
             </h2>
             <div class="wrap">
                 <div class="wrap_child">

@@ -77,7 +77,7 @@ $(function(){
 
 //]]>
 </script>
-<div id="content">
+<div id="content2">
     <div id="left">
         <?php echo $this->fetch('left.html'); ?>
     </div>
