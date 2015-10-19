@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 00:50:02
+ *  @Time:2015-10-19 08:15:15
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
@@ -169,6 +169,14 @@ return array (
   ),
   'hot_saleslist' => 
   array (
+    17 => 
+    array (
+      'goods_id' => '17',
+      'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
+      'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
+      'price' => '90.00',
+      'sales' => '2',
+    ),
     11 => 
     array (
       'goods_id' => '11',
@@ -177,13 +185,13 @@ return array (
       'price' => '268.00',
       'sales' => '2',
     ),
-    17 => 
+    28 => 
     array (
-      'goods_id' => '17',
-      'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
-      'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
-      'price' => '90.00',
-      'sales' => '2',
+      'goods_id' => '28',
+      'goods_name' => '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套',
+      'default_image' => 'data/files/store_2/goods_115/small_200908061005154170.jpg',
+      'price' => '188.00',
+      'sales' => '1',
     ),
     19 => 
     array (
@@ -201,14 +209,6 @@ return array (
       'price' => '129.00',
       'sales' => '1',
     ),
-    24 => 
-    array (
-      'goods_id' => '24',
-      'goods_name' => '阿迪达斯花式运动鞋',
-      'default_image' => 'data/files/store_2/goods_20/small_200908060957002218.jpg',
-      'price' => '169.00',
-      'sales' => '1',
-    ),
   ),
   'collect_goodslist' => 
   array (
@@ -220,36 +220,36 @@ return array (
       'price' => '688.00',
       'collects' => '1',
     ),
-    18 => 
+    15 => 
     array (
-      'goods_id' => '18',
-      'goods_name' => '春针织淑女连衣裙女装',
-      'default_image' => 'data/files/store_2/goods_195/small_200908060936352784.jpg',
-      'price' => '170.00',
+      'goods_id' => '15',
+      'goods_name' => '耐克混色女式篮球鞋',
+      'default_image' => 'data/files/store_2/goods_147/small_200908060925471585.jpg',
+      'price' => '578.00',
       'collects' => '0',
     ),
-    6 => 
+    28 => 
     array (
-      'goods_id' => '6',
-      'goods_name' => '包邮韩版经典长袖雪纺下摆针织连衣裙',
-      'default_image' => 'data/files/store_2/goods_95/small_200908060841358079.jpg',
-      'price' => '170.00',
+      'goods_id' => '28',
+      'goods_name' => '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套',
+      'default_image' => 'data/files/store_2/goods_115/small_200908061005154170.jpg',
+      'price' => '188.00',
       'collects' => '0',
     ),
-    19 => 
+    3 => 
     array (
-      'goods_id' => '19',
-      'goods_name' => '罗衣OL气质真丝雪纺百褶裙针织背心裙',
-      'default_image' => 'data/files/store_2/goods_109/small_200908060938292631.jpg',
-      'price' => '170.00',
+      'goods_id' => '3',
+      'goods_name' => '09新款职业女裤',
+      'default_image' => 'data/files/store_2/goods_107/small_200908060831473107.jpg',
+      'price' => '238.00',
       'collects' => '0',
     ),
-    7 => 
+    16 => 
     array (
-      'goods_id' => '7',
-      'goods_name' => '09春款专柜正品奢华系列9分裤',
-      'default_image' => 'data/files/store_2/goods_186/small_200908060906263554.jpg',
-      'price' => '178.00',
+      'goods_id' => '16',
+      'goods_name' => '横纹方格运动鞋',
+      'default_image' => 'data/files/store_2/goods_67/small_200908060927474675.jpg',
+      'price' => '128.00',
       'collects' => '0',
     ),
   ),

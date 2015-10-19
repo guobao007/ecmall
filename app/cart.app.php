@@ -22,14 +22,14 @@ class CartApp extends MallbaseApp
             LANG::get('cart')
         );
         $this->_config_seo('title', Lang::get('confirm_goods') . ' - ' . Conf::get('site_title'));
-
+        $this->assign('buy_step', 'step1');
         if (empty($carts))
         {
             $this->_cart_empty();
 
             return;
         }
-
+        
         $this->assign('carts', $carts);
         $this->display('cart.index.html');
     }
@@ -179,14 +179,18 @@ class CartApp extends MallbaseApp
         if (empty($spec_info))
         {
             /* 没有该规格 */
-            $this->json_error('no_such_spec');
+            $this->json_error('no_such_spec',array('state'=>'invalid'));
             return;
         }
 
         if ($quantity > $spec_info['stock'])
         {
             /* 数量有限 */
-            $this->json_error('no_enough_goods');
+            $this->json_error('no_enough_goods',array(
+                'state'=>'shortage',
+                'goods_num'=>$spec_info['stock'],
+                'goods_price'=>$spec_info['price']
+                ));
             return;
         }
 
@@ -217,7 +221,8 @@ class CartApp extends MallbaseApp
         $this->json_result(array(
             'cart'      =>  $cart_status['status'],                     //返回总的购物车状态
             'subtotal'  =>  $subtotal,                                  //小计
-            'amount'    =>  $cart_status['carts'][$store_id]['amount']  //店铺购物车总计
+            'amount'    =>  $cart_status['carts'][$store_id]['amount'],  //店铺购物车总计
+            'goods_price'=>$spec_info['price']
         ), 'update_item_successed');
     }
 

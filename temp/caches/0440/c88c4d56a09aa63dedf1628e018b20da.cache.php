@@ -1,13 +1,13 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 01:32:04
+ *  @Time:2015-10-19 08:46:49
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'model_id' => 862966757,
+  'model_id' => 89262525,
   'model_name' => ' 母婴保健',
   'keywords' => 
   array (

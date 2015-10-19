@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <base href="{$site_url}/" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {$page_seo}
+        <link type="text/css" href="{res file=css/base.css}" rel="stylesheet" />
+        <link type="text/css" href="{res file=css/home_login.css}" rel="stylesheet" />
+        <link type="text/css" href="{res file=css/home_cart.css}" rel="stylesheet" />
+        <link type="text/css" href="{res file=css/head.css}" rel="stylesheet" />
+        <link href="{res file=font/font-awesome/css/font-awesome.min.css}" rel="stylesheet" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+              <script src="{res file=js/html5shiv.js}"></script>
+        <![endif]-->
+        <script type="text/javascript" src="index.php?act=jslang"></script>
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{res file=js/common.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{res file=js/jquery.masonry.js}" charset="utf-8"></script>
+        <script type="text/javascript">
+        //<!CDATA[
+        var SITE_URL = "{$site_url}";
+        var REAL_SITE_URL = "{$real_site_url}";
+        var PRICE_FORMAT = '{$price_format}';
+        //]]>
+        </script>
+    </head>
+    <body>
+        <div id="topbox">
+            <div class="content1">
+                <div class="user-entry">
+                    <!--{if !$visitor.user_id}-->
+                        <div class="topl">
+                            <form action="{url app=member&act=login&ret_url=$ret_url}" method="post" name="form1" id="form1">    
+                                <div class="welcome">{$lang.hello}！欢迎光临{$site_title}！</div>
+                                <div class="login">用户名 
+                                    <input type="text" name="user_name" autocomplete="off" class="input0 wid100"> 
+                                    密码 
+                                    <input type="password" autocomplete="off" name="password" class="input0 wid100"> 
+                                    <input type="submit" value="登录" id="submit" name="submit" class="but1">
+                                    <a href="{url app=find_password}">忘记密码？</a><a href="{url app=member&act=register&ret_url=$ret_url}">注册新用户&gt;&gt;</a>
+                                </div> 
+                            </form> 
+                        </div>
+                    <!--{else}-->
+                        <div style="float:left;padding-top:10px;width:650px;">
+                        <span>{$lang.hello}<a href="{url app=member}">{$visitor.user_name|escape}</a></span>
+                        <span>欢迎来到<a href="/"  title="{$site_title}" alt="{$site_title}">{$site_title}</a></span>
+      <span>[<a href="{url app=member&act=logout}">{$lang.logout}</a>]</span>
+                        </div>
+                    <!--{/if}-->
+                    
+                </div>
+                <div class="public-top-layout w">
+                    <div class="quick-menu">
+                        <dl class="">
+                            <dt>
+                            <a href="{url app=buyer_order}">我的订单</a><i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=buyer_order&type=pending}">待付款订单</a></li>
+                                    <li><a href="{url app=buyer_order&type=shipped}">待确认收货</a></li>
+                                    <li><a href="{url app=buyer_order&type=finished}">待评价交易</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="{url app=my_favorite}">我的收藏</a><i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=my_favorite}">商品收藏</a></li>
+                                    <li><a href="{url app=my_favorite&type=store}">店铺收藏</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="">
+                            <dt>客户服务<i></i></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="{url app=my_question}">我的咨询</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>关注我们<i></i></dt>
+                            <dd>
+                                <ul>
+                                    <!--
+                                      <li><img src="" width="100" height="100"></li>
+                                      <li><img src="" width="100" height="100"></li>
+                                    -->
+                                </ul>
+                            </dd>
+                        </dl>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function(){
+          $(".quick-menu dl").hover(function() {
+            $(this).addClass("hover");
+          },
+          function() {
+            $(this).removeClass("hover");
+          });
+
+        });
+        </script>
+        <header class="ncc-head-layout">
+            <div class="site-logo">
+                <a href="index.php">
+                    <img src="{$site_logo}" class="pngFix">
+                </a>
+            </div>
+            <ul class="ncc-flow">
+                <li class="{if $buy_step == 'step1'}current{/if}"><i class="step1"></i>
+                    <p>我的购物车</p>
+                    <sub></sub>
+                    <div class="hr"></div>
+                </li>
+                <li class="{if $buy_step == 'step2'}current{/if}"><i class="step2"></i>
+                    <p>填写核对购物信息</p>
+                    <sub></sub>
+                    <div class="hr"></div>
+                </li>
+                <li class="{if $buy_step == 'step3'}current{/if}"><i class="step3"></i>
+                    <p>支付提交</p>
+                    <sub></sub>
+                    <div class="hr"></div>
+                </li>
+                <li class="{if $buy_step == 'step4'}current{/if}"><i class="step4"></i>
+                    <p>订单完成</p>
+                    <sub></sub>
+                    <div class="hr"></div>
+                </li>
+            </ul>
+        </header>

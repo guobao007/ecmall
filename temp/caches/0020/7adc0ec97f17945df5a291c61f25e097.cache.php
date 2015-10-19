@@ -1,40 +1,39 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 00:50:12
+ *  @Time:2015-10-19 02:47:59
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'id' => 12,
+  'id' => 5,
   'goods' => 
   array (
-    'goods_id' => '12',
+    'goods_id' => '5',
     'store_id' => '3',
     'type' => 'material',
-    'goods_name' => '09新款飞腾运动鞋',
-    'description' => '<p align="center"><img src="http://pic.shopex.cn/pictures/goodsdetail/danson0020.jpg" alt="" /></p>
-<p align="center"><img src="http://pic.shopex.cn/pictures/goodsdetail/danson0021.jpg" alt="" /></p>',
-    'cate_id' => '187',
-    'cate_name' => '运动鞋	跑步鞋',
-    'brand' => 'PUMA',
-    'spec_qty' => '0',
-    'spec_name_1' => '',
-    'spec_name_2' => '',
+    'goods_name' => '2009耐克新款运动鞋',
+    'description' => '<p align="center"><img src="http://pic.shopex.cn/pictures/goodsdetail/danson0025.jpg" alt="" /></p>',
+    'cate_id' => '191',
+    'cate_name' => '运动鞋	全能鞋',
+    'brand' => 'Nike',
+    'spec_qty' => '2',
+    'spec_name_1' => '颜色',
+    'spec_name_2' => '尺码',
     'if_show' => '1',
     'closed' => '0',
     'close_reason' => NULL,
-    'add_time' => '1249550348',
-    'last_update' => '1249550348',
-    'default_spec' => '34',
-    'default_image' => 'data/files/store_2/goods_123/small_200908060918436837.jpg',
+    'add_time' => '1249547890',
+    'last_update' => '1249547960',
+    'default_spec' => '11',
+    'default_image' => 'data/files/store_2/goods_70/small_200908060837502713.jpg',
     'recommended' => '1',
     'cate_id_1' => '185',
-    'cate_id_2' => '187',
+    'cate_id_2' => '191',
     'cate_id_3' => '0',
     'cate_id_4' => '0',
-    'price' => '268.00',
+    'price' => '688.00',
     'tags' => 
     array (
     ),
@@ -43,13 +42,46 @@ return array (
     array (
       0 => 
       array (
-        'spec_id' => '34',
-        'goods_id' => '12',
-        'spec_1' => '',
-        'spec_2' => '',
+        'spec_id' => '11',
+        'goods_id' => '5',
+        'spec_1' => '蓝白混色',
+        'spec_2' => '39',
         'color_rgb' => '',
-        'price' => '268.00',
-        'stock' => '29',
+        'price' => '688.00',
+        'stock' => '33',
+        'sku' => '',
+      ),
+      1 => 
+      array (
+        'spec_id' => '12',
+        'goods_id' => '5',
+        'spec_1' => '蓝白混色',
+        'spec_2' => '40',
+        'color_rgb' => '',
+        'price' => '688.00',
+        'stock' => '39',
+        'sku' => '',
+      ),
+      2 => 
+      array (
+        'spec_id' => '13',
+        'goods_id' => '5',
+        'spec_1' => '蓝白混色',
+        'spec_2' => '41',
+        'color_rgb' => '',
+        'price' => '688.00',
+        'stock' => '99',
+        'sku' => '',
+      ),
+      3 => 
+      array (
+        'spec_id' => '14',
+        'goods_id' => '5',
+        'spec_1' => '蓝白混色',
+        'spec_2' => '42',
+        'color_rgb' => '',
+        'price' => '688.00',
+        'stock' => '10',
         'sku' => '',
       ),
     ),
@@ -57,21 +89,12 @@ return array (
     array (
       0 => 
       array (
-        'image_id' => '36',
-        'goods_id' => '12',
-        'image_url' => 'data/files/store_2/goods_123/200908060918436837.jpg',
-        'thumbnail' => 'data/files/store_2/goods_123/small_200908060918436837.jpg',
+        'image_id' => '20',
+        'goods_id' => '5',
+        'image_url' => 'data/files/store_2/goods_70/200908060837502713.jpg',
+        'thumbnail' => 'data/files/store_2/goods_70/small_200908060837502713.jpg',
         'sort_order' => '255',
-        'file_id' => '38',
-      ),
-      1 => 
-      array (
-        'image_id' => '37',
-        'goods_id' => '12',
-        'image_url' => 'data/files/store_2/goods_142/200908060919027810.jpg',
-        'thumbnail' => 'data/files/store_2/goods_142/small_200908060919027810.jpg',
-        'sort_order' => '255',
-        'file_id' => '39',
+        'file_id' => '22',
       ),
     ),
     '_scates' => 
@@ -79,12 +102,12 @@ return array (
       0 => 
       array (
         'cate_id' => '1209',
-        'goods_id' => '12',
+        'goods_id' => '5',
       ),
     ),
-    'views' => '0',
-    'collects' => '0',
-    'carts' => '0',
+    'views' => '39',
+    'collects' => '1',
+    'carts' => '5',
     'orders' => '0',
     'sales' => '0',
     'comments' => '0',
@@ -256,6 +279,14 @@ return array (
     ),
     'hot_saleslist' => 
     array (
+      17 => 
+      array (
+        'goods_id' => '17',
+        'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
+        'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
+        'price' => '90.00',
+        'sales' => '2',
+      ),
       11 => 
       array (
         'goods_id' => '11',
@@ -264,13 +295,13 @@ return array (
         'price' => '268.00',
         'sales' => '2',
       ),
-      17 => 
+      28 => 
       array (
-        'goods_id' => '17',
-        'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
-        'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
-        'price' => '90.00',
-        'sales' => '2',
+        'goods_id' => '28',
+        'goods_name' => '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套',
+        'default_image' => 'data/files/store_2/goods_115/small_200908061005154170.jpg',
+        'price' => '188.00',
+        'sales' => '1',
       ),
       19 => 
       array (
@@ -288,14 +319,6 @@ return array (
         'price' => '129.00',
         'sales' => '1',
       ),
-      24 => 
-      array (
-        'goods_id' => '24',
-        'goods_name' => '阿迪达斯花式运动鞋',
-        'default_image' => 'data/files/store_2/goods_20/small_200908060957002218.jpg',
-        'price' => '169.00',
-        'sales' => '1',
-      ),
     ),
     'collect_goodslist' => 
     array (
@@ -307,36 +330,36 @@ return array (
         'price' => '688.00',
         'collects' => '1',
       ),
-      18 => 
+      2 => 
       array (
-        'goods_id' => '18',
-        'goods_name' => '春针织淑女连衣裙女装',
-        'default_image' => 'data/files/store_2/goods_195/small_200908060936352784.jpg',
-        'price' => '170.00',
+        'goods_id' => '2',
+        'goods_name' => '花色高邦运动鞋',
+        'default_image' => 'data/files/store_2/goods_131/small_200908060828517782.jpg',
+        'price' => '188.00',
         'collects' => '0',
       ),
-      6 => 
+      15 => 
       array (
-        'goods_id' => '6',
-        'goods_name' => '包邮韩版经典长袖雪纺下摆针织连衣裙',
-        'default_image' => 'data/files/store_2/goods_95/small_200908060841358079.jpg',
-        'price' => '170.00',
+        'goods_id' => '15',
+        'goods_name' => '耐克混色女式篮球鞋',
+        'default_image' => 'data/files/store_2/goods_147/small_200908060925471585.jpg',
+        'price' => '578.00',
         'collects' => '0',
       ),
-      19 => 
+      28 => 
       array (
-        'goods_id' => '19',
-        'goods_name' => '罗衣OL气质真丝雪纺百褶裙针织背心裙',
-        'default_image' => 'data/files/store_2/goods_109/small_200908060938292631.jpg',
-        'price' => '170.00',
+        'goods_id' => '28',
+        'goods_name' => '欧美精贵密码七分袖名媛洋装款水钻圆领绸缎小外套',
+        'default_image' => 'data/files/store_2/goods_115/small_200908061005154170.jpg',
+        'price' => '188.00',
         'collects' => '0',
       ),
-      7 => 
+      3 => 
       array (
-        'goods_id' => '7',
-        'goods_name' => '09春款专柜正品奢华系列9分裤',
-        'default_image' => 'data/files/store_2/goods_186/small_200908060906263554.jpg',
-        'price' => '178.00',
+        'goods_id' => '3',
+        'goods_name' => '09新款职业女裤',
+        'default_image' => 'data/files/store_2/goods_107/small_200908060831473107.jpg',
+        'price' => '238.00',
         'collects' => '0',
       ),
     ),
@@ -398,8 +421,8 @@ return array (
     ),
     2 => 
     array (
-      'text' => '跑步鞋',
-      'url' => 'index.php?app=search&amp;cate_id=187',
+      'text' => '全能鞋',
+      'url' => 'index.php?app=search&amp;cate_id=191',
     ),
     3 => 
     array (
@@ -411,7 +434,7 @@ return array (
     4 => 
     array (
       'title' => '开心网',
-      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=09%E6%96%B0%E6%AC%BE%E9%A3%9E%E8%85%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D12',
+      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=2009%E8%80%90%E5%85%8B%E6%96%B0%E6%AC%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D5',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/kaixin001.gif',
@@ -419,7 +442,7 @@ return array (
     3 => 
     array (
       'title' => 'QQ书签',
-      'link' => 'http://shuqian.qq.com/post?from=3&title=09%E6%96%B0%E6%AC%BE%E9%A3%9E%E8%85%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D12&jumpback=2&noui=1',
+      'link' => 'http://shuqian.qq.com/post?from=3&title=2009%E8%80%90%E5%85%8B%E6%96%B0%E6%AC%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D5&jumpback=2&noui=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/qqshuqian.gif',
@@ -427,7 +450,7 @@ return array (
     2 => 
     array (
       'title' => '人人网',
-      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D12&title=09%E6%96%B0%E6%AC%BE%E9%A3%9E%E8%85%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
+      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D5&title=2009%E8%80%90%E5%85%8B%E6%96%B0%E6%AC%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/renren.gif',
@@ -435,7 +458,7 @@ return array (
     1 => 
     array (
       'title' => '百度收藏',
-      'link' => 'http://cang.baidu.com/do/add?it=09%E6%96%B0%E6%AC%BE%E9%A3%9E%E8%85%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D12&fr=ien#nw=1',
+      'link' => 'http://cang.baidu.com/do/add?it=2009%E8%80%90%E5%85%8B%E6%96%B0%E6%AC%BE%E8%BF%90%E5%8A%A8%E9%9E%8B-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D5&fr=ien#nw=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/baidushoucang.gif',

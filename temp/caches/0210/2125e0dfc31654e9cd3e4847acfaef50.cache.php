@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 01:32:07
+ *  @Time:2015-10-19 08:05:35
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
@@ -89,6 +89,14 @@ return array (
   ),
   'hot_saleslist' => 
   array (
+    32 => 
+    array (
+      'goods_id' => '32',
+      'goods_name' => '测试商品生成二维码',
+      'default_image' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
+      'price' => '100.00',
+      'sales' => '0',
+    ),
     33 => 
     array (
       'goods_id' => '33',
@@ -119,19 +127,19 @@ return array (
       'goods_name' => '测试测试测试',
       'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
       'price' => '100.00',
-      'sales' => '0',
-    ),
-    31 => 
-    array (
-      'goods_id' => '31',
-      'goods_name' => '测试商品',
-      'default_image' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
-      'price' => '50.00',
       'sales' => '0',
     ),
   ),
   'collect_goodslist' => 
   array (
+    32 => 
+    array (
+      'goods_id' => '32',
+      'goods_name' => '测试商品生成二维码',
+      'default_image' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
+      'price' => '100.00',
+      'collects' => '0',
+    ),
     33 => 
     array (
       'goods_id' => '33',
@@ -162,14 +170,6 @@ return array (
       'goods_name' => '测试测试测试',
       'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
       'price' => '100.00',
-      'collects' => '0',
-    ),
-    31 => 
-    array (
-      'goods_id' => '31',
-      'goods_name' => '测试商品',
-      'default_image' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
-      'price' => '50.00',
       'collects' => '0',
     ),
   ),

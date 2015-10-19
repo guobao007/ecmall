@@ -307,7 +307,7 @@ class OrderApp extends ShoppingbaseApp
 
                 $store_model =& m('store');
                 $store_info = $store_model->get($store_id);
-
+                
                 foreach ($cart_items as $rec_id => $goods)
                 {
                     $return['quantity'] += $goods['quantity'];                      //商品总量
@@ -315,7 +315,6 @@ class OrderApp extends ShoppingbaseApp
                     $cart_items[$rec_id]['subtotal']    =   $goods['quantity'] * $goods['price'];   //小计
                     empty($goods['goods_image']) && $cart_items[$rec_id]['goods_image'] = Conf::get('default_goods_image');
                 }
-
                 $return['items']        =   $cart_items;
                 $return['store_id']     =   $store_id;
                 $return['store_name']   =   $store_info['store_name'];
