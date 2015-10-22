@@ -24,7 +24,7 @@ class ShoppeWidget extends BaseWidget {
     }
 
     function parse_config($input) {
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 40; $i++) {
             if (!empty($input['zg_image_url'][$i])) {
                 $result[] = array(
                     'zg_image_url' => $input['zg_image_url'][$i],

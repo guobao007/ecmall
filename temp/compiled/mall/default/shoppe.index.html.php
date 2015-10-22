@@ -18,7 +18,7 @@
 	float: left;
 	margin: 10px 10px 15px 0px;
 	border: 1px #DCDCDC solid;
-	width: 350px;
+	width: 262px;
 	height: 330px;
 }
 .new_ul .dt2 {

@@ -13,3 +13,32 @@ Wrong File:  F:\wamp\www\ecmall\eccore\model\mysql.php[508]	\eccore\model\mysql.
 Tue, 13 Oct 2015 02:10:46 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57
 Tue, 13 Oct 2015 02:10:52 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57
 Tue, 13 Oct 2015 02:11:00 +0000	[2]mkdir(): No such file or directory	\includes\phpqrcode\index.php	57
+Tue, 20 Oct 2015 03:10:25 +0000	[256]MySQL Error[1052]: Column 'goods_id' in where clause is ambiguous
+MySQL Query:SELECT g.goods_id, g.store_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price, gs.stock, s.store_name, s.region_id, s.region_name, s.credit_value, s.sgrade, gst.views, gst.sales, gst.comments FROM ecm_goods g LEFT JOIN ecm_goods_spec gs ON g.default_spec = gs.spec_id LEFT JOIN ecm_store s ON g.store_id = s.store_id LEFT JOIN ecm_goods_statistics gst ON g.goods_id = gst.goods_id  WHERE goods_id in(44,45,46) AND gs.spec_id IS NOT NULL AND s.store_id IS NOT NULL 
+Wrong File:  F:\wamp\www\ecmall\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 20 Oct 2015 03:29:52 +0000	[2]array_keys() expects parameter 1 to be array, null given	\includes\models\cart.model.php	69
+Tue, 20 Oct 2015 03:29:54 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Tue, 20 Oct 2015 06:56:16 +0000	[2]include(F:\wamp\www\ecmall/includes/ordertypes/.otype.php): failed to open stream: No such file or directory	\includes\global.lib.php	65
+Tue, 20 Oct 2015 06:57:36 +0000	[2]include(F:\wamp\www\ecmall/includes/ordertypes/.otype.php): failed to open stream: No such file or directory	\includes\global.lib.php	65
+Tue, 20 Oct 2015 06:57:40 +0000	[2]include(F:\wamp\www\ecmall/includes/ordertypes/.otype.php): failed to open stream: No such file or directory	\includes\global.lib.php	65
+Tue, 20 Oct 2015 06:57:58 +0000	[2]include(F:\wamp\www\ecmall/includes/goodstypes/.gtype.php): failed to open stream: No such file or directory	\includes\global.lib.php	43
+Tue, 20 Oct 2015 06:58:02 +0000	[2]include(F:\wamp\www\ecmall/includes/goodstypes/.gtype.php): failed to open stream: No such file or directory	\includes\global.lib.php	43
+Tue, 20 Oct 2015 06:58:06 +0000	[2]include(F:\wamp\www\ecmall/includes/goodstypes/.gtype.php): failed to open stream: No such file or directory	\includes\global.lib.php	43
+Tue, 20 Oct 2015 06:58:16 +0000	[2]include(F:\wamp\www\ecmall/includes/ordertypes/.otype.php): failed to open stream: No such file or directory	\includes\global.lib.php	65
+Tue, 20 Oct 2015 07:28:09 +0000	[2]Missing argument 1 for BaseOrder::__construct(), called in F:\wamp\www\ecmall\includes\models\buy.model.php on line 43 and defined	\includes\order.base.php	13
+Wed, 21 Oct 2015 06:00:14 +0000	[2]array_keys() expects parameter 1 to be array, null given	\includes\models\buy.model.php	44
+Wed, 21 Oct 2015 07:58:59 +0000	[2]Illegal offset type	\includes\models\buy.model.php	37
+Wed, 21 Oct 2015 07:59:08 +0000	[2]Illegal string offset 'price'	\includes\models\cart.model.php	150
+Wed, 21 Oct 2015 08:00:10 +0000	[2]Illegal string offset 'price'	\includes\models\cart.model.php	150
+Wed, 21 Oct 2015 08:00:15 +0000	[2]Illegal string offset 'price'	\includes\models\cart.model.php	150
+Thu, 22 Oct 2015 02:54:40 +0000	[256]MySQL Error[1064]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND session_id='7976e028057a48ded9fb9021c16516eb'' at line 1
+MySQL Query:SELECT *,cart.rec_id FROM ecm_cart cart LEFT JOIN ecm_goods_spec gs ON cart.spec_id = gs.spec_id WHERE user_id = 5 AND store_id =  AND session_id='7976e028057a48ded9fb9021c16516eb'
+Wrong File:  F:\wamp\www\ecmall\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Thu, 22 Oct 2015 05:58:17 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 05:59:08 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:00:23 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:01:03 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:04:05 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:04:26 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:12:32 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Thu, 22 Oct 2015 06:13:47 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89

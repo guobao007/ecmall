@@ -116,7 +116,7 @@ class OrderApp extends ShoppingbaseApp
             /* 根据商品类型获取对应的订单类型 */
             $goods_type =& gt($goods_info['type']);
             $order_type =& ot($goods_info['otype']);
-
+            
             /* 将这些信息传递给订单类型处理类生成订单(你根据我提供的信息生成一张订单) */
             $order_id = $order_type->submit_order(array(
                 'goods_info'    =>  $goods_info,      //商品信息（包括列表，总价，总量，所属店铺，类型）,可靠的!

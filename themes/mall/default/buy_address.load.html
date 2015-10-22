@@ -1,0 +1,55 @@
+<ul>
+    <!--{foreach from=$address_list item=address name=address_key}-->
+    <li class="receive_add address_item {if $smarty.foreach.address_key.index==0}ncc-selected-item{/if}">
+        <input address="{$address.region_name}&nbsp;{$address.address}" consignee="{$address.consignee}" id="addr_{$address.addr_id}" nc_type="addr" type="radio" class="radio" region_id="{$address.region_id}" name="addr" value="{$address.addr_id}" phone="{if $address.phone_tel}{$address.phone_tel}{else}{$address.phone_mob}{/if}" {if $smarty.foreach.address_key.first}checked{/if}/>
+        <label for="addr_{$address.addr_id}"><span class="true-name">{$address.consignee}</span><span class="address">{$address.region_name}&nbsp;{$address.address}</span><span class="phone"><i class="icon-mobile-phone"></i>{if $address.phone_tel}{$address.phone_tel}{else}{$address.phone_mob}{/if}</span></label>
+        <a href="javascript:void(0);" onclick="delAddr({$address.addr_id});" class="del">[ 删除 ]</a> </li>
+    </li>
+    <!--{/foreach}-->
+    <li class="receive_add addr_item">
+        <input value="0" nc_type="addr" id="add_addr" type="radio" name="addr">
+        <label for="add_addr">使用新地址</label>
+    </li>
+    <div id="add_addr_box"><!-- 存放新增地址表单 --></div>
+</ul>
+<div class="hr16"> <a id="hide_addr_list" class="ncc-btn ncc-btn-red" href="javascript:void(0);">保存收
+货人信息</a></div>
+<script type="text/javascript">
+function delAddr(id){
+    $('#addr_list').load(SITE_URL+'/index.php?app=buy&act=load_addr&id='+id);
+}
+$(function(){
+    function addAddr() {
+        $('#add_addr_box').load(SITE_URL+'/index.php?app=buy&act=add_addr');
+    }
+    $('input[nc_type="addr"]').on('click',function(){
+        if ($(this).val() == '0') {
+            $('.address_item').removeClass('ncc-selected-item');
+            $('#add_addr_box').load(SITE_URL+'/index.php?app=buy&act=add_addr');
+        } else {
+            $('.address_item').removeClass('ncc-selected-item');
+            $(this).parent().addClass('ncc-selected-item');
+            $('#add_addr_box').html('');
+        }
+    });
+    $('#hide_addr_list').on('click',function(){
+        if ($('input[nc_type="addr"]:checked').val() == '0'){
+            submitAddAddr();
+        } else {
+//            var region_name = $('input[name="addr"]:checked').attr('region_name');
+            var region_id = $('input[name="addr"]:checked').attr('region_id');
+            var addr_id = $('input[name="addr"]:checked').val();
+            var consignee = $('input[name="addr"]:checked').attr('consignee');
+            var address = $('input[name="addr"]:checked').attr('address');
+            var phone = $('input[name="addr"]:checked').attr('phone');
+//            showShippingPrice(city_id,area_id);
+            calcOrder();
+            hideAddrList(addr_id,consignee,address,phone);
+        }
+    });
+    if ($('input[nc_type="addr"]').size() == 1){
+        $('#add_addr').attr('checked',true);
+        addAddr();
+    }
+});
+</script>

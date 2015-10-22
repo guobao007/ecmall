@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 00:49:48
+ *  @Time:2015-10-22 05:58:11
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
@@ -89,9 +89,9 @@ return array (
     '_scates' => 
     array (
     ),
-    'views' => '194',
+    'views' => '195',
     'collects' => '0',
-    'carts' => '7',
+    'carts' => '8',
     'orders' => '0',
     'sales' => '0',
     'comments' => '0',
@@ -159,9 +159,9 @@ return array (
       'im_yahoo' => NULL,
       'im_aliww' => NULL,
       'reg_time' => '1438307455',
-      'last_login' => '1444977671',
+      'last_login' => '1445410204',
       'last_ip' => '127.0.0.1',
-      'logins' => '75',
+      'logins' => '78',
       'ugrade' => '0',
       'portrait' => 'data/files/mall/portrait/1/2.jpg',
       'outer_id' => '0',
@@ -171,7 +171,7 @@ return array (
     'store_navs' => 
     array (
     ),
-    'goods_count' => '6',
+    'goods_count' => '5',
     'store_gcates' => 
     array (
     ),
@@ -183,28 +183,12 @@ return array (
     ),
     'hot_saleslist' => 
     array (
-      34 => 
-      array (
-        'goods_id' => '34',
-        'goods_name' => '测试商品生成二维码3',
-        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
-        'price' => '10.00',
-        'sales' => '0',
-      ),
       35 => 
       array (
         'goods_id' => '35',
         'goods_name' => '测试商品22222',
         'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
         'price' => '10.00',
-        'sales' => '0',
-      ),
-      30 => 
-      array (
-        'goods_id' => '30',
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
         'sales' => '0',
       ),
       31 => 
@@ -221,33 +205,33 @@ return array (
         'goods_name' => '测试商品生成二维码',
         'default_image' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
         'price' => '100.00',
+        'sales' => '0',
+      ),
+      33 => 
+      array (
+        'goods_id' => '33',
+        'goods_name' => '测试商品生成二维码2',
+        'default_image' => 'data/files/store_2/goods_90/small_201509240211301710.jpg',
+        'price' => '50.00',
+        'sales' => '0',
+      ),
+      34 => 
+      array (
+        'goods_id' => '34',
+        'goods_name' => '测试商品生成二维码3',
+        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
+        'price' => '10.00',
         'sales' => '0',
       ),
     ),
     'collect_goodslist' => 
     array (
-      34 => 
-      array (
-        'goods_id' => '34',
-        'goods_name' => '测试商品生成二维码3',
-        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
-        'price' => '10.00',
-        'collects' => '0',
-      ),
       35 => 
       array (
         'goods_id' => '35',
         'goods_name' => '测试商品22222',
         'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
         'price' => '10.00',
-        'collects' => '0',
-      ),
-      30 => 
-      array (
-        'goods_id' => '30',
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
         'collects' => '0',
       ),
       31 => 
@@ -264,6 +248,22 @@ return array (
         'goods_name' => '测试商品生成二维码',
         'default_image' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
         'price' => '100.00',
+        'collects' => '0',
+      ),
+      33 => 
+      array (
+        'goods_id' => '33',
+        'goods_name' => '测试商品生成二维码2',
+        'default_image' => 'data/files/store_2/goods_90/small_201509240211301710.jpg',
+        'price' => '50.00',
+        'collects' => '0',
+      ),
+      34 => 
+      array (
+        'goods_id' => '34',
+        'goods_name' => '测试商品生成二维码3',
+        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
+        'price' => '10.00',
         'collects' => '0',
       ),
     ),
@@ -276,14 +276,6 @@ return array (
         'price' => '10.00',
         'sales' => '0',
         'goods_id' => '35',
-      ),
-      30 => 
-      array (
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
-        'sales' => '0',
-        'goods_id' => '30',
       ),
       33 => 
       array (
@@ -308,6 +300,14 @@ return array (
         'price' => '50.00',
         'sales' => '0',
         'goods_id' => '31',
+      ),
+      34 => 
+      array (
+        'goods_name' => '测试商品生成二维码3',
+        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
+        'price' => '10.00',
+        'sales' => '0',
+        'goods_id' => '34',
       ),
     ),
   ),

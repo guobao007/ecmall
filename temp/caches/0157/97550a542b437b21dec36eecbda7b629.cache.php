@@ -1,13 +1,13 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 08:46:49
+ *  @Time:2015-10-22 05:57:49
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'model_id' => 262223549,
+  'model_id' => 926318106,
   'model_name' => ' 酒水茶饮',
   'keywords' => 
   array (
@@ -21,13 +21,29 @@ return array (
   array (
     0 => 
     array (
+      'goods_id' => '17',
+      'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
+      'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
+      'price' => '90.00',
+      'stock' => '80',
+    ),
+    1 => 
+    array (
+      'goods_id' => '18',
+      'goods_name' => '春针织淑女连衣裙女装',
+      'default_image' => 'data/files/store_2/goods_195/small_200908060936352784.jpg',
+      'price' => '170.00',
+      'stock' => '27',
+    ),
+    2 => 
+    array (
       'goods_id' => '19',
       'goods_name' => '罗衣OL气质真丝雪纺百褶裙针织背心裙',
       'default_image' => 'data/files/store_2/goods_109/small_200908060938292631.jpg',
       'price' => '170.00',
       'stock' => '86',
     ),
-    1 => 
+    3 => 
     array (
       'goods_id' => '20',
       'goods_name' => '小脚牛仔铅笔裤',
@@ -35,7 +51,7 @@ return array (
       'price' => '129.00',
       'stock' => '99',
     ),
-    2 => 
+    4 => 
     array (
       'goods_id' => '21',
       'goods_name' => '09春季新款简约大方高雅修身针织连衣裙983配腰带',
@@ -43,29 +59,13 @@ return array (
       'price' => '170.00',
       'stock' => '87',
     ),
-    3 => 
+    5 => 
     array (
       'goods_id' => '22',
       'goods_name' => '新款多用型穿珠运动长裤',
       'default_image' => 'data/files/store_2/goods_147/small_200908060952274906.jpg',
       'price' => '111.00',
       'stock' => '32',
-    ),
-    4 => 
-    array (
-      'goods_id' => '17',
-      'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
-      'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
-      'price' => '90.00',
-      'stock' => '80',
-    ),
-    5 => 
-    array (
-      'goods_id' => '18',
-      'goods_name' => '春针织淑女连衣裙女装',
-      'default_image' => 'data/files/store_2/goods_195/small_200908060936352784.jpg',
-      'price' => '170.00',
-      'stock' => '27',
     ),
   ),
   'ad_images_f1' => 

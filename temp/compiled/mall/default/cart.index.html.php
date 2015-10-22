@@ -43,7 +43,7 @@
                     <?php $_from = $this->_var['cart']['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods');if (count($_from)):
     foreach ($_from AS $this->_var['goods']):
 ?>
-                    <tr id="cart_item_<?php echo $this->_var['goods']['rec_id']; ?>" nc_group="<?php echo $this->_var['goods']['rec_id']; ?>" class="shop-list">
+                    <tr id="cart_item_<?php echo $this->_var['goods']['rec_id']; ?>" nc_group="<?php echo $this->_var['goods']['rec_id']; ?>" class="shop-list <?php if ($this->_var['goods']['state'] && $this->_var['goods']['storage_state'] && $this->_var['goods']['if_show'] && ! $this->_var['goods']['closed']): ?><?php else: ?>item_disabled<?php endif; ?>">
                         <td><input type="checkbox" checked value="<?php echo $this->_var['goods']['rec_id']; ?>|<?php echo $this->_var['goods']['quantity']; ?>" id="cart_id<?php echo $this->_var['goods']['rec_id']; ?>" name="cart_id[]" nc_type="eachGoodsCheckBox"></td>
                         <td class="w60"><a href="<?php echo url('app=goods&id=' . $this->_var['goods']['goods_id']. ''); ?>" target="_blank" class="ncc-goods-thumb"><img src="<?php echo $this->_var['goods']['goods_image']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?>" /></a></td>
                         <td class="tl">
@@ -53,13 +53,21 @@
                             </dl>
                         </td>
                         <td class="w120">￥<em id="item<?php echo $this->_var['goods']['rec_id']; ?>_price"><?php echo $this->_var['goods']['price']; ?></em></td>
+                        <?php if ($this->_var['goods']['state'] && $this->_var['goods']['storage_state'] && $this->_var['goods']['if_show'] && ! $this->_var['goods']['closed']): ?>
                         <td class="w120 ws0">
                             <a href="JavaScript:void(0);" onclick="decrease_quantity(<?php echo $this->_var['goods']['rec_id']; ?>);" title="减少商品件数" class="add-substract-key tip">-</a>
                             <input id="input_item_<?php echo $this->_var['goods']['rec_id']; ?>" value="<?php echo $this->_var['goods']['quantity']; ?>" orig="<?php echo $cart_info['goods_num']; ?>" changed="<?php echo $this->_var['goods']['quantity']; ?>" onkeyup="change_quantity(<?php echo $this->_var['store_id']; ?>, <?php echo $this->_var['goods']['rec_id']; ?>, <?php echo $this->_var['goods']['spec_id']; ?>, this);" type="text" class="text w20"/>
                             <a href="JavaScript:void(0);" onclick="add_quantity(<?php echo $this->_var['goods']['rec_id']; ?>);" title="增加商品件数" class="add-substract-key tip" >+</a>
                         </td>
+                        <?php else: ?>
+                        <td class="w120">无效
+                            <input type="hidden" value="<?php echo $this->_var['goods']['rec_id']; ?>" name="invalid_cart[]">
+                        </td>
+                        <?php endif; ?>
                         <td class="w120">
+                            <?php if ($this->_var['goods']['state'] && $this->_var['goods']['storage_state'] && $this->_var['goods']['if_show'] && ! $this->_var['goods']['closed']): ?>
                             ￥<em id="item<?php echo $this->_var['goods']['rec_id']; ?>_subtotal" nc_type="eachGoodsTotal"><?php echo $this->_var['goods']['subtotal']; ?></em>
+                            <?php endif; ?>
                         </td>
                         <td class="w80">
                             <a href="javascript:void(0)" onclick="collect_goods('<?php echo $this->_var['goods']['goods_id']; ?>');">收藏</a><br/>

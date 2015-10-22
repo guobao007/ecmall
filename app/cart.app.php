@@ -29,7 +29,6 @@ class CartApp extends MallbaseApp
 
             return;
         }
-        
         $this->assign('carts', $carts);
         $this->display('cart.index.html');
     }
@@ -80,7 +79,7 @@ class CartApp extends MallbaseApp
         if (!empty($item_info))
         {
             //$this->json_error('goods_already_in_cart');
-            $this->json_result();
+            $this->json_error('goods_already_in_cart');
             return;
         }
 
@@ -283,16 +282,24 @@ class CartApp extends MallbaseApp
         $carts = array();
 
         /* 获取所有购物车中的内容 */
-        $where_store_id = $store_id ? ' AND cart.store_id=' . $store_id : '';
+        //$where_store_id = $store_id ? ' AND cart.store_id=' . $store_id : '';
 
         /* 只有是自己购物车的项目才能购买 */
-        $where_user_id = $this->visitor->get('user_id') ? " AND cart.user_id=" . $this->visitor->get('user_id') : '';
+        //$where_user_id = $this->visitor->get('user_id') ? " AND cart.user_id=" . $this->visitor->get('user_id') : '';
         $cart_model =& m('cart');
-        $cart_items = $cart_model->find(array(
-            'conditions'    => 'session_id = \'' . SESS_ID . "'" . $where_store_id . $where_user_id,
-            'fields'        => 'this.*,store.store_name',
-            'join'          => 'belongs_to_store',
-        ));
+//        $cart_items = $cart_model->find(array(
+//            'conditions'    => 'session_id = \'' . SESS_ID . "'" . $where_store_id . $where_user_id,
+//            'fields'        => 'this.*,store.store_name',
+//            'join'          => 'belongs_to_store',
+//        ));
+        /******************修改S***************/
+        //取购物车列表
+        $where_store_id = $store_id ? $store_id : '';
+        $condition = "user_id = " . $this->visitor->get('user_id') . " AND session_id='" . SESS_ID . "'";
+        $cart_items = $cart_model->listCart($condition);
+        //取商品最新的在售信息
+        $cart_items = $cart_model->getOnlineCartList($cart_items);
+        /******************修改E***************/
         if (empty($cart_items))
         {
             return $carts;

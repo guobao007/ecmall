@@ -183,6 +183,17 @@ class StoreModel extends BaseModel
         }
         return $info;
     }
+    
+    /**
+     * 获取单个店铺信息
+     */
+    public function get_one_info($store_id,$fields){
+        $info = $this->get(array(
+            'conditions' => $store_id,
+            'fields'     => $fields,
+        ));
+        return $info;
+    }
 
     /* 新增 */
     function add($data, $compatible = false)

@@ -1,20 +1,20 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 08:05:32
+ *  @Time:2015-10-22 05:58:06
  */
 
 if(filemtime(__FILE__) + 3600 < time())return false;
 
 return array (
-  'total_count' => '6',
+  'total_count' => '5',
   'by_category' => 
   array (
     1 => 
     array (
       'cate_id' => '1',
       'cate_name' => '男装',
-      'count' => '5',
+      'count' => '4',
     ),
     73 => 
     array (
@@ -32,7 +32,7 @@ return array (
     array (
       'region_id' => '44',
       'region_name' => '中国	上海市	长宁区',
-      'count' => '6',
+      'count' => '5',
     ),
   ),
   'by_price' => 

@@ -1,0 +1,114 @@
+<style>
+.ncc-table-style tbody tr.item_disabled td {
+	background: none repeat scroll 0 0 #F9F9F9;
+	height: 30px;
+	padding: 10px 0;
+	text-align: center;
+}
+</style>
+<div class="ncc-receipt-info">
+    <div class="ncc-receipt-info-title">
+        <h3>商品清单</h3>
+        {if $ifcart}
+        <a href="index.php?app=cart">返回购物车</a>
+        {/if}
+    </div>
+    <table class="ncc-table-style">
+        <thead>
+            <tr>
+                <th class="w20"></th>
+                <th></th>
+                <th>商品</th>
+                <th class="w120">单价(元)</th>
+                <th class="w120">数量</th>
+                <th class="w120">小计</th>
+                <th class="w160">配送方式</th>
+            </tr>
+        </thead>
+        <!--{foreach from=$store_cart_list item=cart_list key=store_id}-->
+        <tbody>
+            <tr>
+                <th colspan="20"><i class="icon-home"></i><a target="_blank" href="{url app=store&id=$store_id}">{$cart_list.0.store_name}</a>
+                  <div class="store-sale">&emsp;</div>
+                </th>
+            </tr>
+            <!--{foreach from=$cart_list item=cart_info key=key name=cart_name}-->
+            <tr id="cart_item_{$cart_info.rec_id}" class="shop-list {if $cart_info.state && $cart_info.storage_state && $cart_info.if_show && !$cart_info.closed}{else}item_disabled{/if}">
+                <td>
+                    {if $cart_info.state && $cart_info.storage_state && $cart_info.if_show && !$cart_info.closed}
+                    <input type="hidden" value="{$cart_info.rec_id}|{$cart_info.quantity}" name="cart_id[]">
+                    {/if}
+                </td>
+                <td class="w60">
+                    <a href="{url app=goods&id=$cart_info.goods_id}" target="_blank" class="ncc-goods-thumb">
+                        <img src="{$cart_info.goods_image}" alt="{$cart_info.goods_name}" />
+                    </a>
+                </td>
+                <td class="tl">
+                    <dl class="ncc-goods-info">
+                    <dt><a href="{url app=goods&id=$cart_info.goods_id}" target="_blank">{$cart_info.goods_name}</a></dt>
+                    <dd></dd>
+                    </dl>
+                </td>
+                <td class="w120">￥<em>{$cart_info.price}</em></span></td>
+                <td class="w60">{$cart_info.quantity}</td>
+                <td class="w120">
+                    {if $cart_info.state && $cart_info.storage_state && $cart_info.if_show && !$cart_info.closed}
+                    ￥<em id="item{$cart_info.rec_id}_subtotal" nc_type="eachGoodsTotal">{$cart_info.goods_total}</em>
+                    {elseif !$cart_info['storage_state']}
+                    <span style="color: #F00;">库存不足</span>
+                    {elseif !$cart_info['state'] || $cart_info.closed || !$cart_info.if_show}
+                    <span style="color: #F00;">已下架</span>
+                    {/if}
+                </td>
+                {if $smarty.foreach.cart_name.first}
+                <td class="w160" rowspan="{$smarty.foreach.cart_name.total}">
+                    <select class="w120" name="shipping[]" nctype="shipping">
+                        <!--{foreach from=$shipping_methods[$store_id] item=shipping name=sp}-->
+                        <option value="{$shipping.shipping_id}|{$store_id}|{$shipping.first_price}" {if $smarty.foreach.sp.first}selected{/if}>{$shipping.shipping_name}&nbsp;&nbsp;{$shipping.first_price}元</option>
+                        <!--{/foreach}-->
+                    </select>
+                </td>
+                {/if}
+            </tr>
+            <!--{/foreach}-->
+            <tr>
+                <td class="w10"></td>
+                <td class="tl" colspan="2">买家留言：
+                    <input type="text" value="" class="text w340" name="pay_message[{$store_id}]" maxlength="150">&nbsp;</td>
+                <td class="tl" colspan="10"><div class="ncc-form-default"> </div></td>
+            </tr>
+            <tr>
+                <td class="tr" colspan="20">
+                    <div class="ncc-store-account">
+                        <dl class="freight">
+                            <dt>运费：</dt>
+                            <dd>￥<em id="eachStoreFreight_{$store_id}">0.00</em></dd>
+                        </dl>
+                        <dl>
+                            <dt>商品金额：</dt>
+                            <dd>￥<em id="eachStoreGoodsTotal_{$store_id}">{$store_goods_total.$store_id}</em></dd>
+                        </dl>
+<!--                        <dl class="voucher">
+                            <dt>
+                              <select nctype="voucher" name="voucher">
+                                <option value="">选择代金券</option>
+                              </select> ：
+                            <dd>￥<em id="eachStoreVoucher_{$store_id}">-0.00</em></dd>
+                        </dl>-->
+                        <dl class="total">
+                            <dt>本店合计    ：</dt>
+                            <dd>￥<em store_id="{$store_id}" nc_type="eachStoreTotal"></em></dd>
+                        </dl>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <!--{/foreach}-->
+        <tfoot>
+            <tr>
+              <td colspan="20"><div class="ncc-all-account">订单总金额：￥<em id="orderTotal"></em>元</div></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

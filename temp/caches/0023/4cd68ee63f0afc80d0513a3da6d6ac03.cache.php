@@ -1,20 +1,20 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-19 08:15:04
+ *  @Time:2015-10-22 05:58:19
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'id' => 32,
+  'id' => 33,
   'goods' => 
   array (
-    'goods_id' => '32',
+    'goods_id' => '33',
     'store_id' => '2',
     'type' => 'material',
-    'goods_name' => '测试商品生成二维码',
-    'description' => '<p><img src="http://ecmall/data/files/store_2/goods_91/201509240204513228.jpg" alt="web-055620-33.jpg" /></p>',
+    'goods_name' => '测试商品生成二维码2',
+    'description' => '',
     'cate_id' => '1211',
     'cate_name' => '男装	T恤	T恤1',
     'brand' => '',
@@ -24,16 +24,16 @@ return array (
     'if_show' => '1',
     'closed' => '0',
     'close_reason' => NULL,
-    'add_time' => '1443060297',
-    'last_update' => '1443064263',
-    'default_spec' => '77',
-    'default_image' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
+    'add_time' => '1443060693',
+    'last_update' => '1443064230',
+    'default_spec' => '78',
+    'default_image' => 'data/files/store_2/goods_90/small_201509240211301710.jpg',
     'recommended' => '1',
     'cate_id_1' => '1',
     'cate_id_2' => '2',
     'cate_id_3' => '1211',
     'cate_id_4' => '0',
-    'price' => '100.00',
+    'price' => '50.00',
     'tags' => 
     array (
     ),
@@ -42,12 +42,12 @@ return array (
     array (
       0 => 
       array (
-        'spec_id' => '77',
-        'goods_id' => '32',
+        'spec_id' => '78',
+        'goods_id' => '33',
         'spec_1' => '',
         'spec_2' => '',
         'color_rgb' => '',
-        'price' => '100.00',
+        'price' => '50.00',
         'stock' => '10',
         'sku' => '',
       ),
@@ -56,20 +56,20 @@ return array (
     array (
       0 => 
       array (
-        'image_id' => '89',
-        'goods_id' => '32',
-        'image_url' => 'data/files/store_2/goods_123/201509240145231928.jpg',
-        'thumbnail' => 'data/files/store_2/goods_123/small_201509240145231928.jpg',
+        'image_id' => '90',
+        'goods_id' => '33',
+        'image_url' => 'data/files/store_2/goods_90/201509240211301710.jpg',
+        'thumbnail' => 'data/files/store_2/goods_90/small_201509240211301710.jpg',
         'sort_order' => '1',
-        'file_id' => '110',
+        'file_id' => '112',
       ),
     ),
     '_scates' => 
     array (
     ),
-    'views' => '3',
+    'views' => '108',
     'collects' => '0',
-    'carts' => '0',
+    'carts' => '3',
     'orders' => '0',
     'sales' => '0',
     'comments' => '0',
@@ -137,9 +137,9 @@ return array (
       'im_yahoo' => NULL,
       'im_aliww' => NULL,
       'reg_time' => '1438307455',
-      'last_login' => '1445218299',
+      'last_login' => '1445410204',
       'last_ip' => '127.0.0.1',
-      'logins' => '76',
+      'logins' => '78',
       'ugrade' => '0',
       'portrait' => 'data/files/mall/portrait/1/2.jpg',
       'outer_id' => '0',
@@ -149,7 +149,7 @@ return array (
     'store_navs' => 
     array (
     ),
-    'goods_count' => '6',
+    'goods_count' => '5',
     'store_gcates' => 
     array (
     ),
@@ -161,6 +161,22 @@ return array (
     ),
     'hot_saleslist' => 
     array (
+      35 => 
+      array (
+        'goods_id' => '35',
+        'goods_name' => '测试商品22222',
+        'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
+        'price' => '10.00',
+        'sales' => '0',
+      ),
+      31 => 
+      array (
+        'goods_id' => '31',
+        'goods_name' => '测试商品',
+        'default_image' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
+        'price' => '50.00',
+        'sales' => '0',
+      ),
       32 => 
       array (
         'goods_id' => '32',
@@ -183,27 +199,27 @@ return array (
         'goods_name' => '测试商品生成二维码3',
         'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
         'price' => '10.00',
-        'sales' => '0',
-      ),
-      35 => 
-      array (
-        'goods_id' => '35',
-        'goods_name' => '测试商品22222',
-        'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
-        'price' => '10.00',
-        'sales' => '0',
-      ),
-      30 => 
-      array (
-        'goods_id' => '30',
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
         'sales' => '0',
       ),
     ),
     'collect_goodslist' => 
     array (
+      35 => 
+      array (
+        'goods_id' => '35',
+        'goods_name' => '测试商品22222',
+        'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
+        'price' => '10.00',
+        'collects' => '0',
+      ),
+      31 => 
+      array (
+        'goods_id' => '31',
+        'goods_name' => '测试商品',
+        'default_image' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
+        'price' => '50.00',
+        'collects' => '0',
+      ),
       32 => 
       array (
         'goods_id' => '32',
@@ -226,22 +242,6 @@ return array (
         'goods_name' => '测试商品生成二维码3',
         'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
         'price' => '10.00',
-        'collects' => '0',
-      ),
-      35 => 
-      array (
-        'goods_id' => '35',
-        'goods_name' => '测试商品22222',
-        'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
-        'price' => '10.00',
-        'collects' => '0',
-      ),
-      30 => 
-      array (
-        'goods_id' => '30',
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
         'collects' => '0',
       ),
     ),
@@ -254,14 +254,6 @@ return array (
         'price' => '10.00',
         'sales' => '0',
         'goods_id' => '35',
-      ),
-      30 => 
-      array (
-        'goods_name' => '测试测试测试',
-        'default_image' => 'data/files/store_2/goods_4/small_201508050846449221.jpg',
-        'price' => '100.00',
-        'sales' => '0',
-        'goods_id' => '30',
       ),
       33 => 
       array (
@@ -286,6 +278,14 @@ return array (
         'price' => '50.00',
         'sales' => '0',
         'goods_id' => '31',
+      ),
+      34 => 
+      array (
+        'goods_name' => '测试商品生成二维码3',
+        'default_image' => 'data/files/store_2/goods_88/small_201509240311289386.jpg',
+        'price' => '10.00',
+        'sales' => '0',
+        'goods_id' => '34',
       ),
     ),
   ),
@@ -321,7 +321,7 @@ return array (
     4 => 
     array (
       'title' => '开心网',
-      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D32',
+      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%812-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D33',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/kaixin001.gif',
@@ -329,7 +329,7 @@ return array (
     3 => 
     array (
       'title' => 'QQ书签',
-      'link' => 'http://shuqian.qq.com/post?from=3&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D32&jumpback=2&noui=1',
+      'link' => 'http://shuqian.qq.com/post?from=3&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%812-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D33&jumpback=2&noui=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/qqshuqian.gif',
@@ -337,7 +337,7 @@ return array (
     2 => 
     array (
       'title' => '人人网',
-      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D32&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
+      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D33&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%812-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/renren.gif',
@@ -345,7 +345,7 @@ return array (
     1 => 
     array (
       'title' => '百度收藏',
-      'link' => 'http://cang.baidu.com/do/add?it=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D32&fr=ien#nw=1',
+      'link' => 'http://cang.baidu.com/do/add?it=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%812-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D33&fr=ien#nw=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/baidushoucang.gif',

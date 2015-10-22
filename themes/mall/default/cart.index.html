@@ -39,7 +39,7 @@
                         </th>
                     </tr>
                     <!--{foreach from=$cart.goods item=goods}-->
-                    <tr id="cart_item_{$goods.rec_id}" nc_group="{$goods.rec_id}" class="shop-list">
+                    <tr id="cart_item_{$goods.rec_id}" nc_group="{$goods.rec_id}" class="shop-list {if $goods.state && $goods.storage_state && $goods.if_show && !$goods.closed}{else}item_disabled{/if}">
                         <td><input type="checkbox" checked value="{$goods.rec_id}|{$goods.quantity}" id="cart_id{$goods.rec_id}" name="cart_id[]" nc_type="eachGoodsCheckBox"></td>
                         <td class="w60"><a href="{url app=goods&id=$goods.goods_id}" target="_blank" class="ncc-goods-thumb"><img src="{$goods.goods_image}" alt="{$goods.goods_name|escape}" /></a></td>
                         <td class="tl">
@@ -49,13 +49,21 @@
                             </dl>
                         </td>
                         <td class="w120">￥<em id="item{$goods.rec_id}_price">{$goods.price}</em></td>
+                        {if $goods.state && $goods.storage_state && $goods.if_show && !$goods.closed}
                         <td class="w120 ws0">
                             <a href="JavaScript:void(0);" onclick="decrease_quantity({$goods.rec_id});" title="减少商品件数" class="add-substract-key tip">-</a>
                             <input id="input_item_{$goods.rec_id}" value="{$goods.quantity}" orig="<?php echo $cart_info['goods_num']; ?>" changed="{$goods.quantity}" onkeyup="change_quantity({$store_id}, {$goods.rec_id}, {$goods.spec_id}, this);" type="text" class="text w20"/>
                             <a href="JavaScript:void(0);" onclick="add_quantity({$goods.rec_id});" title="增加商品件数" class="add-substract-key tip" >+</a>
                         </td>
+                        {else}
+                        <td class="w120">无效
+                            <input type="hidden" value="{$goods.rec_id}" name="invalid_cart[]">
+                        </td>
+                        {/if}
                         <td class="w120">
+                            {if $goods.state && $goods.storage_state && $goods.if_show && !$goods.closed}
                             ￥<em id="item{$goods.rec_id}_subtotal" nc_type="eachGoodsTotal">{$goods.subtotal}</em>
+                            {/if}
                         </td>
                         <td class="w80">
                             <a href="javascript:void(0)" onclick="collect_goods('{$goods.goods_id}');">收藏</a><br/>
