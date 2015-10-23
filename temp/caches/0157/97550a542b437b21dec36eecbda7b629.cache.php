@@ -1,13 +1,13 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-22 05:57:49
+ *  @Time:2015-10-23 01:24:37
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'model_id' => 926318106,
+  'model_id' => 147113402,
   'model_name' => ' 酒水茶饮',
   'keywords' => 
   array (
@@ -25,7 +25,7 @@ return array (
       'goods_name' => '韩E族百搭修身紧腰休闲长裤【灰色】',
       'default_image' => 'data/files/store_2/goods_121/small_200908060932011437.jpg',
       'price' => '90.00',
-      'stock' => '80',
+      'stock' => '79',
     ),
     1 => 
     array (

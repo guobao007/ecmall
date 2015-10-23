@@ -1,13 +1,13 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-22 05:57:49
+ *  @Time:2015-10-23 01:24:37
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'model_id' => 900847907,
+  'model_id' => 429879330,
   'model_name' => ' 母婴保健',
   'keywords' => 
   array (
@@ -20,6 +20,14 @@ return array (
   'link' => 'http://www.baidu.com',
   'goods_list' => 
   array (
+    0 => 
+    array (
+      'goods_id' => '35',
+      'goods_name' => '测试商品22222',
+      'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
+      'price' => '10.00',
+      'stock' => '10',
+    ),
   ),
   'ad_images_f1' => 
   array (

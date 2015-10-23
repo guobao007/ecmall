@@ -1,16 +1,25 @@
-<ul class="new_ul">
+<ul class="oproductul">
     <!--{foreach from=$widget_data.goods_list item=goods key=key}-->
     <li>
-        <dl>
-            <dt>
-                <a target="_blank" href="{$goods.zg_link_url}">
-                    <img id="picture_0" width="262" height="235" src="{$goods.zg_image_url}" title="{$goods.zg_title}">
-                </a>
-            </dt>
-            <dt> </dt>
-            <dd class="dt1">¥<span class="dd1">{$goods.zg_price}</span><span id="priceold_0" class="dd2">¥{$goods.zg_priceold}</span></dd>
-            <dt class="dt2"><a target="_blank" href="{$goods.zg_link_url}">{$goods.zg_title}</a></dt>
-        </dl>
+        <div class="tit_pro green_t">
+            <h3><a title="{$goods.zg_title}" id="title_5" target="_blank" href="{$goods.zg_link_url}">{$goods.zg_title}</a></h3>
+            <h4><a title="" id="content_5" target="_blank" href="{$goods.zg_link_url}"></a></h4>
+        </div>
+        <div class="pricetab green_c">
+            <div class="jinsou">仅售</div>
+            <div id="price_5" class="price">{$goods.zg_price}</div>
+            <div class="oriprice">¥<cite id="priceold_5">{$goods.zg_priceold}</cite></div>
+        </div>
+        <div class="pic">
+            <a target="_blank" href="{$goods.zg_link_url}">
+                <img width="278" height="260" src="{$goods.zg_image_url}" title="{$goods.zg_title}" id="picture_5"></a>
+        </div>
+        <div class="botab">
+        <h5 class="stock">库存仅剩<em id="storage_5" class="greenf">100</em>可供抢购</h5>
+        <div class="buybut green_b">
+          <h3><a target="_blank" href="{$goods.zg_link_url}">点击抢购</a></h3>
+        </div>
+      </div>
     </li>
     <!--{/foreach}-->
 </ul>
