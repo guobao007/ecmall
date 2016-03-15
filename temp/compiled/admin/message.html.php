@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
-<title> ECMall系统消息 -- Powered by ECMall </title>
+<title> 系统消息</title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
 <style>
 <!--
@@ -19,7 +19,7 @@ p {color: #999; border-top: 1px solid #cbe4f5; text-align: center; padding-top: 
 </head>
 
 <body>
-<h1>ECMall系统消息</h1>
+<h1>系统消息</h1>
 <dl>
     <dt><?php echo $this->_var['message']; ?></dt>
     <?php if ($this->_var['err_file']): ?>
@@ -41,6 +41,6 @@ window.setTimeout("<?php echo $this->_var['redirect']; ?>", 5000);
 //-->
 </script>
 <?php endif; ?>
-<p>Copyright 2003-2012 ShopEx Inc.,All rights reserved.</p>
+<p></p>
 </body>
 </html>

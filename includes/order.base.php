@@ -349,7 +349,7 @@ class BaseOrder extends Object
         {
             return false;
         }
-
+        dump($consignee_info);
         /* 计算配送费用 */
         $shipping_model =& m('shipping');
         $shipping_info  = $shipping_model->get("shipping_id={$consignee_info['shipping_id']} AND store_id={$goods_info['store_id']} AND enabled=1");

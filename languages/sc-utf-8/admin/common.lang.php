@@ -19,7 +19,7 @@ return array(
     'admin_nav' =>  '后台导航',
     'go_back'   =>  '返回上一页',
     'auto_redirect' => '若不选择将自动跳转',
-    'ecmall_sysmsg' => 'ECMall系统消息',
+    'ecmall_sysmsg' => '系统消息',
     'system_message' => '系统消息',
     'has_error' =>  '非常抱歉，在处理您的请求时出现了一些错误，如下：<br />',
     'required_field'    => '有必填项未填',

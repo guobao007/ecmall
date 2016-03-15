@@ -439,7 +439,7 @@ function checkQuantity(){
         $("#quantity").val('1');
         return false;
     }
-    max = parseInt($('[nctype="goods_stock"]').text());
+    max = parseInt($('[ectype="goods_stock"]').text());
     if(quantity > max){
         alert("库存不足");
         return false;

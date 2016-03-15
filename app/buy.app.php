@@ -11,6 +11,8 @@ class buyApp extends ShoppingbaseApp{
         $this->order = & m('order');
         $this->cart  = & m('cart');
         $this->buy  = & m('buy');
+        $this->member  = & m('member');
+        $this->goodsstatistics  =& m('goodsstatistics');
     }
     /**
      * 购物车、直接购买第一步:选择收获地址和配送方式
@@ -41,6 +43,65 @@ class buyApp extends ShoppingbaseApp{
      */
     public function buy_step2() {
         $result = $this->buy->buyStep2($_POST, $_SESSION['user_info']['user_id'], $_SESSION['user_info']['user_name']);
+        if(!empty($result['error'])) {
+            $this->show_message($result['error'], 'go_back', 'index.php?app=cart');
+        }
+        foreach ($result['order_list'] as $order_id=>$order_info) {
+            /* 下单完成后清理商品，如清空购物车，或将团购拍卖的状态转为已下单之类的 */
+            $this->cart->_clear_goods($order_id,$order_info['seller_id']);
+            /* 减去商品库存 */
+            $stock_info = $this->order->updateGoodsStorageNum('-', $order_id);
+            if(!$stock_info){
+                $this->show_message('更新库存失败', 'go_back', 'index.php?app=cart');
+            }
+            /* 获取订单信息 */
+            $order_info = $this->order->get($order_id);
+            /* 发送事件 */
+            $feed_images = array();
+            foreach ($result['store_cart_list'][$order_info['seller_id']] as $_gi)
+            {
+                $feed_images[] = array(
+                    'url'   => SITE_URL . '/' . $_gi['goods_image'],
+                    'link'  => SITE_URL . '/' . url('app=goods&id=' . $_gi['goods_id']),
+                );
+            }
+            $this->send_feed('order_created', array(
+                'user_id'   => $user_id,
+                'user_name' => addslashes($user_name),
+                'seller_id' => $order_info['seller_id'],
+                'seller_name' => $order_info['seller_name'],
+                'store_url' => SITE_URL . '/' . url('app=store&id=' . $order_info['seller_id']),
+                'images'    => $feed_images,
+            ));
+            $buyer_address = $order_info['buyer_email'];
+            $member_info  = $this->member->get($order_info['store_id']);
+            $seller_address= $member_info['email'];
+            /* 发送给买家下单通知 */
+            $buyer_mail = get_mail('tobuyer_new_order_notify', array('order' => $order_info));
+            $this->_mailto($buyer_address, addslashes($buyer_mail['subject']), addslashes($buyer_mail['message']));
+
+            /* 发送给卖家新订单通知 */
+            $seller_mail = get_mail('toseller_new_order_notify', array('order' => $order_info));
+            $this->_mailto($seller_address, addslashes($seller_mail['subject']), addslashes($seller_mail['message']));
+            /* 更新下单次数 */
+            $goods_ids = array();
+            foreach ($result['store_cart_list'][$order_info['seller_id']] as $goods)
+            {
+                $goods_ids[] = $goods['goods_id'];
+            }
+            $this->goodsstatistics->edit($goods_ids, 'orders=orders+1');
+        }
+        //转向到商城支付页面
+        $pay_url = 'index.php?app=buy&act=pay&pay_sn='.$result['pay_sn'];
+        /* 到收银台付款 */
+        header('Location:' . $pay_url);
+    }
+    
+    /**
+     * 下单时支付页面
+     */
+    public function pay() {
+        dump($_GET);
     }
     
     /**

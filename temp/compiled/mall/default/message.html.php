@@ -129,7 +129,8 @@
         <?php if ($this->_var['redirect']): ?>
         window.setTimeout("<?php echo $this->_var['redirect']; ?>", 2000);
         <?php else: ?>
-        window.setTimeout("javascript:history.back()", 2000);
+        var url = '<?php echo $this->_var['links']['0']['href']; ?>' ? location.href='<?php echo $this->_var['links']['0']['href']; ?>' : 'javascript:history.back()';
+        window.setTimeout(url, 2000);
         <?php endif; ?>
         //]]>
         </script>

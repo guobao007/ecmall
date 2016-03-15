@@ -150,17 +150,19 @@ class CartModel extends BaseModel
         $store_goods_total = array();
         //存放本次下单所有店铺商品总金额
         $order_goods_total = 0;
-
+        //存放每个店铺店铺下的总商品数
+        $store_goods_num = array();
         foreach ($store_cart_list as $store_id => $store_cart) {
             $tmp_amount = 0;
             foreach ($store_cart as $key => $cart_info) {
                 $store_cart[$key]['goods_total'] = number_format(($cart_info['price'] * $cart_info['quantity']),2,'.','');
                 $tmp_amount += $store_cart[$key]['goods_total'];
+                $store_goods_num[$store_id] += $store_cart[$key]['quantity'];
             }
             $store_cart_list[$store_id] = $store_cart;
-            $store_goods_total[$store_id] = number_format($tmp_amount,2,'.','');;
+            $store_goods_total[$store_id] = number_format($tmp_amount,2,'.','');
         }
-        return array($store_cart_list, $store_goods_total);
+        return array($store_cart_list, $store_goods_total, $store_goods_num);
     }
     
     /**
@@ -211,6 +213,32 @@ class CartModel extends BaseModel
             return true;
         }else{
             return false;
+        }
+    }
+    
+    /**
+     *    下单完成后清理商品
+     *
+     *    @author    QT
+     *    @return    void
+     */
+    function _clear_goods($order_id,$store_id)
+    {
+        /* 订单下完后清空指定购物车 */
+        if (!$store_id){
+            return false;
+        }
+        $this->drop("store_id = {$store_id} AND session_id='" . SESS_ID . "'");
+        //优惠券信息处理
+        if (isset($_POST['coupon_sn']) && !empty($_POST['coupon_sn']))
+        {
+            $sn = trim($_POST['coupon_sn']);
+            $couponsn_mod =& m('couponsn');
+            $couponsn = $couponsn_mod->get("coupon_sn = '{$sn}'");
+            if ($couponsn['remain_times'] > 0)
+            {
+                $couponsn_mod->edit("coupon_sn = '{$sn}'", "remain_times= remain_times - 1");
+            }
         }
     }
 

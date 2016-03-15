@@ -42,3 +42,11 @@ Thu, 22 Oct 2015 06:04:05 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.
 Thu, 22 Oct 2015 06:04:26 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
 Thu, 22 Oct 2015 06:12:32 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
 Thu, 22 Oct 2015 06:13:47 +0000	[2]fsockopen(): 	\includes\libraries\class.smtp.php	89
+Wed, 28 Oct 2015 08:10:30 +0000	[2]Missing argument 2 for buyModel::_valid_consignee_info(), called in F:\wamp\www\ecmall\includes\models\buy.model.php on line 85 and defined	\includes\models\buy.model.php	335
+Wed, 28 Oct 2015 08:10:51 +0000	[2]Missing argument 2 for buyModel::_valid_consignee_info(), called in F:\wamp\www\ecmall\includes\models\buy.model.php on line 85 and defined	\includes\models\buy.model.php	334
+Thu, 29 Oct 2015 01:31:31 +0000	[2]array_keys() expects parameter 1 to be array, null given	\includes\models\buy.model.php	54
+Thu, 29 Oct 2015 02:03:17 +0000	[2]Invalid argument supplied for foreach()	\app\buy.app.php	58
+Thu, 29 Oct 2015 02:27:08 +0000	[2]Invalid argument supplied for foreach()	\app\buy.app.php	61
+Thu, 29 Oct 2015 02:27:18 +0000	[2]Invalid argument supplied for foreach()	\app\buy.app.php	61
+Thu, 29 Oct 2015 02:29:11 +0000	[2]Invalid argument supplied for foreach()	\app\buy.app.php	61
+Thu, 29 Oct 2015 02:32:16 +0000	[2]Invalid argument supplied for foreach()	\app\buy.app.php	88

@@ -50,7 +50,6 @@ function _trigger_message ($arr)
         //$redirect = (($i + 2) >= $n) ? false : $arr[$i + 2];
         $a['links'][] = array('href' => $href , 'text' => Lang::get($arr[$i]));
     }
-
     return $a;
 }
 /**

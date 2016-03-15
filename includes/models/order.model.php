@@ -87,6 +87,39 @@ class OrderModel extends BaseModel
         /* 操作成功 */
         return true;
     }
+    
+    /**
+     * 变更库存和销量
+     * @param type $goods_buy_quantity
+     * @return type
+     * @throws Exception
+     */
+    public function updateGoodsStorageNum($action, $order_id) {
+        if (!in_array($action, array('+', '-'))) {
+            return false;
+        }
+        if (!$order_id) {
+            return false;
+        }
+
+        /* 获取订单商品列表 */
+        $model_ordergoods = & m('ordergoods');
+        $order_goods = $model_ordergoods->find("order_id={$order_id}");
+        if (empty($order_goods)) {
+            return false;
+        }
+
+        $model_goodsspec = & m('goodsspec');
+        $model_goods = & m('goods');
+
+        /* 依次改变库存 */
+        foreach ($order_goods as $rec_id => $goods) {
+            $model_goodsspec->edit($goods['spec_id'], "stock=stock {$action} {$goods['quantity']}");
+            $model_goods->clear_cache($goods['goods_id']);
+        }
+        /* 操作成功 */
+        return true;
+    }
 }
 
 ?>

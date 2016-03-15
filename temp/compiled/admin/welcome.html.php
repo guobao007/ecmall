@@ -41,11 +41,11 @@ alert(dangerous_apps);
     </ul>
 </dd>
 <?php endif; ?>
-<dt>ECMall 动态</dt>
+<!--<dt>ECMall 动态</dt>
 <dd>
     <ul id="news">
     </ul>
-</dd>
+</dd>-->
 <?php if ($this->_var['remind_info']): ?>
 <dt>站长提醒</dt>
 <dd>
@@ -114,10 +114,10 @@ alert(dangerous_apps);
             <td class="td"><?php echo $this->_var['sys_info']['mysql_version']; ?></td>
         </tr>
         <tr>
-            <th>ECMall 版本:</th>
+<!--            <th>ECMall 版本:</th>
             <td class="td"><?php echo $this->_var['sys_info']['ecmall_version']; ?></td>
             <th>安装日期:</th>
-            <td class="td"><?php echo $this->_var['sys_info']['install_date']; ?></td>
+            <td class="td"><?php echo $this->_var['sys_info']['install_date']; ?></td>-->
         </tr>
     </table>
 </dd>

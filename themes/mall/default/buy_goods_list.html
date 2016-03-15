@@ -29,6 +29,7 @@
         <tbody>
             <tr>
                 <th colspan="20"><i class="icon-home"></i><a target="_blank" href="{url app=store&id=$store_id}">{$cart_list.0.store_name}</a>
+                    <input type="hidden" value="{$cart_list.0.store_name}" name="store_name[]">
                   <div class="store-sale">&emsp;</div>
                 </th>
             </tr>
@@ -65,7 +66,7 @@
                 <td class="w160" rowspan="{$smarty.foreach.cart_name.total}">
                     <select class="w120" name="shipping[]" nctype="shipping">
                         <!--{foreach from=$shipping_methods[$store_id] item=shipping name=sp}-->
-                        <option value="{$shipping.shipping_id}|{$store_id}|{$shipping.first_price}" {if $smarty.foreach.sp.first}selected{/if}>{$shipping.shipping_name}&nbsp;&nbsp;{$shipping.first_price}元</option>
+                        <option value="{$shipping.shipping_id}|{$store_id}|{$shipping.shipping_fee}" {if $smarty.foreach.sp.first}selected{/if}>{$shipping.shipping_name}&nbsp;&nbsp;{$shipping.shipping_fee}元</option>
                         <!--{/foreach}-->
                     </select>
                 </td>
