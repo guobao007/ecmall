@@ -4,7 +4,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=<?php echo $this->_var['charset']; ?>" />
 <meta http-equiv="Content-Type" content="text/html;charset=<?php echo $this->_var['charset']; ?>" />
-<title>商城后台</title>
+<title>商城后台 -- Powered by ECMall</title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>

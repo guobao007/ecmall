@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
-<title>您需要登录后才能使用本功能</title>
+<title>您需要登录后才能使用本功能- Powered by ECMall</title>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
@@ -42,7 +42,7 @@ $(function(){
             <input class="btnEnter" type="submit" name="" value="" />
             <input class="btnBack" type="button" name="" value="" onclick="go('<?php echo $this->_var['site_url']; ?>')"/>
             <input class="btnBorget" type="button" name="" value="" onclick="go('<?php echo $this->_var['site_url']; ?>/index.php?app=find_password')"/>
-            <!--<p>&copy; 2003-2012 ShopEx inc. Powered by ECMall</p>-->
+            <p>&copy; 2003-2012 ShopEx inc. Powered by ECMall</p>
             </th>
         </tr>
     </form>

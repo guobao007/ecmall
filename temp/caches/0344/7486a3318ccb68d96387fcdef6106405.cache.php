@@ -1,13 +1,13 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2016-03-09 00:45:27
+ *  @Time:2015-10-23 01:24:37
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'model_id' => 1852650322,
+  'model_id' => 756990381,
   'model_name' => '哈哈',
   'keywords' => 
   array (

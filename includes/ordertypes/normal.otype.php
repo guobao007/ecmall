@@ -86,7 +86,6 @@ class NormalOrder extends BaseOrder
     {
         /* 释放goods_info和post两个变量 */
         extract($data);
-        dump($goods_info);
         /* 处理订单基本信息 */
         $base_info = $this->_handle_order_info($goods_info, $post);
         if (!$base_info)

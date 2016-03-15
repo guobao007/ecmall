@@ -98,12 +98,8 @@ function goodsspec(specs, specQty, defSpec)
         var current_spec = null;
         if(spec.stock > 0){
             current_spec = '<span class="yes">已选择 <strong>'+spec.spec1+'，'+spec.spec2+'</strong></span>';
-            $("[nctype='buynow_submit']").removeClass('no-buynow')
-            $("[nctype='addcart_submit']").removeClass('no-addcart');
         }else{
             current_spec = '<span class="no"><i class="icon-exclamation-sign"></i>&nbsp;商品当前库存不足</span>';
-            $("[nctype='buynow_submit']").addClass('no-buynow');
-            $("[nctype='addcart_submit']").addClass('no-addcart');
         }
         $("[ectype='current_spec']").html(current_spec);
     }
@@ -137,12 +133,8 @@ function selectSpec(num, spec, liObj)
             var current_spec = null;
             if(spec.stock > 0){
                 current_spec = '<span class="yes">已选择 <strong>'+spec.spec1+'，'+spec.spec2+'</strong></span>';
-                $("[nctype='buynow_submit']").removeClass('no-buynow')
-                $("[nctype='addcart_submit']").removeClass('no-addcart');
             }else{
                 current_spec = '<span class="no"><i class="icon-exclamation-sign"></i>&nbsp;商品当前库存不足</span>';
-                $("[nctype='buynow_submit']").addClass('no-buynow');
-                $("[nctype='addcart_submit']").addClass('no-addcart');
             }
             $("[ectype='current_spec']").html(current_spec);
             $("[ectype='goods_price']").html(price_format(spec.price));

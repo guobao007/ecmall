@@ -339,23 +339,23 @@ body { font-size: 12px; font-family: Arial, Verdana, sans-serif; }
 #warning label.error { color:#000; font-weight:normal; }
 
 /*  8  small window*/
-.content4 {padding: 20px;  border: 1px solid #e2e2e2;border-top:0px; color: #666; }
-.content4 h1 {font-size: 16px; color: #000; margin-bottom: 15px;}
-.content4 p {margin-bottom: 15px;}
-.content4 p span {color: #4b7a10; font-size: 16px; font-weight: bold; }
-.content4 dl {width: 332px; padding-bottom: 20px; overflow: hidden;}
-.content4 dt {float: left; +padding-top: 5px;}
-.content4 dd {float: right; width: 264px;}
-.content4 .li {float: left; width: 122px; height: 25px;}
-.content4 .btn {text-align: center; word-spacing: 10px; }
-.content4 .btn .btn1 {width: 75px; height: 29px; border: 0; background: url(../images/btn1.gif); color: #c73702; font-weight: bold; font-size: 14px;}
-.content4 .btn .btn2 {width: 75px; height: 29px; border: 0; background: url(../images/btn2.gif); color: #4e4e4e; font-weight: bold; font-size: 14px;}
-.content4 .clue_on {color: #9b9b9b; padding-bottom: 20px; line-height: 18px;}
-.content4 .pay {padding: 15px;}
-.content4 .pb15 {padding-bottom: 15px;}
-.content4 .btn {text-align: center; word-spacing: 10px; }
-.content4 .btn .btn1 {width: 75px; height: 29px; border: 0; background: url(../images/btn1.gif); color: #c73702; font-weight: bold; font-size: 14px;}
-.content4 .btn .btn2 {width: 75px; height: 29px; border: 0; background: url(../images/btn2.gif); color: #4e4e4e; font-weight: bold; font-size: 14px;}
+.content1 {padding: 20px;  border: 1px solid #e2e2e2;border-top:0px; color: #666; }
+.content1 h1 {font-size: 16px; color: #000; margin-bottom: 15px;}
+.content1 p {margin-bottom: 15px;}
+.content1 p span {color: #4b7a10; font-size: 16px; font-weight: bold; }
+.content1 dl {width: 332px; padding-bottom: 20px; overflow: hidden;}
+.content1 dt {float: left; +padding-top: 5px;}
+.content1 dd {float: right; width: 264px;}
+.content1 .li {float: left; width: 122px; height: 25px;}
+.content1 .btn {text-align: center; word-spacing: 10px; }
+.content1 .btn .btn1 {width: 75px; height: 29px; border: 0; background: url(../images/btn1.gif); color: #c73702; font-weight: bold; font-size: 14px;}
+.content1 .btn .btn2 {width: 75px; height: 29px; border: 0; background: url(../images/btn2.gif); color: #4e4e4e; font-weight: bold; font-size: 14px;}
+.content1 .clue_on {color: #9b9b9b; padding-bottom: 20px; line-height: 18px;}
+.content1 .pay {padding: 15px;}
+.content1 .pb15 {padding-bottom: 15px;}
+.content1 .btn {text-align: center; word-spacing: 10px; }
+.content1 .btn .btn1 {width: 75px; height: 29px; border: 0; background: url(../images/btn1.gif); color: #c73702; font-weight: bold; font-size: 14px;}
+.content1 .btn .btn2 {width: 75px; height: 29px; border: 0; background: url(../images/btn2.gif); color: #4e4e4e; font-weight: bold; font-size: 14px;}
 /*9*/
 .content_line { width: 400px; overflow: hidden; border-bottom: 1px dotted #ddd; color: #666; padding: 10px; line-height: 20px; }
 .dialog_content strong { font-size: 16px; font-weight: bold; }

@@ -31,7 +31,6 @@
         <tbody>
             <tr>
                 <th colspan="20"><i class="icon-home"></i><a target="_blank" href="<?php echo url('app=store&id=' . $this->_var['store_id']. ''); ?>"><?php echo $this->_var['cart_list']['0']['store_name']; ?></a>
-                    <input type="hidden" value="<?php echo $this->_var['cart_list']['0']['store_name']; ?>" name="store_name[]">
                   <div class="store-sale">&emsp;</div>
                 </th>
             </tr>
@@ -76,7 +75,7 @@ if ($this->_foreach['sp']['total'] > 0):
     foreach ($_from AS $this->_var['shipping']):
         $this->_foreach['sp']['iteration']++;
 ?>
-                        <option value="<?php echo $this->_var['shipping']['shipping_id']; ?>|<?php echo $this->_var['store_id']; ?>|<?php echo $this->_var['shipping']['shipping_fee']; ?>" <?php if (($this->_foreach['sp']['iteration'] <= 1)): ?>selected<?php endif; ?>><?php echo $this->_var['shipping']['shipping_name']; ?>&nbsp;&nbsp;<?php echo $this->_var['shipping']['shipping_fee']; ?>元</option>
+                        <option value="<?php echo $this->_var['shipping']['shipping_id']; ?>|<?php echo $this->_var['store_id']; ?>|<?php echo $this->_var['shipping']['first_price']; ?>" <?php if (($this->_foreach['sp']['iteration'] <= 1)): ?>selected<?php endif; ?>><?php echo $this->_var['shipping']['shipping_name']; ?>&nbsp;&nbsp;<?php echo $this->_var['shipping']['first_price']; ?>元</option>
                         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
                     </select>
                 </td>

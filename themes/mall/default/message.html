@@ -129,8 +129,7 @@
         {if $redirect}
         window.setTimeout("{$redirect}", 2000);
         {else}
-        var url = '{$links.0.href}' ? location.href='{$links.0.href}' : 'javascript:history.back()';
-        window.setTimeout(url, 2000);
+        window.setTimeout("javascript:history.back()", 2000);
         {/if}
         //]]>
         </script>

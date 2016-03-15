@@ -1,39 +1,39 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2015-10-22 05:58:11
+ *  @Time:2015-10-22 06:00:18
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
 
 return array (
-  'id' => 35,
+  'id' => 31,
   'goods' => 
   array (
-    'goods_id' => '35',
+    'goods_id' => '31',
     'store_id' => '2',
     'type' => 'material',
-    'goods_name' => '测试商品22222',
-    'description' => '',
-    'cate_id' => '1211',
-    'cate_name' => '男装	T恤	T恤1',
-    'brand' => '',
-    'spec_qty' => '2',
-    'spec_name_1' => '颜色',
-    'spec_name_2' => '尺码',
+    'goods_name' => '测试商品',
+    'description' => '<p><img src="http://ecmall/data/files/store_2/goods_45/201509140154059781.jpg" alt="1_04848498615189861_1280.jpg" /><img src="http://ecmall/data/files/store_2/goods_49/201509140154091464.jpg" alt="1_04848498638519467_1280.jpg" /></p>',
+    'cate_id' => '75',
+    'cate_name' => '运动服/颈环配件	T恤	长袖休闲T恤',
+    'brand' => 'ERG',
+    'spec_qty' => '0',
+    'spec_name_1' => '',
+    'spec_name_2' => '',
     'if_show' => '1',
     'closed' => '0',
     'close_reason' => NULL,
-    'add_time' => '1443513003',
-    'last_update' => '1444703233',
-    'default_spec' => '80',
-    'default_image' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
+    'add_time' => '1442195663',
+    'last_update' => '1442388582',
+    'default_spec' => '76',
+    'default_image' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
     'recommended' => '1',
-    'cate_id_1' => '1',
-    'cate_id_2' => '2',
-    'cate_id_3' => '1211',
+    'cate_id_1' => '73',
+    'cate_id_2' => '74',
+    'cate_id_3' => '75',
     'cate_id_4' => '0',
-    'price' => '10.00',
+    'price' => '50.00',
     'tags' => 
     array (
     ),
@@ -42,56 +42,34 @@ return array (
     array (
       0 => 
       array (
-        'spec_id' => '80',
-        'goods_id' => '35',
-        'spec_1' => '红色',
-        'spec_2' => 'M',
+        'spec_id' => '76',
+        'goods_id' => '31',
+        'spec_1' => '',
+        'spec_2' => '',
         'color_rgb' => '',
-        'price' => '10.00',
+        'price' => '50.00',
         'stock' => '10',
-        'sku' => '',
-      ),
-      1 => 
-      array (
-        'spec_id' => '81',
-        'goods_id' => '35',
-        'spec_1' => '褐色',
-        'spec_2' => 'L',
-        'color_rgb' => '',
-        'price' => '11.00',
-        'stock' => '0',
-        'sku' => '',
-      ),
-      2 => 
-      array (
-        'spec_id' => '82',
-        'goods_id' => '35',
-        'spec_1' => '褐色',
-        'spec_2' => 'M',
-        'color_rgb' => '',
-        'price' => '12.00',
-        'stock' => '30',
-        'sku' => '',
+        'sku' => '23456789422',
       ),
     ),
     '_images' => 
     array (
       0 => 
       array (
-        'image_id' => '92',
-        'goods_id' => '35',
-        'image_url' => 'data/files/store_2/goods_1/201509290726412817.jpg',
-        'thumbnail' => 'data/files/store_2/goods_1/small_201509290726412817.jpg',
+        'image_id' => '88',
+        'goods_id' => '31',
+        'image_url' => 'data/files/store_2/goods_60/201509140154203827.jpg',
+        'thumbnail' => 'data/files/store_2/goods_60/small_201509140154203827.jpg',
         'sort_order' => '1',
-        'file_id' => '120',
+        'file_id' => '109',
       ),
     ),
     '_scates' => 
     array (
     ),
-    'views' => '195',
+    'views' => '2',
     'collects' => '0',
-    'carts' => '8',
+    'carts' => '0',
     'orders' => '0',
     'sales' => '0',
     'comments' => '0',
@@ -320,18 +298,18 @@ return array (
     ),
     1 => 
     array (
-      'text' => '男装',
-      'url' => 'index.php?app=search&amp;cate_id=1',
+      'text' => '运动服/颈环配件',
+      'url' => 'index.php?app=search&amp;cate_id=73',
     ),
     2 => 
     array (
       'text' => 'T恤',
-      'url' => 'index.php?app=search&amp;cate_id=2',
+      'url' => 'index.php?app=search&amp;cate_id=74',
     ),
     3 => 
     array (
-      'text' => 'T恤1',
-      'url' => 'index.php?app=search&amp;cate_id=1211',
+      'text' => '长袖休闲T恤',
+      'url' => 'index.php?app=search&amp;cate_id=75',
     ),
     4 => 
     array (
@@ -343,7 +321,7 @@ return array (
     4 => 
     array (
       'title' => '开心网',
-      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%8122222-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D35',
+      'link' => 'http://www.kaixin001.com/repaste/share.php?rtitle=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99&rurl=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D31',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/kaixin001.gif',
@@ -351,7 +329,7 @@ return array (
     3 => 
     array (
       'title' => 'QQ书签',
-      'link' => 'http://shuqian.qq.com/post?from=3&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%8122222-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D35&jumpback=2&noui=1',
+      'link' => 'http://shuqian.qq.com/post?from=3&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&uri=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D31&jumpback=2&noui=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/qqshuqian.gif',
@@ -359,7 +337,7 @@ return array (
     2 => 
     array (
       'title' => '人人网',
-      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D35&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%8122222-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
+      'link' => 'http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D31&title=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99',
       'type' => 'share',
       'sort_order' => 255,
       'logo' => 'data/system/renren.gif',
@@ -367,7 +345,7 @@ return array (
     1 => 
     array (
       'title' => '百度收藏',
-      'link' => 'http://cang.baidu.com/do/add?it=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%8122222-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D35&fr=ien#nw=1',
+      'link' => 'http://cang.baidu.com/do/add?it=%E6%B5%8B%E8%AF%95%E5%95%86%E5%93%81-ECMall%E6%BC%94%E7%A4%BA%E7%AB%99++++++&iu=http%3A%2F%2Fecmall%2Findex.php%3Fapp%3Dgoods%26id%3D31&fr=ien#nw=1',
       'type' => 'collect',
       'sort_order' => 255,
       'logo' => 'data/system/baidushoucang.gif',
